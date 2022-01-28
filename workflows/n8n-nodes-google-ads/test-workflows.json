@@ -1,0 +1,71 @@
+{
+    "nodes": [
+      {
+        "parameters": {},
+        "name": "Start",
+        "type": "n8n-nodes-base.start",
+        "typeVersion": 1,
+        "position": [
+          240,
+          300
+        ]
+      },
+      {
+        "parameters": {
+          "customerId": "0",
+          "customAudienceId": "0"
+        },
+        "name": "Google Ads",
+        "type": "CUSTOM.googleAds",
+        "typeVersion": 1,
+        "position": [
+          660,
+          200
+        ],
+        "credentials": {
+          "googleAdsApi": {
+            "id": "8",
+            "name": "Google Ads account 2"
+          }
+        }
+      },
+      {
+        "parameters": {
+          "operation": "mutate",
+          "customerId": "1",
+          "jsonBody": "{ \"testattr1\": \"12345\" }"
+        },
+        "name": "Google Ads1",
+        "type": "CUSTOM.googleAds",
+        "typeVersion": 1,
+        "position": [
+          660,
+          440
+        ],
+        "credentials": {
+          "googleAdsApi": {
+            "id": "8",
+            "name": "Google Ads account 2"
+          }
+        }
+      }
+    ],
+    "connections": {
+      "Start": {
+        "main": [
+          [
+            {
+              "node": "Google Ads",
+              "type": "main",
+              "index": 0
+            },
+            {
+              "node": "Google Ads1",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      }
+    }
+  }
