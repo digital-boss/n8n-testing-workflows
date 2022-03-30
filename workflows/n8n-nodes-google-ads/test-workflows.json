@@ -1,71 +1,261 @@
 {
-    "nodes": [
-      {
-        "parameters": {},
-        "name": "Start",
-        "type": "n8n-nodes-base.start",
-        "typeVersion": 1,
-        "position": [
-          240,
-          300
-        ]
+  "name": "Google Ads Test Workflow",
+  "nodes": [
+    {
+      "parameters": {},
+      "name": "Start",
+      "type": "n8n-nodes-base.start",
+      "typeVersion": 1,
+      "position": [
+        -180,
+        220
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "userList",
+        "operation": "get",
+        "userListResourceName": "={{$json[\"resourceName\"]}}"
       },
-      {
-        "parameters": {
-          "customerId": "0",
-          "customAudienceId": "0"
-        },
-        "name": "Google Ads",
-        "type": "CUSTOM.googleAds",
-        "typeVersion": 1,
-        "position": [
-          660,
-          200
-        ],
-        "credentials": {
-          "googleAdsApi": {
-            "id": "8",
-            "name": "Google Ads account 2"
-          }
-        }
-      },
-      {
-        "parameters": {
-          "operation": "mutate",
-          "customerId": "1",
-          "jsonBody": "{ \"testattr1\": \"12345\" }"
-        },
-        "name": "Google Ads1",
-        "type": "CUSTOM.googleAds",
-        "typeVersion": 1,
-        "position": [
-          660,
-          440
-        ],
-        "credentials": {
-          "googleAdsApi": {
-            "id": "8",
-            "name": "Google Ads account 2"
-          }
+      "name": "Google Ads9",
+      "type": "CUSTOM.googleAds",
+      "typeVersion": 1,
+      "position": [
+        260,
+        220
+      ],
+      "executeOnce": true,
+      "credentials": {
+        "googleAdsOAuth2Api": {
+          "id": "11",
+          "name": "Google Ads account"
         }
       }
-    ],
-    "connections": {
-      "Start": {
-        "main": [
-          [
-            {
-              "node": "Google Ads",
-              "type": "main",
-              "index": 0
-            },
-            {
-              "node": "Google Ads1",
-              "type": "main",
-              "index": 0
-            }
-          ]
-        ]
+    },
+    {
+      "parameters": {
+        "customerId": "customers/9021488603",
+        "resource": "userList",
+        "returnAll": true,
+        "simplifyOutput": true
+      },
+      "name": "Google Ads10",
+      "type": "CUSTOM.googleAds",
+      "typeVersion": 1,
+      "position": [
+        80,
+        220
+      ],
+      "executeOnce": true,
+      "credentials": {
+        "googleAdsOAuth2Api": {
+          "id": "11",
+          "name": "Google Ads account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "customerId": "customers/9021488603",
+        "resource": "userList",
+        "operation": "create",
+        "name": "=qwerty_{{Date.now()}}",
+        "additionalFields": {
+          "description": "asdf"
+        },
+        "simplifyOutput": true
+      },
+      "name": "Google Ads11",
+      "type": "CUSTOM.googleAds",
+      "typeVersion": 1,
+      "position": [
+        60,
+        460
+      ],
+      "executeOnce": true,
+      "credentials": {
+        "googleAdsOAuth2Api": {
+          "id": "11",
+          "name": "Google Ads account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "customerId": "customers/9021488603",
+        "resource": "userList",
+        "operation": "addUser",
+        "userListResourceName": "customers/9021488603/userLists/7102704600",
+        "additionalFields": {
+          "email": "asd@asd"
+        }
+      },
+      "name": "Google Ads12",
+      "type": "CUSTOM.googleAds",
+      "typeVersion": 1,
+      "position": [
+        80,
+        660
+      ],
+      "executeOnce": true,
+      "credentials": {
+        "googleAdsOAuth2Api": {
+          "id": "11",
+          "name": "Google Ads account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "customerId": "customers/9021488603",
+        "resource": "userList",
+        "operation": "removeUser",
+        "userListResourceName": "customers/9021488603/userLists/7102704600",
+        "additionalFields": {
+          "email": "asd@asd",
+          "phoneNumber": "00000"
+        }
+      },
+      "name": "Google Ads13",
+      "type": "CUSTOM.googleAds",
+      "typeVersion": 1,
+      "position": [
+        280,
+        660
+      ],
+      "executeOnce": true,
+      "credentials": {
+        "googleAdsOAuth2Api": {
+          "id": "11",
+          "name": "Google Ads account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "customerId": "customers/9021488603",
+        "resource": "userList",
+        "operation": "deleteOpr",
+        "userListResourceName": "={{$json[\"resourceName\"]}}"
+      },
+      "name": "Google Ads14",
+      "type": "CUSTOM.googleAds",
+      "typeVersion": 1,
+      "position": [
+        440,
+        460
+      ],
+      "executeOnce": true,
+      "credentials": {
+        "googleAdsOAuth2Api": {
+          "id": "11",
+          "name": "Google Ads account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "customerId": "customers/9021488603",
+        "resource": "search",
+        "queryGQL": "SELECT user_list.id FROM user_list",
+        "simplifyOutput": true
+      },
+      "name": "Google Ads15",
+      "type": "CUSTOM.googleAds",
+      "typeVersion": 1,
+      "position": [
+        440,
+        220
+      ],
+      "executeOnce": true,
+      "credentials": {
+        "googleAdsOAuth2Api": {
+          "id": "11",
+          "name": "Google Ads account"
+        }
       }
     }
-  }
+  ],
+  "connections": {
+    "Start": {
+      "main": [
+        [
+          {
+            "node": "Google Ads10",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Ads9": {
+      "main": [
+        [
+          {
+            "node": "Google Ads15",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Ads10": {
+      "main": [
+        [
+          {
+            "node": "Google Ads9",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Ads11": {
+      "main": [
+        [
+          {
+            "node": "Google Ads14",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Ads12": {
+      "main": [
+        [
+          {
+            "node": "Google Ads13",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Ads14": {
+      "main": [
+        [
+          {
+            "node": "Google Ads12",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Ads15": {
+      "main": [
+        [
+          {
+            "node": "Google Ads11",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {},
+  "id": 6
+}
