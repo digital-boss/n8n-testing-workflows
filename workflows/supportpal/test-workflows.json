@@ -1,0 +1,691 @@
+{
+  "name": "My workflow",
+  "nodes": [
+    {
+      "parameters": {},
+      "name": "Start",
+      "type": "n8n-nodes-base.start",
+      "typeVersion": 1,
+      "position": [
+        240,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "email": "test17@test.org",
+        "optionalFields": {}
+      },
+      "name": "Supportpal",
+      "type": "CUSTOM.supportpal",
+      "typeVersion": 1,
+      "position": [
+        460,
+        480
+      ],
+      "credentials": {
+        "supportpalApi": {
+          "id": "14",
+          "name": "Supportpal account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "id": "={{$json[\"data\"][\"id\"]}}",
+        "optionalFields": {
+          "firstname": "test"
+        }
+      },
+      "name": "Supportpal1",
+      "type": "CUSTOM.supportpal",
+      "typeVersion": 1,
+      "position": [
+        680,
+        480
+      ],
+      "credentials": {
+        "supportpalApi": {
+          "id": "14",
+          "name": "Supportpal account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "id": "={{$json[\"data\"][\"id\"]}}"
+      },
+      "name": "Supportpal2",
+      "type": "CUSTOM.supportpal",
+      "typeVersion": 1,
+      "position": [
+        900,
+        480
+      ],
+      "credentials": {
+        "supportpalApi": {
+          "id": "14",
+          "name": "Supportpal account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "delete",
+        "id": "={{$node[\"Supportpal2\"].json[\"data\"][\"id\"]}}"
+      },
+      "name": "Supportpal3",
+      "type": "CUSTOM.supportpal",
+      "typeVersion": 1,
+      "position": [
+        1120,
+        500
+      ],
+      "credentials": {
+        "supportpalApi": {
+          "id": "14",
+          "name": "Supportpal account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "simplify": true,
+        "queryParameters": {}
+      },
+      "name": "Supportpal4",
+      "type": "CUSTOM.supportpal",
+      "typeVersion": 1,
+      "position": [
+        240,
+        100
+      ],
+      "credentials": {
+        "supportpalApi": {
+          "id": "14",
+          "name": "Supportpal account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "organisation",
+        "operation": "getAll",
+        "queryParameters": {}
+      },
+      "name": "Supportpal5",
+      "type": "CUSTOM.supportpal",
+      "typeVersion": 1,
+      "position": [
+        240,
+        -80
+      ],
+      "credentials": {
+        "supportpalApi": {
+          "id": "14",
+          "name": "Supportpal account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "ticket",
+        "operation": "getAll",
+        "simplify": true,
+        "queryParameters": {
+          "limit": 10
+        }
+      },
+      "name": "Supportpal6",
+      "type": "CUSTOM.supportpal",
+      "typeVersion": 1,
+      "position": [
+        240,
+        -260
+      ],
+      "credentials": {
+        "supportpalApi": {
+          "id": "14",
+          "name": "Supportpal account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "report",
+        "operation": "getAll",
+        "simplify": true
+      },
+      "name": "Supportpal7",
+      "type": "CUSTOM.supportpal",
+      "typeVersion": 1,
+      "position": [
+        240,
+        -440
+      ],
+      "credentials": {
+        "supportpalApi": {
+          "id": "14",
+          "name": "Supportpal account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "organisation",
+        "name": "Test14",
+        "simplify": true,
+        "optionalFields": {}
+      },
+      "name": "Supportpal8",
+      "type": "CUSTOM.supportpal",
+      "typeVersion": 1,
+      "position": [
+        460,
+        300
+      ],
+      "credentials": {
+        "supportpalApi": {
+          "id": "14",
+          "name": "Supportpal account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "organisation",
+        "operation": "update",
+        "id": "={{$json[\"id\"]}}",
+        "optionalFields": {
+          "name": "Test11"
+        }
+      },
+      "name": "Supportpal9",
+      "type": "CUSTOM.supportpal",
+      "typeVersion": 1,
+      "position": [
+        680,
+        300
+      ],
+      "credentials": {
+        "supportpalApi": {
+          "id": "14",
+          "name": "Supportpal account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "organisation",
+        "operation": "get",
+        "id": "={{$json[\"data\"][\"id\"]}}"
+      },
+      "name": "Supportpal10",
+      "type": "CUSTOM.supportpal",
+      "typeVersion": 1,
+      "position": [
+        900,
+        300
+      ],
+      "credentials": {
+        "supportpalApi": {
+          "id": "14",
+          "name": "Supportpal account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "organisation",
+        "operation": "delete",
+        "id": "={{$node[\"Supportpal10\"].json[\"data\"][\"id\"]}}"
+      },
+      "name": "Supportpal11",
+      "type": "CUSTOM.supportpal",
+      "typeVersion": 1,
+      "position": [
+        1120,
+        300
+      ],
+      "credentials": {
+        "supportpalApi": {
+          "id": "14",
+          "name": "Supportpal account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "ticket",
+        "user": "={{$json[\"data\"][\"id\"]}}",
+        "department": 2,
+        "status": 1,
+        "priority": 1,
+        "subject": "Test Ticket",
+        "text": "Test Ticket Text",
+        "simplify": true,
+        "optionalFields": {}
+      },
+      "name": "Supportpal12",
+      "type": "CUSTOM.supportpal",
+      "typeVersion": 1,
+      "position": [
+        460,
+        680
+      ],
+      "credentials": {
+        "supportpalApi": {
+          "id": "14",
+          "name": "Supportpal account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "ticket",
+        "operation": "update",
+        "id": "={{$json[\"id\"]}}",
+        "simplify": true,
+        "optionalFields": {
+          "subject": "Update Subject Test"
+        }
+      },
+      "name": "Supportpal13",
+      "type": "CUSTOM.supportpal",
+      "typeVersion": 1,
+      "position": [
+        680,
+        680
+      ],
+      "credentials": {
+        "supportpalApi": {
+          "id": "14",
+          "name": "Supportpal account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "ticket",
+        "operation": "get",
+        "id": "={{$json[\"id\"]}}"
+      },
+      "name": "Supportpal14",
+      "type": "CUSTOM.supportpal",
+      "typeVersion": 1,
+      "position": [
+        900,
+        680
+      ],
+      "credentials": {
+        "supportpalApi": {
+          "id": "14",
+          "name": "Supportpal account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "ticket",
+        "operation": "delete",
+        "id": "={{$node[\"Supportpal14\"].json[\"data\"][\"id\"]}}"
+      },
+      "name": "Supportpal15",
+      "type": "CUSTOM.supportpal",
+      "typeVersion": 1,
+      "position": [
+        1120,
+        680
+      ],
+      "credentials": {
+        "supportpalApi": {
+          "id": "14",
+          "name": "Supportpal account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "message",
+        "ticket_id": "={{$node[\"Supportpal14\"].json[\"data\"][\"id\"]}}",
+        "user_id": "={{$node[\"Supportpal2\"].json[\"data\"][\"id\"]}}",
+        "text": "Test Message",
+        "simplify": true,
+        "optionalFields": {}
+      },
+      "name": "Supportpal16",
+      "type": "CUSTOM.supportpal",
+      "typeVersion": 1,
+      "position": [
+        460,
+        880
+      ],
+      "credentials": {
+        "supportpalApi": {
+          "id": "14",
+          "name": "Supportpal account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "message",
+        "operation": "update",
+        "text": "Update Message Text",
+        "id": "={{$json[\"id\"]}}",
+        "simplify": true
+      },
+      "name": "Supportpal17",
+      "type": "CUSTOM.supportpal",
+      "typeVersion": 1,
+      "position": [
+        680,
+        880
+      ],
+      "credentials": {
+        "supportpalApi": {
+          "id": "14",
+          "name": "Supportpal account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "message",
+        "operation": "get",
+        "id": "={{$json[\"id\"]}}",
+        "simplify": true
+      },
+      "name": "Supportpal18",
+      "type": "CUSTOM.supportpal",
+      "typeVersion": 1,
+      "position": [
+        900,
+        880
+      ],
+      "credentials": {
+        "supportpalApi": {
+          "id": "14",
+          "name": "Supportpal account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "message",
+        "operation": "delete",
+        "id": "={{$json[\"id\"]}}"
+      },
+      "name": "Supportpal19",
+      "type": "CUSTOM.supportpal",
+      "typeVersion": 1,
+      "position": [
+        1120,
+        880
+      ],
+      "credentials": {
+        "supportpalApi": {
+          "id": "14",
+          "name": "Supportpal account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "message",
+        "operation": "getAll",
+        "ticket_id": "={{$json[\"data\"][\"id\"]}}",
+        "simplify": true,
+        "queryParameters": {}
+      },
+      "name": "Supportpal20",
+      "type": "CUSTOM.supportpal",
+      "typeVersion": 1,
+      "position": [
+        260,
+        880
+      ],
+      "credentials": {
+        "supportpalApi": {
+          "id": "14",
+          "name": "Supportpal account 2"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Start": {
+      "main": [
+        [
+          {
+            "node": "Supportpal4",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Supportpal8",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Supportpal5",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Supportpal6",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Supportpal7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Supportpal": {
+      "main": [
+        [
+          {
+            "node": "Supportpal1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Supportpal1": {
+      "main": [
+        [
+          {
+            "node": "Supportpal2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Supportpal2": {
+      "main": [
+        [
+          {
+            "node": "Supportpal12",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Supportpal4": {
+      "main": [
+        []
+      ]
+    },
+    "Supportpal5": {
+      "main": [
+        []
+      ]
+    },
+    "Supportpal6": {
+      "main": [
+        []
+      ]
+    },
+    "Supportpal8": {
+      "main": [
+        [
+          {
+            "node": "Supportpal9",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Supportpal9": {
+      "main": [
+        [
+          {
+            "node": "Supportpal10",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Supportpal10": {
+      "main": [
+        [
+          {
+            "node": "Supportpal",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Supportpal12": {
+      "main": [
+        [
+          {
+            "node": "Supportpal13",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Supportpal13": {
+      "main": [
+        [
+          {
+            "node": "Supportpal14",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Supportpal14": {
+      "main": [
+        [
+          {
+            "node": "Supportpal20",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Supportpal16": {
+      "main": [
+        [
+          {
+            "node": "Supportpal17",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Supportpal17": {
+      "main": [
+        [
+          {
+            "node": "Supportpal18",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Supportpal18": {
+      "main": [
+        [
+          {
+            "node": "Supportpal19",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Supportpal19": {
+      "main": [
+        [
+          {
+            "node": "Supportpal15",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Supportpal15": {
+      "main": [
+        [
+          {
+            "node": "Supportpal3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Supportpal3": {
+      "main": [
+        [
+          {
+            "node": "Supportpal11",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Supportpal7": {
+      "main": [
+        []
+      ]
+    },
+    "Supportpal20": {
+      "main": [
+        [
+          {
+            "node": "Supportpal16",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {},
+  "id": 15
+}
