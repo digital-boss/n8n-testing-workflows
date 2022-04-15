@@ -1,0 +1,506 @@
+{
+  "name": "Yealink Test Workflow (Package)",
+  "nodes": [
+    {
+      "parameters": {},
+      "name": "Start",
+      "type": "n8n-nodes-base.start",
+      "typeVersion": 1,
+      "position": [
+        220,
+        160
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "staff",
+        "additionalFields": {
+          "autoCount": false,
+          "limit": 0,
+          "orderbys": {
+            "metadataValues": [
+              {},
+              {}
+            ]
+          },
+          "searchKey": "",
+          "skip": 0,
+          "type": ""
+        }
+      },
+      "name": "Yealink",
+      "type": "CUSTOM.yealink",
+      "typeVersion": 1,
+      "position": [
+        410,
+        360
+      ],
+      "credentials": {
+        "yealinkApi": {
+          "id": "37",
+          "name": "Yealink Test"
+        }
+      },
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "resource": "region",
+        "simplifyOutput": true
+      },
+      "name": "Yealink1",
+      "type": "CUSTOM.yealink",
+      "typeVersion": 1,
+      "position": [
+        400,
+        160
+      ],
+      "credentials": {
+        "yealinkApi": {
+          "id": "37",
+          "name": "Yealink Test"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "region",
+        "operation": "add",
+        "parentId": "asd",
+        "name": "asd",
+        "additionalFields": {
+          "description": ""
+        }
+      },
+      "name": "Yealink2",
+      "type": "CUSTOM.yealink",
+      "typeVersion": 1,
+      "position": [
+        580,
+        160
+      ],
+      "credentials": {
+        "yealinkApi": {
+          "id": "38",
+          "name": "wrong credentials"
+        }
+      },
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "resource": "staff",
+        "operation": "addSip",
+        "sipRegisterName": "asd",
+        "username": "asd",
+        "password": "asd",
+        "sipServer1": "asd",
+        "sipPort1": "asd",
+        "additionalFields": {
+          "sipDisplayName": "",
+          "sipLabel": "",
+          "sipServer2": "",
+          "sipPort2": "",
+          "type": "",
+          "remark": "",
+          "regionId": ""
+        }
+      },
+      "name": "Yealink3",
+      "type": "CUSTOM.yealink",
+      "typeVersion": 1,
+      "position": [
+        570,
+        360
+      ],
+      "credentials": {
+        "yealinkApi": {
+          "id": "37",
+          "name": "Yealink Test"
+        }
+      },
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "additionalFields": {
+          "autoCount": false,
+          "limit": 2,
+          "orderbys": {
+            "metadataValues": [
+              {},
+              {}
+            ]
+          },
+          "skip": 2
+        }
+      },
+      "name": "Yealink4",
+      "type": "CUSTOM.yealink",
+      "typeVersion": 1,
+      "position": [
+        920,
+        610
+      ],
+      "credentials": {
+        "yealinkApi": {
+          "id": "37",
+          "name": "Yealink Test"
+        }
+      },
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "operation": "add",
+        "mac": [
+          "001565930d7e"
+        ],
+        "modelId": "asd",
+        "regionId": "00b254ffae1a45a7a2419537d7de5757",
+        "additionalFields": {
+          "authName": "",
+          "machineId": "",
+          "password": "",
+          "phone": "",
+          "remark": "",
+          "serverId": "14456",
+          "staffIds": [
+            "015ad6e16c304243893a8eec5973db73"
+          ],
+          "staffs": {
+            "metadataValues": [
+              {},
+              {}
+            ]
+          },
+          "syncRps": false,
+          "uniqueServerUrl": ""
+        }
+      },
+      "name": "Yealink5",
+      "type": "CUSTOM.yealink",
+      "typeVersion": 1,
+      "position": [
+        390,
+        610
+      ],
+      "credentials": {
+        "yealinkApi": {
+          "id": "37",
+          "name": "Yealink Test"
+        }
+      },
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "operation": "batchDelete",
+        "additionalFields": {
+          "deviceIds": {},
+          "syncRps": true,
+          "macs": [
+            "805e0c0dde0d"
+          ],
+          "deleteRps": true
+        }
+      },
+      "name": "Yealink6",
+      "type": "CUSTOM.yealink",
+      "typeVersion": 1,
+      "position": [
+        730,
+        610
+      ],
+      "credentials": {
+        "yealinkApi": {
+          "id": "37",
+          "name": "Yealink Test"
+        }
+      },
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "operation": "edit",
+        "id": "007e153da0a14930b802b0496d01361c",
+        "regionId": "00351ae07ce84a1a908d72ae91d58b2a",
+        "additionalFields": {
+          "authName": "",
+          "machineId": "",
+          "password": "",
+          "phone": "",
+          "remark": "",
+          "serverId": "14456",
+          "staffIds": [
+            "ff8ee8b5ba53449285f540e0cfb80216"
+          ],
+          "staffs": {
+            "metadataValues": [
+              {},
+              {}
+            ]
+          },
+          "syncRps": false,
+          "uniqueServerUrl": ""
+        }
+      },
+      "name": "Yealink7",
+      "type": "CUSTOM.yealink",
+      "typeVersion": 1,
+      "position": [
+        560,
+        610
+      ],
+      "credentials": {
+        "yealinkApi": {
+          "id": "37",
+          "name": "Yealink Test"
+        }
+      },
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "resource": "rpsDevice",
+        "mac": "805ec0e43dd3"
+      },
+      "name": "Yealink8",
+      "type": "CUSTOM.yealink",
+      "typeVersion": 1,
+      "position": [
+        390,
+        840
+      ],
+      "credentials": {
+        "yealinkApi": {
+          "id": "37",
+          "name": "Yealink Test"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "rpsDevice",
+        "operation": "checkMac",
+        "mac": "805ec0e43dd3"
+      },
+      "name": "Yealink9",
+      "type": "CUSTOM.yealink",
+      "typeVersion": 1,
+      "position": [
+        570,
+        840
+      ],
+      "credentials": {
+        "yealinkApi": {
+          "id": "37",
+          "name": "Yealink Test"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "additionalFields": {
+          "limit": 5,
+          "skip": 5
+        },
+        "simplifyOutput": true
+      },
+      "name": "Yealink11",
+      "type": "CUSTOM.yealink",
+      "typeVersion": 1,
+      "position": [
+        1090,
+        610
+      ],
+      "credentials": {
+        "yealinkApi": {
+          "id": "37",
+          "name": "Yealink Test"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "staff",
+        "additionalFields": {
+          "limit": 1
+        }
+      },
+      "name": "Yealink17",
+      "type": "CUSTOM.yealink",
+      "typeVersion": 1,
+      "position": [
+        740,
+        360
+      ],
+      "credentials": {
+        "yealinkApi": {
+          "id": "37",
+          "name": "Yealink Test"
+        }
+      },
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "resource": "staff",
+        "additionalFields": {
+          "limit": 1
+        },
+        "simplifyOutput": true
+      },
+      "name": "Yealink18",
+      "type": "CUSTOM.yealink",
+      "typeVersion": 1,
+      "position": [
+        910,
+        360
+      ],
+      "credentials": {
+        "yealinkApi": {
+          "id": "37",
+          "name": "Yealink Test"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Start": {
+      "main": [
+        [
+          {
+            "node": "Yealink1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Yealink1": {
+      "main": [
+        [
+          {
+            "node": "Yealink2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Yealink2": {
+      "main": [
+        [
+          {
+            "node": "Yealink",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Yealink": {
+      "main": [
+        [
+          {
+            "node": "Yealink3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Yealink5": {
+      "main": [
+        [
+          {
+            "node": "Yealink7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Yealink7": {
+      "main": [
+        [
+          {
+            "node": "Yealink6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Yealink6": {
+      "main": [
+        [
+          {
+            "node": "Yealink4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Yealink4": {
+      "main": [
+        [
+          {
+            "node": "Yealink11",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Yealink11": {
+      "main": [
+        [
+          {
+            "node": "Yealink8",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Yealink8": {
+      "main": [
+        [
+          {
+            "node": "Yealink9",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Yealink3": {
+      "main": [
+        [
+          {
+            "node": "Yealink17",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Yealink17": {
+      "main": [
+        [
+          {
+            "node": "Yealink5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {},
+  "id": 36
+}
