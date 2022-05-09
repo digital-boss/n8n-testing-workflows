@@ -1,0 +1,490 @@
+{
+    "nodes": [
+      {
+        "parameters": {},
+        "name": "Start",
+        "type": "n8n-nodes-base.start",
+        "typeVersion": 1,
+        "position": [
+          240,
+          300
+        ]
+      },
+      {
+        "parameters": {
+          "operation": "getAll",
+          "additionalFields": {
+            "limit": 10
+          },
+          "simplify": true
+        },
+        "name": "PortaOne",
+        "type": "@digital-boss/n8n-nodes-portaone.portaone",
+        "typeVersion": 1,
+        "position": [
+          460,
+          300
+        ],
+        "credentials": {
+          "portaOneTokenApi": {
+            "id": "25",
+            "name": "PortaOne account"
+          }
+        }
+      },
+      {
+        "parameters": {
+          "i_customer": "={{$json[\"i_customer\"]}}",
+          "additionalFields": {},
+          "simplify": true
+        },
+        "name": "PortaOne1",
+        "type": "@digital-boss/n8n-nodes-portaone.portaone",
+        "typeVersion": 1,
+        "position": [
+          640,
+          300
+        ],
+        "executeOnce": true,
+        "credentials": {
+          "portaOneTokenApi": {
+            "id": "25",
+            "name": "PortaOne account"
+          }
+        }
+      },
+      {
+        "parameters": {
+          "resource": "account",
+          "operation": "getAll",
+          "additionalFields": {},
+          "simplify": true
+        },
+        "name": "PortaOne2",
+        "type": "@digital-boss/n8n-nodes-portaone.portaone",
+        "typeVersion": 1,
+        "position": [
+          460,
+          480
+        ],
+        "credentials": {
+          "portaOneTokenApi": {
+            "id": "25",
+            "name": "PortaOne account"
+          }
+        }
+      },
+      {
+        "parameters": {
+          "resource": "account",
+          "i_account": "={{$json[\"i_account\"]}}",
+          "additionalFields": {},
+          "simplify": true
+        },
+        "name": "PortaOne3",
+        "type": "@digital-boss/n8n-nodes-portaone.portaone",
+        "typeVersion": 1,
+        "position": [
+          640,
+          480
+        ],
+        "executeOnce": true,
+        "credentials": {
+          "portaOneTokenApi": {
+            "id": "25",
+            "name": "PortaOne account"
+          }
+        }
+      },
+      {
+        "parameters": {
+          "resource": "invoice",
+          "operation": "getAll",
+          "additionalFields": {
+            "limit": 10
+          },
+          "simplify": true
+        },
+        "name": "PortaOne4",
+        "type": "@digital-boss/n8n-nodes-portaone.portaone",
+        "typeVersion": 1,
+        "position": [
+          460,
+          660
+        ],
+        "credentials": {
+          "portaOneTokenApi": {
+            "id": "25",
+            "name": "PortaOne account"
+          }
+        }
+      },
+      {
+        "parameters": {
+          "resource": "invoice",
+          "i_invoice": "={{$json[\"i_invoice\"]}}",
+          "additionalFields": {},
+          "simplify": true
+        },
+        "name": "PortaOne5",
+        "type": "@digital-boss/n8n-nodes-portaone.portaone",
+        "typeVersion": 1,
+        "position": [
+          640,
+          660
+        ],
+        "executeOnce": true,
+        "credentials": {
+          "portaOneTokenApi": {
+            "id": "25",
+            "name": "PortaOne account"
+          }
+        }
+      },
+      {
+        "parameters": {
+          "resource": "customerExtension",
+          "operation": "getAll",
+          "i_customer": "={{$json[\"i_customer\"]}}",
+          "additionalFields": {
+            "limit": 10
+          }
+        },
+        "name": "PortaOne6",
+        "type": "@digital-boss/n8n-nodes-portaone.portaone",
+        "typeVersion": 1,
+        "position": [
+          640,
+          -60
+        ],
+        "executeOnce": true,
+        "credentials": {
+          "portaOneTokenApi": {
+            "id": "25",
+            "name": "PortaOne account"
+          }
+        }
+      },
+      {
+        "parameters": {
+          "resource": "customerXdrs",
+          "i_customer": "={{$json[\"i_customer\"]}}",
+          "from_date": "2021-05-31T22:00:00.000Z",
+          "to_date": "2022-05-08T22:00:00.000Z",
+          "additionalFields": {
+            "limit": 10
+          }
+        },
+        "name": "PortaOne7",
+        "type": "@digital-boss/n8n-nodes-portaone.portaone",
+        "typeVersion": 1,
+        "position": [
+          640,
+          120
+        ],
+        "executeOnce": true,
+        "credentials": {
+          "portaOneTokenApi": {
+            "id": "25",
+            "name": "PortaOne account"
+          }
+        }
+      },
+      {
+        "parameters": {
+          "resource": "didNumbers",
+          "additionalFields": {
+            "limit": 10
+          },
+          "simplify": true
+        },
+        "name": "PortaOne8",
+        "type": "@digital-boss/n8n-nodes-portaone.portaone",
+        "typeVersion": 1,
+        "position": [
+          460,
+          840
+        ],
+        "credentials": {
+          "portaOneTokenApi": {
+            "id": "25",
+            "name": "PortaOne account"
+          }
+        }
+      },
+      {
+        "parameters": {
+          "resource": "billingSessions",
+          "additionalFields": {
+            "limit": 10
+          },
+          "simplify": true
+        },
+        "name": "PortaOne9",
+        "type": "@digital-boss/n8n-nodes-portaone.portaone",
+        "typeVersion": 1,
+        "position": [
+          460,
+          1040
+        ],
+        "credentials": {
+          "portaOneTokenApi": {
+            "id": "25",
+            "name": "PortaOne account"
+          }
+        }
+      },
+      {
+        "parameters": {
+          "resource": "customerExtension",
+          "additionalFields": {}
+        },
+        "name": "PortaOne10",
+        "type": "@digital-boss/n8n-nodes-portaone.portaone",
+        "typeVersion": 1,
+        "position": [
+          820,
+          -60
+        ],
+        "credentials": {
+          "portaOneTokenApi": {
+            "id": "25",
+            "name": "PortaOne account"
+          }
+        }
+      },
+      {
+        "parameters": {
+          "resource": "customerExtension",
+          "operation": "update",
+          "additionalFields": {}
+        },
+        "name": "PortaOne11",
+        "type": "@digital-boss/n8n-nodes-portaone.portaone",
+        "typeVersion": 1,
+        "position": [
+          1000,
+          -60
+        ],
+        "credentials": {
+          "portaOneTokenApi": {
+            "id": "25",
+            "name": "PortaOne account"
+          }
+        }
+      },
+      {
+        "parameters": {
+          "resource": "didNumbers",
+          "operation": "assignToCustomer"
+        },
+        "name": "PortaOne12",
+        "type": "@digital-boss/n8n-nodes-portaone.portaone",
+        "typeVersion": 1,
+        "position": [
+          640,
+          840
+        ],
+        "credentials": {
+          "portaOneTokenApi": {
+            "id": "25",
+            "name": "PortaOne account"
+          }
+        }
+      },
+      {
+        "parameters": {
+          "resource": "didNumbers",
+          "operation": "assignToAccount"
+        },
+        "name": "PortaOne13",
+        "type": "@digital-boss/n8n-nodes-portaone.portaone",
+        "typeVersion": 1,
+        "position": [
+          820,
+          840
+        ],
+        "credentials": {
+          "portaOneTokenApi": {
+            "id": "25",
+            "name": "PortaOne account"
+          }
+        }
+      },
+      {
+        "parameters": {
+          "operation": "create",
+          "name": "TEST CUSTOMER ",
+          "iso_4217": "USD",
+          "additionalFields": {}
+        },
+        "name": "PortaOne14",
+        "type": "@digital-boss/n8n-nodes-portaone.portaone",
+        "typeVersion": 1,
+        "position": [
+          820,
+          300
+        ],
+        "credentials": {
+          "portaOneTokenApi": {
+            "id": "25",
+            "name": "PortaOne account"
+          }
+        }
+      },
+      {
+        "parameters": {
+          "operation": "update",
+          "additionalFields": {}
+        },
+        "name": "PortaOne15",
+        "type": "@digital-boss/n8n-nodes-portaone.portaone",
+        "typeVersion": 1,
+        "position": [
+          1000,
+          300
+        ],
+        "credentials": {
+          "portaOneTokenApi": {
+            "id": "25",
+            "name": "PortaOne account"
+          }
+        }
+      },
+      {
+        "parameters": {
+          "resource": "account",
+          "operation": "addAlias",
+          "additionalFields": {}
+        },
+        "name": "PortaOne16",
+        "type": "@digital-boss/n8n-nodes-portaone.portaone",
+        "typeVersion": 1,
+        "position": [
+          820,
+          480
+        ],
+        "credentials": {
+          "portaOneTokenApi": {
+            "id": "25",
+            "name": "PortaOne account"
+          }
+        }
+      },
+      {
+        "parameters": {
+          "resource": "account",
+          "operation": "delete"
+        },
+        "name": "PortaOne17",
+        "type": "@digital-boss/n8n-nodes-portaone.portaone",
+        "typeVersion": 1,
+        "position": [
+          1000,
+          480
+        ],
+        "credentials": {
+          "portaOneTokenApi": {
+            "id": "25",
+            "name": "PortaOne account"
+          }
+        }
+      },
+      {
+        "parameters": {
+          "resource": "invoice",
+          "operation": "applyAdjustment",
+          "additionalFields": {}
+        },
+        "name": "PortaOne18",
+        "type": "@digital-boss/n8n-nodes-portaone.portaone",
+        "typeVersion": 1,
+        "position": [
+          820,
+          660
+        ],
+        "credentials": {
+          "portaOneTokenApi": {
+            "id": "25",
+            "name": "PortaOne account"
+          }
+        }
+      }
+    ],
+    "connections": {
+      "Start": {
+        "main": [
+          [
+            {
+              "node": "PortaOne",
+              "type": "main",
+              "index": 0
+            },
+            {
+              "node": "PortaOne2",
+              "type": "main",
+              "index": 0
+            },
+            {
+              "node": "PortaOne4",
+              "type": "main",
+              "index": 0
+            },
+            {
+              "node": "PortaOne8",
+              "type": "main",
+              "index": 0
+            },
+            {
+              "node": "PortaOne9",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "PortaOne": {
+        "main": [
+          [
+            {
+              "node": "PortaOne7",
+              "type": "main",
+              "index": 0
+            },
+            {
+              "node": "PortaOne6",
+              "type": "main",
+              "index": 0
+            },
+            {
+              "node": "PortaOne1",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "PortaOne2": {
+        "main": [
+          [
+            {
+              "node": "PortaOne3",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "PortaOne4": {
+        "main": [
+          [
+            {
+              "node": "PortaOne5",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      }
+    }
+  }
