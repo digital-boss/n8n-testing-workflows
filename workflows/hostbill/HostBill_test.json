@@ -1,0 +1,1240 @@
+{
+  "name": "HostBill test",
+  "nodes": [
+    {
+      "parameters": {},
+      "name": "Start",
+      "type": "n8n-nodes-base.start",
+      "typeVersion": 1,
+      "position": [
+        460,
+        580
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "account",
+        "operation": "create",
+        "id": 1
+      },
+      "name": "account: create",
+      "type": "CUSTOM.hostBill",
+      "typeVersion": 1,
+      "position": [
+        220,
+        2280
+      ],
+      "credentials": {
+        "hostBillApi": {
+          "id": "9",
+          "name": "HostBill account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "service",
+        "operation": "getProductDetails"
+      },
+      "name": "service: getProductDetails",
+      "type": "CUSTOM.hostBill",
+      "typeVersion": 1,
+      "position": [
+        220,
+        1920
+      ],
+      "credentials": {
+        "hostBillApi": {
+          "id": "9",
+          "name": "HostBill account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "domain",
+        "operation": "register"
+      },
+      "name": "domain: register",
+      "type": "CUSTOM.hostBill",
+      "typeVersion": 1,
+      "position": [
+        1040,
+        2600
+      ],
+      "credentials": {
+        "hostBillApi": {
+          "id": "9",
+          "name": "HostBill account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "id": "={{$json[\"client_id\"]}}",
+        "optionalFields": {
+          "firstname": "NewClientName"
+        }
+      },
+      "name": "client: update",
+      "type": "CUSTOM.hostBill",
+      "typeVersion": 1,
+      "position": [
+        1120,
+        260
+      ],
+      "credentials": {
+        "hostBillApi": {
+          "id": "9",
+          "name": "HostBill account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "id": "={{$json[\"client_id\"]}}"
+      },
+      "name": "client: get",
+      "type": "CUSTOM.hostBill",
+      "typeVersion": 1,
+      "position": [
+        1120,
+        420
+      ],
+      "credentials": {
+        "hostBillApi": {
+          "id": "9",
+          "name": "HostBill account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "getDomains",
+        "id": "={{$json[\"client_id\"]}}"
+      },
+      "name": "client: getDomains",
+      "type": "CUSTOM.hostBill",
+      "typeVersion": 1,
+      "position": [
+        1120,
+        580
+      ],
+      "credentials": {
+        "hostBillApi": {
+          "id": "9",
+          "name": "HostBill account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "page": 1
+      },
+      "name": "client: getAll",
+      "type": "CUSTOM.hostBill",
+      "typeVersion": 1,
+      "position": [
+        1340,
+        920
+      ],
+      "credentials": {
+        "hostBillApi": {
+          "id": "9",
+          "name": "HostBill account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "create",
+        "firstname": "test1 First Name",
+        "lastname": "test1 Last Name",
+        "email": "test1@some.io",
+        "password": "pass",
+        "password2": "pass",
+        "optionalFields": {
+          "notifyclient": true,
+          "type": "Private",
+          "language": "en",
+          "companyname": "test1 ",
+          "phonenumber": "123",
+          "address1": "Address1",
+          "address2": "Address2",
+          "city": "Austin",
+          "state": "Texas",
+          "postcode": "123",
+          "country": "USA"
+        }
+      },
+      "name": "client: create",
+      "type": "CUSTOM.hostBill",
+      "typeVersion": 1,
+      "position": [
+        800,
+        580
+      ],
+      "credentials": {
+        "hostBillApi": {
+          "id": "9",
+          "name": "HostBill account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "verifyLogin",
+        "email": "test1@some.io",
+        "password": "pass"
+      },
+      "name": "client: verifyLogin success",
+      "type": "CUSTOM.hostBill",
+      "typeVersion": 1,
+      "position": [
+        1120,
+        740
+      ],
+      "credentials": {
+        "hostBillApi": {
+          "id": "9",
+          "name": "HostBill account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "verifyLogin",
+        "email": "test1@some.io",
+        "password": "WRONG"
+      },
+      "name": "client: verifyLogin fail",
+      "type": "CUSTOM.hostBill",
+      "typeVersion": 1,
+      "position": [
+        1120,
+        920
+      ],
+      "credentials": {
+        "hostBillApi": {
+          "id": "9",
+          "name": "HostBill account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "delete",
+        "id": "={{$node[\"client: create\"].json[\"client_id\"]}}"
+      },
+      "name": "client: delete",
+      "type": "CUSTOM.hostBill",
+      "typeVersion": 1,
+      "position": [
+        1680,
+        920
+      ],
+      "credentials": {
+        "hostBillApi": {
+          "id": "9",
+          "name": "HostBill account"
+        }
+      },
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "resource": "clientContact",
+        "operation": "create",
+        "id": "={{$json[\"client_id\"]}}",
+        "firstname": "test2 Client Name",
+        "lastname": "Last Name",
+        "email": "client@some.io",
+        "password": "pass2",
+        "password2": "pass2",
+        "Optional Fields": {
+          "phonenumber": "3453",
+          "address1": "line1",
+          "address2": "line2",
+          "city": "city",
+          "state": "state",
+          "postcode": "423",
+          "country": "country"
+        }
+      },
+      "name": "clientContact: create",
+      "type": "CUSTOM.hostBill",
+      "typeVersion": 1,
+      "position": [
+        800,
+        1120
+      ],
+      "credentials": {
+        "hostBillApi": {
+          "id": "9",
+          "name": "HostBill account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "clientContact",
+        "operation": "delete",
+        "client_id": "={{$node[\"clientContact: create\"].json[\"contact_id\"]}}",
+        "parent_id": "={{$node[\"client: create\"].json[\"client_id\"]}}"
+      },
+      "name": "clientContact: delete",
+      "type": "CUSTOM.hostBill",
+      "typeVersion": 1,
+      "position": [
+        1680,
+        1140
+      ],
+      "credentials": {
+        "hostBillApi": {
+          "id": "9",
+          "name": "HostBill account"
+        }
+      },
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "resource": "clientContact",
+        "id": "={{$node[\"client: create\"].json[\"client_id\"]}}",
+        "page": 1
+      },
+      "name": "clientContact: getByClient",
+      "type": "CUSTOM.hostBill",
+      "typeVersion": 1,
+      "position": [
+        1280,
+        1120
+      ],
+      "credentials": {
+        "hostBillApi": {
+          "id": "9",
+          "name": "HostBill account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "clientContact",
+        "operation": "update",
+        "id": "={{$json[\"contact_id\"]}}",
+        "Optional Fields": {
+          "city": "NewCity",
+          "country": "NewCountry"
+        }
+      },
+      "name": "clientContact: update",
+      "type": "CUSTOM.hostBill",
+      "typeVersion": 1,
+      "position": [
+        1040,
+        1120
+      ],
+      "credentials": {
+        "hostBillApi": {
+          "id": "9",
+          "name": "HostBill account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "invoice",
+        "operation": "create",
+        "client_id": "={{$json[\"client_id\"]}}"
+      },
+      "name": "invoice: create",
+      "type": "CUSTOM.hostBill",
+      "typeVersion": 1,
+      "position": [
+        800,
+        1380
+      ],
+      "credentials": {
+        "hostBillApi": {
+          "id": "9",
+          "name": "HostBill account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "invoice",
+        "operation": "addItem",
+        "id": "={{$json[\"invoice_id\"]}}",
+        "line": "Line Descr Sample",
+        "price": "33",
+        "qty": 2,
+        "tax": true
+      },
+      "name": "invoice: addItem",
+      "type": "CUSTOM.hostBill",
+      "typeVersion": 1,
+      "position": [
+        1040,
+        1380
+      ],
+      "credentials": {
+        "hostBillApi": {
+          "id": "9",
+          "name": "HostBill account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "invoice",
+        "operation": "addPayment",
+        "id": "={{$json[\"invoice_id\"]}}",
+        "amount": 12,
+        "paymentmodule": 3,
+        "fee": 5,
+        "date": "2022-06-15T21:00:00.000Z",
+        "Optional Fields": {
+          "transnumber": 43
+        }
+      },
+      "name": "invoice: addPayment",
+      "type": "CUSTOM.hostBill",
+      "typeVersion": 1,
+      "position": [
+        1040,
+        1540
+      ],
+      "credentials": {
+        "hostBillApi": {
+          "id": "9",
+          "name": "HostBill account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "invoice",
+        "operation": "setStatus",
+        "id": "={{$json[\"invoice_id\"]}}",
+        "status": "Unpaid"
+      },
+      "name": "invoice: setStatus",
+      "type": "CUSTOM.hostBill",
+      "typeVersion": 1,
+      "position": [
+        1040,
+        1720
+      ],
+      "credentials": {
+        "hostBillApi": {
+          "id": "9",
+          "name": "HostBill account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "invoice",
+        "operation": "get",
+        "id": "={{$node[\"invoice: create\"].json[\"invoice_id\"]}}"
+      },
+      "name": "invoice: get",
+      "type": "CUSTOM.hostBill",
+      "typeVersion": 1,
+      "position": [
+        1220,
+        1720
+      ],
+      "credentials": {
+        "hostBillApi": {
+          "id": "9",
+          "name": "HostBill account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "invoice",
+        "page": 1
+      },
+      "name": "invoice: getAll",
+      "type": "CUSTOM.hostBill",
+      "typeVersion": 1,
+      "position": [
+        1400,
+        1720
+      ],
+      "credentials": {
+        "hostBillApi": {
+          "id": "9",
+          "name": "HostBill account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "invoice",
+        "operation": "delete",
+        "id": "={{$node[\"invoice: create\"].json[\"invoice_id\"]}}"
+      },
+      "name": "invoice: delete",
+      "type": "CUSTOM.hostBill",
+      "typeVersion": 1,
+      "position": [
+        1680,
+        1720
+      ],
+      "credentials": {
+        "hostBillApi": {
+          "id": "9",
+          "name": "HostBill account"
+        }
+      },
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "resource": "order",
+        "operation": "setActive",
+        "id": "={{$json[\"order_id\"]}}"
+      },
+      "name": "order: setActive",
+      "type": "CUSTOM.hostBill",
+      "typeVersion": 1,
+      "position": [
+        1040,
+        2080
+      ],
+      "credentials": {
+        "hostBillApi": {
+          "id": "9",
+          "name": "HostBill account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "order",
+        "operation": "get",
+        "id": "={{$json[\"order_id\"]}}"
+      },
+      "name": "order: get",
+      "type": "CUSTOM.hostBill",
+      "typeVersion": 1,
+      "position": [
+        1040,
+        2240
+      ],
+      "credentials": {
+        "hostBillApi": {
+          "id": "9",
+          "name": "HostBill account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "order"
+      },
+      "name": "order: getAll",
+      "type": "CUSTOM.hostBill",
+      "typeVersion": 1,
+      "position": [
+        1040,
+        2400
+      ],
+      "credentials": {
+        "hostBillApi": {
+          "id": "9",
+          "name": "HostBill account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "order",
+        "operation": "setStatus",
+        "id": "={{$json[\"order_id\"]}}",
+        "status": "Pending"
+      },
+      "name": "order: setStatus",
+      "type": "CUSTOM.hostBill",
+      "typeVersion": 1,
+      "position": [
+        1040,
+        1920
+      ],
+      "credentials": {
+        "hostBillApi": {
+          "id": "9",
+          "name": "HostBill account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "account",
+        "operation": "delete"
+      },
+      "name": "account: delete",
+      "type": "CUSTOM.hostBill",
+      "typeVersion": 1,
+      "position": [
+        220,
+        3140
+      ],
+      "credentials": {
+        "hostBillApi": {
+          "id": "9",
+          "name": "HostBill account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "account",
+        "operation": "get"
+      },
+      "name": "account: get",
+      "type": "CUSTOM.hostBill",
+      "typeVersion": 1,
+      "position": [
+        220,
+        2780
+      ],
+      "credentials": {
+        "hostBillApi": {
+          "id": "9",
+          "name": "HostBill account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "account"
+      },
+      "name": "account: getAll",
+      "type": "CUSTOM.hostBill",
+      "typeVersion": 1,
+      "position": [
+        220,
+        2960
+      ],
+      "credentials": {
+        "hostBillApi": {
+          "id": "9",
+          "name": "HostBill account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "account",
+        "operation": "update",
+        "optionalFields": {
+          "status": "Suspended"
+        }
+      },
+      "name": "account: update",
+      "type": "CUSTOM.hostBill",
+      "typeVersion": 1,
+      "position": [
+        220,
+        2440
+      ],
+      "credentials": {
+        "hostBillApi": {
+          "id": "9",
+          "name": "HostBill account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "account",
+        "operation": "addAddon",
+        "optionalFields": {
+          "invoice": true
+        }
+      },
+      "name": "account: addAddon",
+      "type": "CUSTOM.hostBill",
+      "typeVersion": 1,
+      "position": [
+        220,
+        2600
+      ],
+      "credentials": {
+        "hostBillApi": {
+          "id": "9",
+          "name": "HostBill account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "service"
+      },
+      "name": "service: getProducts",
+      "type": "CUSTOM.hostBill",
+      "typeVersion": 1,
+      "position": [
+        220,
+        1740
+      ],
+      "credentials": {
+        "hostBillApi": {
+          "id": "9",
+          "name": "HostBill account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "domain",
+        "operation": "transfer"
+      },
+      "name": "domain: transfer",
+      "type": "CUSTOM.hostBill",
+      "typeVersion": 1,
+      "position": [
+        1040,
+        2760
+      ],
+      "credentials": {
+        "hostBillApi": {
+          "id": "9",
+          "name": "HostBill account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "domain",
+        "operation": "renew"
+      },
+      "name": "domain: renew",
+      "type": "CUSTOM.hostBill",
+      "typeVersion": 1,
+      "position": [
+        1040,
+        2920
+      ],
+      "credentials": {
+        "hostBillApi": {
+          "id": "9",
+          "name": "HostBill account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "domain",
+        "operation": "delete"
+      },
+      "name": "domain: delete",
+      "type": "CUSTOM.hostBill",
+      "typeVersion": 1,
+      "position": [
+        1680,
+        3400
+      ],
+      "credentials": {
+        "hostBillApi": {
+          "id": "9",
+          "name": "HostBill account"
+        }
+      },
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "resource": "domain",
+        "operation": "epp"
+      },
+      "name": "domain: epp",
+      "type": "CUSTOM.hostBill",
+      "typeVersion": 1,
+      "position": [
+        1040,
+        3080
+      ],
+      "credentials": {
+        "hostBillApi": {
+          "id": "9",
+          "name": "HostBill account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "domain",
+        "operation": "get"
+      },
+      "name": "domain: get",
+      "type": "CUSTOM.hostBill",
+      "typeVersion": 1,
+      "position": [
+        1040,
+        3240
+      ],
+      "credentials": {
+        "hostBillApi": {
+          "id": "9",
+          "name": "HostBill account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "domain"
+      },
+      "name": "domain: getAll",
+      "type": "CUSTOM.hostBill",
+      "typeVersion": 1,
+      "position": [
+        1040,
+        3400
+      ],
+      "credentials": {
+        "hostBillApi": {
+          "id": "9",
+          "name": "HostBill account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "order",
+        "operation": "create",
+        "client_id": "={{$json[\"client_id\"]}}",
+        "confirm": true,
+        "invoice_info": true,
+        "module": 2,
+        "serviceFields": {
+          "product": 1,
+          "domain_name": "qweqwe",
+          "cycle": "m",
+          "coupon": ""
+        },
+        "domainFields": {}
+      },
+      "name": "order: create product",
+      "type": "CUSTOM.hostBill",
+      "typeVersion": 1,
+      "position": [
+        800,
+        1920
+      ],
+      "credentials": {
+        "hostBillApi": {
+          "id": "9",
+          "name": "HostBill account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "order",
+        "operation": "delete",
+        "id": "={{$node[\"order: create product\"].json[\"order_id\"]}}"
+      },
+      "name": "order: delete product",
+      "type": "CUSTOM.hostBill",
+      "typeVersion": 1,
+      "position": [
+        1680,
+        2400
+      ],
+      "credentials": {
+        "hostBillApi": {
+          "id": "9",
+          "name": "HostBill account"
+        }
+      },
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "resource": "order",
+        "operation": "create",
+        "client_id": "={{$json[\"client_id\"]}}",
+        "confirm": true,
+        "invoice_info": true,
+        "module": 2,
+        "serviceFields": {},
+        "domainFields": {
+          "domain_action": "register",
+          "domain_sld": "qweqw",
+          "domain_period": 1,
+          "domain_tld": ".com"
+        }
+      },
+      "name": "order: create domain",
+      "type": "CUSTOM.hostBill",
+      "typeVersion": 1,
+      "position": [
+        800,
+        2600
+      ],
+      "credentials": {
+        "hostBillApi": {
+          "id": "9",
+          "name": "HostBill account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "order",
+        "operation": "delete",
+        "id": "={{$node[\"order: create domain\"].json[\"order_id\"]}}"
+      },
+      "name": "order: delete domain",
+      "type": "CUSTOM.hostBill",
+      "typeVersion": 1,
+      "position": [
+        1680,
+        2600
+      ],
+      "credentials": {
+        "hostBillApi": {
+          "id": "9",
+          "name": "HostBill account"
+        }
+      },
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "content": "where to get input params for these operations?",
+        "height": 80,
+        "width": 260
+      },
+      "name": "Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -120,
+        1880
+      ]
+    },
+    {
+      "parameters": {
+        "content": "where to get input params for these operations?",
+        "height": 80
+      },
+      "name": "Note1",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -100,
+        2300
+      ]
+    },
+    {
+      "parameters": {
+        "content": "Where to get input params for these operations?",
+        "height": 80,
+        "width": 260
+      },
+      "name": "Note2",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1260,
+        2920
+      ]
+    }
+  ],
+  "connections": {
+    "client: create": {
+      "main": [
+        [
+          {
+            "node": "client: update",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "client: get",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "client: getDomains",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "client: verifyLogin success",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "client: verifyLogin fail",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "clientContact: create",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "invoice: create",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "order: create product",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "order: create domain",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "client: verifyLogin fail": {
+      "main": [
+        [
+          {
+            "node": "client: getAll",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "clientContact: create": {
+      "main": [
+        [
+          {
+            "node": "clientContact: update",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "clientContact: update": {
+      "main": [
+        [
+          {
+            "node": "clientContact: getByClient",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "invoice: create": {
+      "main": [
+        [
+          {
+            "node": "invoice: addItem",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "invoice: addPayment",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "invoice: setStatus",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "invoice: setStatus": {
+      "main": [
+        [
+          {
+            "node": "invoice: get",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "invoice: get": {
+      "main": [
+        [
+          {
+            "node": "invoice: getAll",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "order: create product": {
+      "main": [
+        [
+          {
+            "node": "order: setStatus",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "order: setActive",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "order: get",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "order: getAll",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "service: getProductDetails",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "service: getProductDetails": {
+      "main": [
+        [
+          {
+            "node": "service: getProducts",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "order: create domain": {
+      "main": [
+        [
+          {
+            "node": "domain: register",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "domain: transfer",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "domain: renew",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "domain: epp",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "domain: get",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "domain: getAll",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "domain: getAll": {
+      "main": [
+        [
+          {
+            "node": "domain: delete",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "domain: delete": {
+      "main": [
+        [
+          {
+            "node": "order: delete domain",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "order: getAll": {
+      "main": [
+        [
+          {
+            "node": "order: delete product",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "invoice: getAll": {
+      "main": [
+        [
+          {
+            "node": "invoice: delete",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "invoice: delete": {
+      "main": [
+        [
+          {
+            "node": "clientContact: delete",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "clientContact: delete": {
+      "main": [
+        [
+          {
+            "node": "client: delete",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Start": {
+      "main": [
+        [
+          {
+            "node": "client: create",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {},
+  "id": 11
+}
