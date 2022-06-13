@@ -1,0 +1,722 @@
+{
+  "name": "Mollie Test Workflow",
+  "nodes": [
+    {
+      "parameters": {},
+      "name": "Start",
+      "type": "n8n-nodes-base.start",
+      "typeVersion": 1,
+      "position": [
+        1240,
+        240
+      ]
+    },
+    {
+      "parameters": {
+        "isLiveKey": false,
+        "operation": "delete",
+        "id": "={{$json[\"id\"]}}"
+      },
+      "name": "Mollie",
+      "type": "CUSTOM.mollie",
+      "typeVersion": 1,
+      "position": [
+        2280,
+        240
+      ],
+      "executeOnce": true,
+      "credentials": {
+        "mollieApi": {
+          "id": "15",
+          "name": "Mollie account"
+        }
+      },
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "isLiveKey": false,
+        "operation": "create",
+        "orderId": "12345",
+        "currency": "EUR",
+        "value": "12345.87",
+        "description": "asd",
+        "redirectUrl": "https://reirectUrl.com",
+        "additionalFields": {
+          "webhookUrl": ""
+        }
+      },
+      "name": "Mollie1",
+      "type": "CUSTOM.mollie",
+      "typeVersion": 1,
+      "position": [
+        1500,
+        240
+      ],
+      "executeOnce": true,
+      "credentials": {
+        "mollieApi": {
+          "id": "15",
+          "name": "Mollie account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "isLiveKey": false,
+        "operation": "list",
+        "additionalParameters": {
+          "limit": 3
+        }
+      },
+      "name": "Mollie2",
+      "type": "CUSTOM.mollie",
+      "typeVersion": 1,
+      "position": [
+        2080,
+        240
+      ],
+      "executeOnce": true,
+      "credentials": {
+        "mollieApi": {
+          "id": "15",
+          "name": "Mollie account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "isLiveKey": false,
+        "resource": "paymentLinks",
+        "additionalParameters": {
+          "limit": 3
+        }
+      },
+      "name": "Mollie3",
+      "type": "CUSTOM.mollie",
+      "typeVersion": 1,
+      "position": [
+        1880,
+        480
+      ],
+      "executeOnce": true,
+      "credentials": {
+        "mollieApi": {
+          "id": "15",
+          "name": "Mollie account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "isLiveKey": false,
+        "operation": "get",
+        "id": "={{$json[\"id\"]}}"
+      },
+      "name": "Mollie4",
+      "type": "CUSTOM.mollie",
+      "typeVersion": 1,
+      "position": [
+        1700,
+        240
+      ],
+      "executeOnce": true,
+      "credentials": {
+        "mollieApi": {
+          "id": "15",
+          "name": "Mollie account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "isLiveKey": false,
+        "operation": "update",
+        "id": "={{$json[\"id\"]}}",
+        "additionalFields": {
+          "description": "dsa"
+        }
+      },
+      "name": "Mollie5",
+      "type": "CUSTOM.mollie",
+      "typeVersion": 1,
+      "position": [
+        1880,
+        240
+      ],
+      "executeOnce": true,
+      "credentials": {
+        "mollieApi": {
+          "id": "15",
+          "name": "Mollie account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "isLiveKey": false,
+        "resource": "paymentLinks",
+        "operation": "get",
+        "id": "={{$json[\"id\"]}}"
+      },
+      "name": "Mollie6",
+      "type": "CUSTOM.mollie",
+      "typeVersion": 1,
+      "position": [
+        1700,
+        480
+      ],
+      "executeOnce": true,
+      "credentials": {
+        "mollieApi": {
+          "id": "15",
+          "name": "Mollie account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "isLiveKey": false,
+        "resource": "paymentLinks",
+        "operation": "create",
+        "currency": "EUR",
+        "value": "234.00",
+        "description": "asd",
+        "additionalFields": {}
+      },
+      "name": "Mollie7",
+      "type": "CUSTOM.mollie",
+      "typeVersion": 1,
+      "position": [
+        1500,
+        480
+      ],
+      "executeOnce": true,
+      "credentials": {
+        "mollieApi": {
+          "id": "15",
+          "name": "Mollie account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "isLiveKey": false,
+        "resource": "methods",
+        "additionalParameters": {}
+      },
+      "name": "Mollie8",
+      "type": "CUSTOM.mollie",
+      "typeVersion": 1,
+      "position": [
+        1500,
+        720
+      ],
+      "executeOnce": true,
+      "credentials": {
+        "mollieApi": {
+          "id": "15",
+          "name": "Mollie account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "isLiveKey": false,
+        "resource": "methods",
+        "operation": "listAll",
+        "additionalParameters": {}
+      },
+      "name": "Mollie9",
+      "type": "CUSTOM.mollie",
+      "typeVersion": 1,
+      "position": [
+        1700,
+        720
+      ],
+      "executeOnce": true,
+      "credentials": {
+        "mollieApi": {
+          "id": "15",
+          "name": "Mollie account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "isLiveKey": false,
+        "resource": "methods",
+        "operation": "get",
+        "id": "={{$json[\"id\"]}}",
+        "additionalParameters": {}
+      },
+      "name": "Mollie10",
+      "type": "CUSTOM.mollie",
+      "typeVersion": 1,
+      "position": [
+        1900,
+        720
+      ],
+      "executeOnce": true,
+      "credentials": {
+        "mollieApi": {
+          "id": "15",
+          "name": "Mollie account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "isLiveKey": false,
+        "resource": "refunds",
+        "operation": "createByPayment",
+        "id": "tr_ydeKdwcgzs",
+        "currency": "EUR",
+        "value": "11.00",
+        "additionalFields": {
+          "description": "asd"
+        }
+      },
+      "name": "Mollie11",
+      "type": "CUSTOM.mollie",
+      "typeVersion": 1,
+      "position": [
+        1500,
+        960
+      ],
+      "executeOnce": true,
+      "credentials": {
+        "mollieApi": {
+          "id": "15",
+          "name": "Mollie account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "isLiveKey": false,
+        "resource": "refunds",
+        "operation": "getByPayment",
+        "id": "={{$json[\"id\"]}}",
+        "paymentId": "={{$json[\"paymentId\"]}}"
+      },
+      "name": "Mollie13",
+      "type": "CUSTOM.mollie",
+      "typeVersion": 1,
+      "position": [
+        2080,
+        960
+      ],
+      "executeOnce": true,
+      "credentials": {
+        "mollieApi": {
+          "id": "15",
+          "name": "Mollie account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "isLiveKey": false,
+        "resource": "refunds",
+        "operation": "deleteByPayment",
+        "id": "={{$json[\"id\"]}}",
+        "paymentId": "={{$json[\"paymentId\"]}}"
+      },
+      "name": "Mollie14",
+      "type": "CUSTOM.mollie",
+      "typeVersion": 1,
+      "position": [
+        1700,
+        960
+      ],
+      "executeOnce": true,
+      "credentials": {
+        "mollieApi": {
+          "id": "15",
+          "name": "Mollie account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "isLiveKey": false,
+        "resource": "refunds",
+        "operation": "listByPayment",
+        "paymentId": "={{$json[\"paymentId\"]}}",
+        "additionalParameters": {}
+      },
+      "name": "Mollie15",
+      "type": "CUSTOM.mollie",
+      "typeVersion": 1,
+      "position": [
+        2260,
+        960
+      ],
+      "executeOnce": true,
+      "credentials": {
+        "mollieApi": {
+          "id": "15",
+          "name": "Mollie account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "isLiveKey": false,
+        "resource": "refunds",
+        "operation": "listByOrder",
+        "orderId": "={{$json[\"orderId\"]}}",
+        "additionalParameters": {}
+      },
+      "name": "Mollie16",
+      "type": "CUSTOM.mollie",
+      "typeVersion": 1,
+      "position": [
+        2440,
+        960
+      ],
+      "executeOnce": true,
+      "credentials": {
+        "mollieApi": {
+          "id": "15",
+          "name": "Mollie account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "isLiveKey": false,
+        "resource": "refunds",
+        "operation": "deleteByPayment",
+        "id": "={{$json[\"id\"]}}",
+        "paymentId": "={{$json[\"paymentId\"]}}"
+      },
+      "name": "Mollie18",
+      "type": "CUSTOM.mollie",
+      "typeVersion": 1,
+      "position": [
+        2620,
+        960
+      ],
+      "executeOnce": true,
+      "credentials": {
+        "mollieApi": {
+          "id": "15",
+          "name": "Mollie account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "isLiveKey": false,
+        "resource": "refunds",
+        "operation": "createByOrder",
+        "orderId": "ord_yewlzk",
+        "additionalFields": {}
+      },
+      "name": "Mollie17",
+      "type": "CUSTOM.mollie",
+      "typeVersion": 1,
+      "position": [
+        1900,
+        960
+      ],
+      "executeOnce": true,
+      "credentials": {
+        "mollieApi": {
+          "id": "15",
+          "name": "Mollie account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "isLiveKey": false,
+        "operation": "list",
+        "additionalParameters": {}
+      },
+      "name": "Mollie12",
+      "type": "CUSTOM.mollie",
+      "typeVersion": 1,
+      "position": [
+        2500,
+        240
+      ],
+      "executeOnce": true,
+      "credentials": {
+        "mollieApi": {
+          "id": "15",
+          "name": "Mollie account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "isLiveKey": false,
+        "resource": "captures"
+      },
+      "name": "Mollie19",
+      "type": "CUSTOM.mollie",
+      "typeVersion": 1,
+      "position": [
+        1500,
+        1180
+      ],
+      "executeOnce": true,
+      "credentials": {
+        "mollieApi": {
+          "id": "15",
+          "name": "Mollie account"
+        }
+      },
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "isLiveKey": false,
+        "resource": "captures"
+      },
+      "name": "Mollie20",
+      "type": "CUSTOM.mollie",
+      "typeVersion": 1,
+      "position": [
+        1700,
+        1180
+      ],
+      "executeOnce": true,
+      "credentials": {
+        "mollieApi": {
+          "id": "15",
+          "name": "Mollie account"
+        }
+      },
+      "disabled": true
+    }
+  ],
+  "connections": {
+    "Start": {
+      "main": [
+        [
+          {
+            "node": "Mollie1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mollie": {
+      "main": [
+        [
+          {
+            "node": "Mollie7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mollie1": {
+      "main": [
+        [
+          {
+            "node": "Mollie4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mollie2": {
+      "main": [
+        [
+          {
+            "node": "Mollie",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mollie3": {
+      "main": [
+        [
+          {
+            "node": "Mollie8",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mollie4": {
+      "main": [
+        [
+          {
+            "node": "Mollie5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mollie5": {
+      "main": [
+        [
+          {
+            "node": "Mollie2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mollie6": {
+      "main": [
+        [
+          {
+            "node": "Mollie3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mollie7": {
+      "main": [
+        [
+          {
+            "node": "Mollie6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mollie8": {
+      "main": [
+        [
+          {
+            "node": "Mollie9",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mollie9": {
+      "main": [
+        [
+          {
+            "node": "Mollie10",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mollie10": {
+      "main": [
+        [
+          {
+            "node": "Mollie11",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mollie11": {
+      "main": [
+        [
+          {
+            "node": "Mollie14",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mollie13": {
+      "main": [
+        [
+          {
+            "node": "Mollie15",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mollie14": {
+      "main": [
+        [
+          {
+            "node": "Mollie17",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mollie15": {
+      "main": [
+        [
+          {
+            "node": "Mollie16",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mollie16": {
+      "main": [
+        [
+          {
+            "node": "Mollie18",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mollie17": {
+      "main": [
+        [
+          {
+            "node": "Mollie13",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mollie19": {
+      "main": [
+        [
+          {
+            "node": "Mollie20",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mollie18": {
+      "main": [
+        [
+          {
+            "node": "Mollie19",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {},
+  "id": 10
+}

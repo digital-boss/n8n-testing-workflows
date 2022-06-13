@@ -1,0 +1,1823 @@
+{
+  "name": "Zabbix Test Workflow",
+  "nodes": [
+    {
+      "parameters": {},
+      "name": "Start",
+      "type": "n8n-nodes-base.start",
+      "typeVersion": 1,
+      "position": [
+        1260,
+        720
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "item",
+        "parametersUi": {
+          "hostids": [
+            {
+              "id": "10084"
+            }
+          ],
+          "outputOptions": "extend",
+          "search": {
+            "search": [
+              {
+                "key": "key_",
+                "values": [
+                  {
+                    "value": "system"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "name": "Zabbix",
+      "type": "CUSTOM.zabbix",
+      "typeVersion": 1,
+      "position": [
+        1780,
+        1160
+      ],
+      "alwaysOutputData": false,
+      "executeOnce": true,
+      "retryOnFail": false,
+      "credentials": {
+        "zabbixApi": {
+          "id": "5",
+          "name": "Zabbix account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "problem",
+        "parametersUi": {
+          "objectids": [
+            {
+              "id": "15112"
+            }
+          ],
+          "recent": true,
+          "selectAcknowledges": "extend",
+          "selectTags": "extend",
+          "selectSuppressionData": "extend",
+          "outputOptions": "extend",
+          "sortfield": [
+            "eventid"
+          ],
+          "sortorder": [
+            {
+              "sortorder": "DESC"
+            }
+          ]
+        }
+      },
+      "name": "Zabbix2",
+      "type": "CUSTOM.zabbix",
+      "typeVersion": 1,
+      "position": [
+        1780,
+        1380
+      ],
+      "executeOnce": true,
+      "retryOnFail": false,
+      "credentials": {
+        "zabbixApi": {
+          "id": "5",
+          "name": "Zabbix account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "history",
+        "parametersUi": {
+          "history": 3,
+          "itemids": [
+            {
+              "id": "29161"
+            }
+          ],
+          "limit": 10,
+          "outputOptions": "extend",
+          "sortfield": [
+            "clock"
+          ],
+          "sortorder": [
+            {
+              "sortorder": "DESC"
+            }
+          ]
+        }
+      },
+      "name": "Zabbix3",
+      "type": "CUSTOM.zabbix",
+      "typeVersion": 1,
+      "position": [
+        1800,
+        1620
+      ],
+      "executeOnce": true,
+      "retryOnFail": false,
+      "credentials": {
+        "zabbixApi": {
+          "id": "5",
+          "name": "Zabbix account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "item",
+        "jsonParameters": true,
+        "parametersJson": "{\n        \"output\": \"extend\",\n        \"hostids\": \"10084\",\n        \"search\": {\n            \"key_\": \"system\"\n        }\n}"
+      },
+      "name": "Zabbix4",
+      "type": "CUSTOM.zabbix",
+      "typeVersion": 1,
+      "position": [
+        1560,
+        1160
+      ],
+      "executeOnce": true,
+      "retryOnFail": false,
+      "credentials": {
+        "zabbixApi": {
+          "id": "5",
+          "name": "Zabbix account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "problem",
+        "jsonParameters": true,
+        "parametersJson": "{\n\t\"output\": \"extend\",\n\t\"selectAcknowledges\": \"extend\",\n\t\"selectTags\": \"extend\",\n\t\"selectSuppressionData\": \"extend\",\n\t\"objectids\": \"15112\",\n\t\"recent\": \"true\",\n\t\"sortfield\": [\"eventid\"],\n\t\"sortorder\": \"DESC\"\n}"
+      },
+      "name": "Zabbix5",
+      "type": "CUSTOM.zabbix",
+      "typeVersion": 1,
+      "position": [
+        1560,
+        1380
+      ],
+      "executeOnce": true,
+      "retryOnFail": false,
+      "credentials": {
+        "zabbixApi": {
+          "id": "5",
+          "name": "Zabbix account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "history",
+        "jsonParameters": true,
+        "parametersJson": "{        \"output\": \"extend\",        \"history\": 3,        \"itemids\": \"29161\",        \"sortfield\": \"clock\",        \"sortorder\": \"DESC\",        \"limit\": 10}"
+      },
+      "name": "Zabbix6",
+      "type": "CUSTOM.zabbix",
+      "typeVersion": 1,
+      "position": [
+        1560,
+        1620
+      ],
+      "executeOnce": true,
+      "retryOnFail": false,
+      "credentials": {
+        "zabbixApi": {
+          "id": "5",
+          "name": "Zabbix account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "parametersUi": {
+          "filter": {
+            "filter": [
+              {
+                "key": "host",
+                "values": [
+                  {
+                    "value": "Zabbix server"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "name": "Zabbix7",
+      "type": "CUSTOM.zabbix",
+      "typeVersion": 1,
+      "position": [
+        1780,
+        940
+      ],
+      "alwaysOutputData": false,
+      "executeOnce": true,
+      "retryOnFail": false,
+      "credentials": {
+        "zabbixApi": {
+          "id": "5",
+          "name": "Zabbix account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsonParameters": true,
+        "parametersJson": "{\n        \"filter\": {\n            \"host\": [\n                \"Zabbix server\"\n            ]\n        }\n}"
+      },
+      "name": "Zabbix8",
+      "type": "CUSTOM.zabbix",
+      "typeVersion": 1,
+      "position": [
+        1560,
+        940
+      ],
+      "executeOnce": true,
+      "retryOnFail": false,
+      "credentials": {
+        "zabbixApi": {
+          "id": "5",
+          "name": "Zabbix account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "parametersUi": {
+          "groupids": [
+            {
+              "id": "ads"
+            },
+            {
+              "id": "asd"
+            }
+          ],
+          "applicationids": [
+            {
+              "id": "asd"
+            },
+            {
+              "id": "asd"
+            }
+          ],
+          "dserviceids": [
+            {
+              "id": "asd"
+            },
+            {
+              "id": "asd"
+            }
+          ],
+          "graphids": [
+            {
+              "id": "asd"
+            },
+            {
+              "id": "asd"
+            },
+            {
+              "id": "asd"
+            }
+          ],
+          "hostids": [
+            {
+              "id": "asd"
+            },
+            {
+              "id": "asd"
+            }
+          ],
+          "httptestids": [
+            {
+              "id": "asd"
+            },
+            {
+              "id": "asd"
+            }
+          ],
+          "interfaceids": [
+            {
+              "id": "asd"
+            },
+            {
+              "id": "asd"
+            }
+          ],
+          "itemids": [
+            {
+              "id": "asd"
+            },
+            {
+              "id": "asd"
+            }
+          ],
+          "maintenanceids": [
+            {
+              "id": "asd"
+            },
+            {
+              "id": "asd"
+            }
+          ],
+          "monitored_hosts": false,
+          "proxy_hosts": false,
+          "proxyids": [
+            {
+              "id": "asd"
+            },
+            {
+              "id": "asd"
+            }
+          ],
+          "templateids": [
+            {
+              "id": "asd"
+            },
+            {
+              "id": "asd"
+            }
+          ],
+          "triggerids": [
+            {
+              "id": "asd"
+            },
+            {
+              "id": "asd"
+            }
+          ],
+          "with_items": false,
+          "with_item_prototypes": false,
+          "with_simple_graph_item_prototypes": false,
+          "with_applications": false,
+          "with_graphs": false,
+          "with_monitored_httptests": false,
+          "with_monitored_items": false,
+          "with_monitored_triggers": false,
+          "with_simple_graph_items": false,
+          "with_triggers": false,
+          "withProblemsSuppressed": "",
+          "evaltype": 0,
+          "severities": [
+            {
+              "severityNumber": 0
+            },
+            {
+              "severityNumber": 2
+            }
+          ],
+          "tags": {
+            "tags": [
+              {
+                "tag": "asd",
+                "value": "asd"
+              },
+              {
+                "tag": "asd",
+                "value": "asd"
+              }
+            ]
+          },
+          "inheritedTags": false,
+          "selectApplicationsOptions": "extend",
+          "selectDiscoveriesOptions": "extend",
+          "selectDiscoveryRuleOptions": "propertyNames",
+          "discoveryRulePropertyNames": [
+            "itemid",
+            "delay"
+          ],
+          "selectGraphsOptions": "extend",
+          "selectGroupsOptions": "extend",
+          "selectHostDiscoveryOptions": "propertyNames",
+          "hostDiscoveryPropertyNames": [
+            "host",
+            "hostid"
+          ],
+          "selectHttpTestsOptions": "extend",
+          "selectInterfacesOptions": "extend",
+          "selectInventoryOptions": "extend",
+          "selectItemsOptions": "extend",
+          "selectMacrosOptions": "extend",
+          "selectParentTemplatesOptions": "extend",
+          "selectScreensOptions": "extend",
+          "selectTags": "extend",
+          "selectInheritedTags": "extend",
+          "selectTriggersOptions": "extend",
+          "limitSelects": "",
+          "searchInventory": {
+            "searchInventory": [
+              {
+                "values": [
+                  {
+                    "value": "Linux"
+                  },
+                  {
+                    "value": "Windows"
+                  }
+                ]
+              }
+            ]
+          },
+          "countOutput": false,
+          "editable": false,
+          "excludeSearch": false,
+          "filter": {
+            "filter": [
+              {
+                "key": "available",
+                "values": [
+                  {
+                    "value": "asd"
+                  },
+                  {
+                    "value": "asd"
+                  }
+                ]
+              }
+            ]
+          },
+          "limit": 0,
+          "outputOptions": "extend",
+          "search": {
+            "search": [
+              {
+                "key": "error",
+                "values": [
+                  {
+                    "value": "asd"
+                  },
+                  {
+                    "value": "asd"
+                  }
+                ]
+              },
+              {
+                "key": "description",
+                "values": [
+                  {
+                    "value": "asd"
+                  },
+                  {
+                    "value": "asd"
+                  }
+                ]
+              }
+            ]
+          },
+          "searchByAny": false,
+          "searchWildcardsEnabled": false,
+          "sortfield": [
+            "hostid",
+            "host",
+            "name"
+          ],
+          "sortorder": [
+            {
+              "sortorder": "ASC"
+            },
+            {
+              "sortorder": "ASC"
+            }
+          ],
+          "startSearch": false,
+          "preservekeys": false
+        }
+      },
+      "name": "Zabbix9",
+      "type": "CUSTOM.zabbix",
+      "typeVersion": 1,
+      "position": [
+        2020,
+        940
+      ],
+      "executeOnce": true,
+      "retryOnFail": false,
+      "credentials": {
+        "zabbixApi": {
+          "id": "5",
+          "name": "Zabbix account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "parametersUi": {
+          "groupids": [
+            {
+              "id": "asd"
+            },
+            {
+              "id": "ads"
+            }
+          ],
+          "applicationids": [
+            {
+              "id": "asd"
+            },
+            {
+              "id": "asd"
+            }
+          ],
+          "graphids": [
+            {
+              "id": "asd"
+            },
+            {
+              "id": "asd"
+            }
+          ],
+          "hostids": [
+            {
+              "id": "asd"
+            },
+            {
+              "id": "asd"
+            }
+          ],
+          "interfaceids": [
+            {
+              "id": "asd"
+            },
+            {
+              "id": "asd"
+            }
+          ],
+          "itemids": [
+            {
+              "id": "asd"
+            },
+            {
+              "id": "ads"
+            }
+          ],
+          "proxyids": [
+            {
+              "id": "asd"
+            },
+            {
+              "id": "ads"
+            }
+          ],
+          "templateids": [
+            {
+              "id": "asd"
+            },
+            {
+              "id": "ads"
+            }
+          ],
+          "triggerids": [
+            {
+              "id": "asd"
+            },
+            {
+              "id": "asd"
+            }
+          ],
+          "with_triggers": false,
+          "selectApplicationsOptions": "propertyNames",
+          "applicationPropertyNames": [
+            "applicationid",
+            "hostid"
+          ],
+          "selectDiscoveryRuleOptions": "propertyNames",
+          "discoveryRulePropertyNames": [
+            "interfaceid",
+            "hostid"
+          ],
+          "selectGraphsOptions": "propertyNames",
+          "graphPropertyNames": [
+            "width",
+            "name"
+          ],
+          "selectInterfacesOptions": "propertyNames",
+          "interfacePropertyNames": [
+            "interfaceid"
+          ],
+          "selectTriggersOptions": "propertyNames",
+          "triggerPropertyNames": [
+            "comments"
+          ],
+          "limitSelects": "",
+          "countOutput": false,
+          "editable": false,
+          "excludeSearch": false,
+          "filter": {
+            "filter": [
+              {
+                "key": "host",
+                "values": [
+                  {
+                    "value": "asd"
+                  },
+                  {
+                    "value": "asd"
+                  }
+                ]
+              }
+            ]
+          },
+          "limit": 5,
+          "outputOptions": "propertyNames",
+          "outputPropertyNames": [
+            {
+              "value": "sad"
+            },
+            {
+              "value": "asd"
+            }
+          ],
+          "search": {
+            "search": [
+              {
+                "key": "description",
+                "values": [
+                  {
+                    "value": "asd"
+                  },
+                  {
+                    "value": "asd"
+                  }
+                ]
+              }
+            ]
+          },
+          "searchByAny": false,
+          "searchWildcardsEnabled": false,
+          "sortfield": [
+            "name",
+            "host",
+            "hostid"
+          ],
+          "sortorder": [
+            {
+              "sortorder": "ASC"
+            },
+            {
+              "sortorder": "ASC"
+            }
+          ],
+          "startSearch": false,
+          "preservekeys": false
+        }
+      },
+      "name": "Zabbix1",
+      "type": "CUSTOM.zabbix",
+      "typeVersion": 1,
+      "position": [
+        2040,
+        1160
+      ],
+      "executeOnce": true,
+      "retryOnFail": false,
+      "credentials": {
+        "zabbixApi": {
+          "id": "5",
+          "name": "Zabbix account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "problem",
+        "parametersUi": {
+          "eventids": [
+            {
+              "id": "asd"
+            },
+            {
+              "id": "asd"
+            }
+          ],
+          "groupids": [
+            {
+              "id": "asd"
+            },
+            {
+              "id": "asd"
+            }
+          ],
+          "hostids": [
+            {
+              "id": "asd"
+            },
+            {
+              "id": "asd"
+            }
+          ],
+          "objectids": [
+            {
+              "id": "ads"
+            },
+            {
+              "id": "asd"
+            }
+          ],
+          "applicationids": [
+            {
+              "id": "asd"
+            },
+            {
+              "id": "asd"
+            }
+          ],
+          "source": 0,
+          "object": 0,
+          "acknowledged": false,
+          "suppressed": false,
+          "severities": [
+            {
+              "severityNumber": ""
+            },
+            {
+              "severityNumber": 2
+            }
+          ],
+          "evaltype": 0,
+          "tags": {
+            "tags": [
+              {
+                "tag": "asd",
+                "value": "asd"
+              },
+              {
+                "tag": "asd",
+                "value": "asd"
+              }
+            ]
+          },
+          "recent": false,
+          "eventid_from": "asd",
+          "eventid_till": "asd",
+          "time_from": "asd",
+          "time_till": "asd",
+          "selectAcknowledges": "extend",
+          "selectTags": "extend",
+          "selectSuppressionData": "extend",
+          "countOutput": false,
+          "editable": false,
+          "excludeSearch": false,
+          "filter": {
+            "filter": [
+              {
+                "key": "source",
+                "values": [
+                  {
+                    "value": "asd"
+                  },
+                  {
+                    "value": 2
+                  }
+                ]
+              }
+            ]
+          },
+          "limit": 5,
+          "outputOptions": "propertyNames",
+          "outputPropertyNames": [
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            }
+          ],
+          "search": {
+            "search": [
+              {
+                "key": "source",
+                "values": [
+                  {
+                    "value": "asd"
+                  },
+                  {
+                    "value": "asd"
+                  }
+                ]
+              },
+              {
+                "key": "opdata",
+                "values": [
+                  {
+                    "value": "asd"
+                  },
+                  {
+                    "value": "asd"
+                  }
+                ]
+              }
+            ]
+          },
+          "searchByAny": false,
+          "searchWildcardsEnabled": false,
+          "sortfield": [
+            "eventid"
+          ],
+          "sortorder": [
+            {
+              "sortorder": "ASC"
+            },
+            {
+              "sortorder": "ASC"
+            }
+          ],
+          "startSearch": false,
+          "preservekeys": false
+        }
+      },
+      "name": "Zabbix10",
+      "type": "CUSTOM.zabbix",
+      "typeVersion": 1,
+      "position": [
+        2040,
+        1380
+      ],
+      "executeOnce": true,
+      "retryOnFail": false,
+      "credentials": {
+        "zabbixApi": {
+          "id": "5",
+          "name": "Zabbix account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "history",
+        "parametersUi": {
+          "history": 2,
+          "hostids": [
+            {
+              "id": "1"
+            },
+            {
+              "id": "2"
+            }
+          ],
+          "itemids": [
+            {
+              "id": "2"
+            },
+            {
+              "id": "1"
+            }
+          ],
+          "time_from": "2345",
+          "time_till": "234567",
+          "countOutput": false,
+          "editable": false,
+          "excludeSearch": false,
+          "filter": {
+            "filter": [
+              {
+                "key": "clock",
+                "values": [
+                  {
+                    "value": 4
+                  }
+                ]
+              }
+            ]
+          },
+          "limit": 3,
+          "outputOptions": "propertyNames",
+          "outputPropertyNames": [
+            {
+              "value": "timestamp"
+            },
+            {
+              "value": "clock"
+            }
+          ],
+          "search": {
+            "search": [
+              {
+                "key": "source",
+                "values": [
+                  {
+                    "value": "asd"
+                  }
+                ]
+              }
+            ]
+          },
+          "searchByAny": false,
+          "searchWildcardsEnabled": false,
+          "sortfield": [
+            "itemid",
+            "clock"
+          ],
+          "sortorder": [
+            {
+              "sortorder": "ASC"
+            },
+            {
+              "sortorder": "ASC"
+            }
+          ],
+          "startSearch": false
+        }
+      },
+      "name": "Zabbix11",
+      "type": "CUSTOM.zabbix",
+      "typeVersion": 1,
+      "position": [
+        2060,
+        1620
+      ],
+      "executeOnce": true,
+      "retryOnFail": false,
+      "credentials": {
+        "zabbixApi": {
+          "id": "5",
+          "name": "Zabbix account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "functionCode": "return {        \n\"filter\": {            \n\"host\": [                \n\"Zabbix server\"            \n]        \n}};"
+      },
+      "name": "FunctionItem",
+      "type": "n8n-nodes-base.functionItem",
+      "typeVersion": 1,
+      "position": [
+        1780,
+        720
+      ]
+    },
+    {
+      "parameters": {
+        "jsonParameters": true,
+        "parametersJson": "={{$json}}"
+      },
+      "name": "Zabbix12",
+      "type": "CUSTOM.zabbix",
+      "typeVersion": 1,
+      "position": [
+        2000,
+        720
+      ],
+      "executeOnce": true,
+      "retryOnFail": false,
+      "credentials": {
+        "zabbixApi": {
+          "id": "5",
+          "name": "Zabbix account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "event",
+        "parametersUi": {
+          "eventids": [
+            {
+              "id": "asd"
+            },
+            {
+              "id": "asd"
+            }
+          ],
+          "graphids": [
+            {
+              "id": "asd"
+            },
+            {
+              "id": "asd"
+            }
+          ],
+          "hostids": [
+            {
+              "id": "ads"
+            },
+            {
+              "id": "ads"
+            }
+          ],
+          "objectids": [
+            {
+              "id": "asd"
+            },
+            {
+              "id": "ads"
+            }
+          ],
+          "source": 0,
+          "object": 0,
+          "acknowledged": false,
+          "suppressed": false,
+          "severities": [
+            {
+              "severityNumber": 0
+            },
+            {
+              "severityNumber": 0
+            },
+            {
+              "severityNumber": 0
+            }
+          ],
+          "evaltype": 0,
+          "tags": {
+            "tags": [
+              {
+                "tag": "asd",
+                "value": "asd"
+              }
+            ]
+          },
+          "eventid_from": "asd",
+          "eventid_till": "asd",
+          "time_from": 5,
+          "time_till": 6,
+          "problem_time_from": 8,
+          "problem_time_till": 7,
+          "value": [
+            {
+              "value": 6
+            },
+            {
+              "value": 9
+            }
+          ],
+          "selectHostsOptions": "propertyNames",
+          "hostPropertyNames": [
+            "hostid",
+            "host",
+            "description",
+            "flags",
+            "inventory_mode",
+            "ipmi_authtype",
+            "ipmi_password",
+            "ipmi_privilege",
+            "ipmi_username",
+            "maintenance_from"
+          ],
+          "select_acknowledges": "extend",
+          "selectTags": "extend",
+          "selectSuppressionData": "extend",
+          "countOutput": false,
+          "editable": false,
+          "excludeSearch": false,
+          "filter": {
+            "filter": [
+              {
+                "key": "eventid",
+                "values": [
+                  {
+                    "value": 5
+                  }
+                ]
+              }
+            ]
+          },
+          "limit": 6,
+          "outputOptions": "propertyNames",
+          "outputPropertyNames": [
+            {
+              "value": "acknowledged"
+            }
+          ],
+          "search": {
+            "search": [
+              {
+                "key": "source",
+                "values": [
+                  {
+                    "value": "asd"
+                  },
+                  {
+                    "value": "asd"
+                  }
+                ]
+              }
+            ]
+          },
+          "searchByAny": false,
+          "searchWildcardsEnabled": false,
+          "sortfield": [
+            "eventid",
+            "clock",
+            "objectid"
+          ],
+          "sortorder": [
+            {
+              "sortorder": "ASC"
+            }
+          ],
+          "startSearch": false,
+          "preservekeys": false
+        }
+      },
+      "name": "Zabbix13",
+      "type": "CUSTOM.zabbix",
+      "typeVersion": 1,
+      "position": [
+        2080,
+        1860
+      ],
+      "executeOnce": true,
+      "retryOnFail": false,
+      "credentials": {
+        "zabbixApi": {
+          "id": "5",
+          "name": "Zabbix account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "event",
+        "jsonParameters": true,
+        "parametersJson": "{         \"output\": \"extend\",         \"select_acknowledges\": \"extend\",         \"selectTags\": \"extend\",         \"selectSuppressionData\": \"extend\",         \"sortfield\": [\"clock\", \"eventid\"],         \"sortorder\": \"DESC\"     }"
+      },
+      "name": "Zabbix15",
+      "type": "CUSTOM.zabbix",
+      "typeVersion": 1,
+      "position": [
+        1560,
+        1860
+      ],
+      "executeOnce": true,
+      "retryOnFail": false,
+      "credentials": {
+        "zabbixApi": {
+          "id": "5",
+          "name": "Zabbix account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "event",
+        "parametersUi": {
+          "select_acknowledges": "extend",
+          "selectTags": "extend",
+          "selectSuppressionData": "extend",
+          "outputOptions": "extend",
+          "sortfield": [
+            "clock",
+            "eventid"
+          ],
+          "sortorder": [
+            {
+              "sortorder": "DESC"
+            }
+          ]
+        }
+      },
+      "name": "Zabbix16",
+      "type": "CUSTOM.zabbix",
+      "typeVersion": 1,
+      "position": [
+        1820,
+        1860
+      ],
+      "executeOnce": true,
+      "retryOnFail": false,
+      "credentials": {
+        "zabbixApi": {
+          "id": "5",
+          "name": "Zabbix account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "service",
+        "parametersUi": {
+          "serviceids": [
+            {
+              "id": ""
+            }
+          ],
+          "parentids": [
+            {
+              "id": ""
+            }
+          ],
+          "deep_parentids": false,
+          "childids": [
+            {
+              "id": ""
+            }
+          ],
+          "evaltype": 0,
+          "tags": {
+            "tags": [
+              {}
+            ]
+          },
+          "problem_tags": {
+            "problem_tags": [
+              {}
+            ]
+          },
+          "without_problem_tags": false,
+          "slaids": [
+            {
+              "id": ""
+            }
+          ],
+          "selectChildren": "count",
+          "selectParents": "extend",
+          "selectTags": "extend",
+          "selectProblemEvents": "extend",
+          "selectProblemTags": "extend",
+          "selectStatusRules": "extend",
+          "selectStatusTimeline": {
+            "statusTimeline": [
+              {}
+            ]
+          },
+          "countOutput": false,
+          "editable": false,
+          "excludeSearch": false,
+          "filter": {
+            "filter": [
+              {
+                "key": "serviceid",
+                "values": [
+                  {
+                    "value": 0
+                  },
+                  {
+                    "value": 0
+                  }
+                ]
+              }
+            ]
+          },
+          "limit": 0,
+          "outputOptions": "propertyNames",
+          "outputPropertyNames": [
+            {
+              "value": "serviceid"
+            },
+            {
+              "value": "name"
+            }
+          ],
+          "search": {
+            "search": [
+              {
+                "key": "serviceid",
+                "values": [
+                  {
+                    "value": ""
+                  }
+                ]
+              }
+            ]
+          },
+          "searchByAny": false,
+          "searchWildcardsEnabled": false,
+          "sortfield": [
+            "name"
+          ],
+          "sortorder": [
+            {
+              "sortorder": "ASC"
+            }
+          ],
+          "startSearch": false,
+          "preservekeys": false
+        }
+      },
+      "name": "Zabbix14",
+      "type": "CUSTOM.zabbix",
+      "typeVersion": 1,
+      "position": [
+        2080,
+        2120
+      ],
+      "executeOnce": true,
+      "retryOnFail": false,
+      "credentials": {
+        "zabbixApi": {
+          "id": "5",
+          "name": "Zabbix account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "service",
+        "parametersUi": {
+          "selectTags": "extend",
+          "outputOptions": "extend",
+          "sortorder": []
+        }
+      },
+      "name": "Zabbix17",
+      "type": "CUSTOM.zabbix",
+      "typeVersion": 1,
+      "position": [
+        1820,
+        2120
+      ],
+      "executeOnce": true,
+      "retryOnFail": false,
+      "credentials": {
+        "zabbixApi": {
+          "id": "5",
+          "name": "Zabbix account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "service",
+        "jsonParameters": true,
+        "parametersJson": "\n{\n\"evaltype\": 0,\n\"tags\": [\n{\n\"tag\": \"asd\",\n\"value\": \"asd\",\n\"operator\": 0\n}\n],\n\"selectTags\": \"extend\",\n\"countOutput\": false,\n\"editable\": false,\n\"excludeSearch\": false,\n\"filter\": {\n\"sortorder\": [\n5\n]\n},\n\"limit\": 6,\n\"outputOptions\": \"propertyNames\",\n\"outputPropertyNames\": [\n{\n\"value\": \"propagation_value\"\n}\n],\n\"search\": {\n\"name\": [\n\"asd\",\n\"asd\"\n]\n},\n\"searchByAny\": false,\n\"searchWildcardsEnabled\": false,\n\"sortfield\": [\n\"sortorder\"\n],\n\"sortorder\": [\n\"ASC\"\n],\n\"startSearch\": false,\n\"preservekeys\": false\n} "
+      },
+      "name": "Zabbix18",
+      "type": "CUSTOM.zabbix",
+      "typeVersion": 1,
+      "position": [
+        1560,
+        2120
+      ],
+      "executeOnce": true,
+      "retryOnFail": false,
+      "credentials": {
+        "zabbixApi": {
+          "id": "5",
+          "name": "Zabbix account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "sla",
+        "parametersUi": {
+          "slaids": [
+            {
+              "id": ""
+            },
+            {
+              "id": ""
+            }
+          ],
+          "serviceids": [
+            {
+              "id": ""
+            },
+            {
+              "id": ""
+            }
+          ],
+          "selectSchedule": "extend",
+          "selectExcludedDowntimes": "extend",
+          "selectServiceTags": "count",
+          "countOutput": false,
+          "editable": false,
+          "excludeSearch": false,
+          "filter": {
+            "filter": [
+              {
+                "key": "timezone",
+                "values": []
+              }
+            ]
+          },
+          "limit": 6,
+          "outputOptions": "propertyNames",
+          "outputPropertyNames": [
+            {
+              "value": "period"
+            }
+          ],
+          "search": {
+            "search": [
+              {
+                "key": "effective_date",
+                "values": [
+                  {
+                    "value": "asd"
+                  },
+                  {
+                    "value": "asd"
+                  }
+                ]
+              }
+            ]
+          },
+          "searchByAny": false,
+          "searchWildcardsEnabled": false,
+          "sortorder": [
+            {
+              "sortorder": "ASC"
+            }
+          ],
+          "startSearch": false,
+          "preservekeys": false
+        }
+      },
+      "name": "Zabbix19",
+      "type": "CUSTOM.zabbix",
+      "typeVersion": 1,
+      "position": [
+        2080,
+        2360
+      ],
+      "executeOnce": true,
+      "retryOnFail": false,
+      "credentials": {
+        "zabbixApi": {
+          "id": "5",
+          "name": "Zabbix account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "sla",
+        "parametersUi": {
+          "outputOptions": "extend",
+          "sortorder": []
+        }
+      },
+      "name": "Zabbix20",
+      "type": "CUSTOM.zabbix",
+      "typeVersion": 1,
+      "position": [
+        1820,
+        2360
+      ],
+      "executeOnce": true,
+      "retryOnFail": false,
+      "credentials": {
+        "zabbixApi": {
+          "id": "5",
+          "name": "Zabbix account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "sla",
+        "jsonParameters": true,
+        "parametersJson": "\n{\n\"slaids\": [\n\"\",\n\"\"\n],\n\"serviceids\": [\n\"\",\n\"\"\n],\n\"selectSchedule\": \"extend\",\n\"selectExcludedDowntimes\": \"extend\",\n\"selectServiceTags\": \"count\",\n\"countOutput\": false,\n\"editable\": false,\n\"excludeSearch\": false,\n\"filter\": {\n\"timezone\": [\n]\n},\n\"limit\": 6,\n\"search\": {\n\"period\": [\n\"asd\",\n\"asd\"\n]\n},\n\"searchByAny\": false,\n\"searchWildcardsEnabled\": false,\n\"sortorder\": [\n\"ASC\"\n],\n\"startSearch\": false,\n\"preservekeys\": false,\n\"output\": [\n\"period\"\n]\n} "
+      },
+      "name": "Zabbix21",
+      "type": "CUSTOM.zabbix",
+      "typeVersion": 1,
+      "position": [
+        1560,
+        2360
+      ],
+      "executeOnce": true,
+      "retryOnFail": false,
+      "credentials": {
+        "zabbixApi": {
+          "id": "5",
+          "name": "Zabbix account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "sla",
+        "operation": "getsli",
+        "slaid": "={{$json[\"eventid\"]}}",
+        "parametersUi": {
+          "period_from": "",
+          "period_to": "",
+          "periods": [
+            {
+              "period": ""
+            },
+            {
+              "period": ""
+            }
+          ],
+          "serviceids": [
+            {
+              "id": ""
+            },
+            {
+              "id": ""
+            }
+          ]
+        }
+      },
+      "name": "Zabbix22",
+      "type": "CUSTOM.zabbix",
+      "typeVersion": 1,
+      "position": [
+        2080,
+        2600
+      ],
+      "executeOnce": true,
+      "retryOnFail": false,
+      "credentials": {
+        "zabbixApi": {
+          "id": "5",
+          "name": "Zabbix account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "sla",
+        "operation": "getsli",
+        "jsonParameters": true,
+        "parametersJson": "=\n{\n\"period_from\": \"\",\n\"period_to\": \"\",\n\"periods\": [\n\"\",\n\"\"\n],\n\"serviceids\": [\n\"\",\n\"\"\n],\n\"slaid\": \"{{$json[\"eventid\"]}}\"\n}"
+      },
+      "name": "Zabbix24",
+      "type": "CUSTOM.zabbix",
+      "typeVersion": 1,
+      "position": [
+        1820,
+        2600
+      ],
+      "executeOnce": true,
+      "retryOnFail": false,
+      "credentials": {
+        "zabbixApi": {
+          "id": "5",
+          "name": "Zabbix account"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Start": {
+      "main": [
+        [
+          {
+            "node": "FunctionItem",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Zabbix": {
+      "main": [
+        [
+          {
+            "node": "Zabbix1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Zabbix2": {
+      "main": [
+        [
+          {
+            "node": "Zabbix10",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Zabbix3": {
+      "main": [
+        [
+          {
+            "node": "Zabbix11",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Zabbix4": {
+      "main": [
+        [
+          {
+            "node": "Zabbix",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Zabbix5": {
+      "main": [
+        [
+          {
+            "node": "Zabbix2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Zabbix6": {
+      "main": [
+        [
+          {
+            "node": "Zabbix3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Zabbix7": {
+      "main": [
+        [
+          {
+            "node": "Zabbix9",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Zabbix8": {
+      "main": [
+        [
+          {
+            "node": "Zabbix7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Zabbix9": {
+      "main": [
+        [
+          {
+            "node": "Zabbix4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Zabbix1": {
+      "main": [
+        [
+          {
+            "node": "Zabbix5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Zabbix10": {
+      "main": [
+        [
+          {
+            "node": "Zabbix6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Zabbix11": {
+      "main": [
+        [
+          {
+            "node": "Zabbix15",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "FunctionItem": {
+      "main": [
+        [
+          {
+            "node": "Zabbix12",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Zabbix12": {
+      "main": [
+        [
+          {
+            "node": "Zabbix8",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Zabbix15": {
+      "main": [
+        [
+          {
+            "node": "Zabbix16",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Zabbix16": {
+      "main": [
+        [
+          {
+            "node": "Zabbix13",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Zabbix13": {
+      "main": [
+        [
+          {
+            "node": "Zabbix18",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Zabbix18": {
+      "main": [
+        [
+          {
+            "node": "Zabbix17",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Zabbix17": {
+      "main": [
+        [
+          {
+            "node": "Zabbix14",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Zabbix20": {
+      "main": [
+        [
+          {
+            "node": "Zabbix19",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Zabbix21": {
+      "main": [
+        [
+          {
+            "node": "Zabbix20",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Zabbix24",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Zabbix22",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Zabbix14": {
+      "main": [
+        [
+          {
+            "node": "Zabbix21",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {},
+  "id": 5
+}
