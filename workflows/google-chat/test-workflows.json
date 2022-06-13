@@ -1,0 +1,479 @@
+{
+  "name": "Google Chat Test Workflow",
+  "nodes": [
+    {
+      "parameters": {},
+      "name": "Start",
+      "type": "n8n-nodes-base.start",
+      "typeVersion": 1,
+      "position": [
+        250,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "space",
+        "operation": "getAll"
+      },
+      "name": "Google Chat",
+      "type": "CUSTOM.googleChat",
+      "typeVersion": 1,
+      "position": [
+        460,
+        300
+      ],
+      "executeOnce": true,
+      "credentials": {
+        "googleApi": {
+          "id": "7",
+          "name": "Google account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "space",
+        "spaceName": "={{$json[\"name\"]}}"
+      },
+      "name": "Google Chat1",
+      "type": "CUSTOM.googleChat",
+      "typeVersion": 1,
+      "position": [
+        660,
+        300
+      ],
+      "executeOnce": true,
+      "credentials": {
+        "googleApi": {
+          "id": "7",
+          "name": "Google account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "member",
+        "memberName": "={{$json[\"name\"]}}"
+      },
+      "name": "Google Chat2",
+      "type": "CUSTOM.googleChat",
+      "typeVersion": 1,
+      "position": [
+        1080,
+        460
+      ],
+      "executeOnce": true,
+      "credentials": {
+        "googleApi": {
+          "id": "7",
+          "name": "Google account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "member",
+        "operation": "getAll",
+        "spaceName": "={{$json[\"name\"]}}"
+      },
+      "name": "Google Chat3",
+      "type": "CUSTOM.googleChat",
+      "typeVersion": 1,
+      "position": [
+        900,
+        460
+      ],
+      "executeOnce": true,
+      "credentials": {
+        "googleApi": {
+          "id": "7",
+          "name": "Google account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "spaceName": "={{$json[\"name\"]}}",
+        "messageUi": {
+          "text": "asd"
+        },
+        "additionalFields": {}
+      },
+      "name": "Google Chat4",
+      "type": "CUSTOM.googleChat",
+      "typeVersion": 1,
+      "position": [
+        900,
+        660
+      ],
+      "executeOnce": true,
+      "credentials": {
+        "googleApi": {
+          "id": "7",
+          "name": "Google account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "messageName": "={{$json[\"name\"]}}"
+      },
+      "name": "Google Chat5",
+      "type": "CUSTOM.googleChat",
+      "typeVersion": 1,
+      "position": [
+        1080,
+        660
+      ],
+      "executeOnce": true,
+      "credentials": {
+        "googleApi": {
+          "id": "7",
+          "name": "Google account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "incomingWebhook",
+        "incomingWebhookUrl": "https://chat.googleapis.com/v1/spaces/AAAA4mrhOqA/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=hMOHFkGR9YMsq0T8qq5MYDI_vOamVUSBC-oBeD3y4L4%3D",
+        "messageUi": {
+          "text": "asd"
+        },
+        "additionalFields": {
+          "threadKey": "asd"
+        }
+      },
+      "name": "Google Chat8",
+      "type": "CUSTOM.googleChat",
+      "typeVersion": 1,
+      "position": [
+        920,
+        1260
+      ],
+      "executeOnce": true,
+      "credentials": {
+        "googleApi": {
+          "id": "7",
+          "name": "Google account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "attachment"
+      },
+      "name": "Google Chat9",
+      "type": "CUSTOM.googleChat",
+      "typeVersion": 1,
+      "position": [
+        920,
+        1040
+      ],
+      "executeOnce": true,
+      "credentials": {
+        "googleApi": {
+          "id": "7",
+          "name": "Google account"
+        }
+      },
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "resource": "media"
+      },
+      "name": "Google Chat10",
+      "type": "CUSTOM.googleChat",
+      "typeVersion": 1,
+      "position": [
+        1100,
+        1040
+      ],
+      "executeOnce": true,
+      "credentials": {
+        "googleApi": {
+          "id": "7",
+          "name": "Google account"
+        }
+      },
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "messageName": "={{$json[\"name\"]}}",
+        "messageUi": {
+          "text": "asdf"
+        }
+      },
+      "name": "Google Chat11",
+      "type": "CUSTOM.googleChat",
+      "typeVersion": 1,
+      "position": [
+        1280,
+        660
+      ],
+      "executeOnce": true,
+      "credentials": {
+        "googleApi": {
+          "id": "7",
+          "name": "Google account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "messageName": "={{$json[\"name\"]}}",
+        "messageUi": {
+          "text": "asdf"
+        }
+      },
+      "name": "Google Chat12",
+      "type": "CUSTOM.googleChat",
+      "typeVersion": 1,
+      "position": [
+        1300,
+        840
+      ],
+      "executeOnce": true,
+      "credentials": {
+        "googleApi": {
+          "id": "7",
+          "name": "Google account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "delete",
+        "messageName": "={{$json[\"name\"]}}"
+      },
+      "name": "Google Chat13",
+      "type": "CUSTOM.googleChat",
+      "typeVersion": 1,
+      "position": [
+        1460,
+        840
+      ],
+      "executeOnce": true,
+      "credentials": {
+        "googleApi": {
+          "id": "7",
+          "name": "Google account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "spaceName": "={{$json[\"name\"]}}",
+        "messageUi": {
+          "text": "asd"
+        },
+        "additionalFields": {}
+      },
+      "name": "Google Chat6",
+      "type": "CUSTOM.googleChat",
+      "typeVersion": 1,
+      "position": [
+        900,
+        840
+      ],
+      "executeOnce": true,
+      "credentials": {
+        "googleApi": {
+          "id": "7",
+          "name": "Google account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "incomingWebhook",
+        "incomingWebhookUrl": "https://chat.googleapis.com/v1/spaces/AAAA4mrhOqA/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=hMOHFkGR9YMsq0T8qq5MYDI_vOamVUSBC-oBeD3y4L4%3D",
+        "jsonParameters": true,
+        "messageJson": "{\"text\":\"asd\"}",
+        "additionalFields": {
+          "threadKey": "asd"
+        }
+      },
+      "name": "Google Chat14",
+      "type": "CUSTOM.googleChat",
+      "typeVersion": 1,
+      "position": [
+        920,
+        1440
+      ],
+      "executeOnce": true,
+      "credentials": {
+        "googleApi": {
+          "id": "7",
+          "name": "Google account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "delete",
+        "messageName": "={{$json[\"name\"]}}"
+      },
+      "name": "Google Chat15",
+      "type": "CUSTOM.googleChat",
+      "typeVersion": 1,
+      "position": [
+        1460,
+        660
+      ],
+      "executeOnce": true,
+      "credentials": {
+        "googleApi": {
+          "id": "7",
+          "name": "Google account"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Start": {
+      "main": [
+        [
+          {
+            "node": "Google Chat",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Chat": {
+      "main": [
+        [
+          {
+            "node": "Google Chat1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Chat1": {
+      "main": [
+        [
+          {
+            "node": "Google Chat3",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Google Chat4",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Google Chat8",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Google Chat9",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Google Chat6",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Google Chat14",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Chat3": {
+      "main": [
+        [
+          {
+            "node": "Google Chat2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Chat4": {
+      "main": [
+        [
+          {
+            "node": "Google Chat5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Chat5": {
+      "main": [
+        [
+          {
+            "node": "Google Chat11",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Chat9": {
+      "main": [
+        [
+          {
+            "node": "Google Chat10",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Chat11": {
+      "main": [
+        [
+          {
+            "node": "Google Chat15",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Chat12": {
+      "main": [
+        [
+          {
+            "node": "Google Chat13",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Chat6": {
+      "main": [
+        [
+          {
+            "node": "Google Chat12",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {},
+  "id": 3
+}

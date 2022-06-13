@@ -19,7 +19,7 @@
           "simplify": true
         },
         "name": "PortaOne",
-        "type": "@digital-boss/n8n-nodes-portaone.portaone",
+        "type": "CUSTOM.portaone",
         "typeVersion": 1,
         "position": [
           460,
@@ -39,7 +39,7 @@
           "simplify": true
         },
         "name": "PortaOne1",
-        "type": "@digital-boss/n8n-nodes-portaone.portaone",
+        "type": "CUSTOM.portaone",
         "typeVersion": 1,
         "position": [
           640,
@@ -61,7 +61,7 @@
           "simplify": true
         },
         "name": "PortaOne2",
-        "type": "@digital-boss/n8n-nodes-portaone.portaone",
+        "type": "CUSTOM.portaone",
         "typeVersion": 1,
         "position": [
           460,
@@ -82,7 +82,7 @@
           "simplify": true
         },
         "name": "PortaOne3",
-        "type": "@digital-boss/n8n-nodes-portaone.portaone",
+        "type": "CUSTOM.portaone",
         "typeVersion": 1,
         "position": [
           640,
@@ -106,7 +106,7 @@
           "simplify": true
         },
         "name": "PortaOne4",
-        "type": "@digital-boss/n8n-nodes-portaone.portaone",
+        "type": "CUSTOM.portaone",
         "typeVersion": 1,
         "position": [
           460,
@@ -127,7 +127,7 @@
           "simplify": true
         },
         "name": "PortaOne5",
-        "type": "@digital-boss/n8n-nodes-portaone.portaone",
+        "type": "CUSTOM.portaone",
         "typeVersion": 1,
         "position": [
           640,
@@ -151,7 +151,7 @@
           }
         },
         "name": "PortaOne6",
-        "type": "@digital-boss/n8n-nodes-portaone.portaone",
+        "type": "CUSTOM.portaone",
         "typeVersion": 1,
         "position": [
           640,
@@ -176,7 +176,7 @@
           }
         },
         "name": "PortaOne7",
-        "type": "@digital-boss/n8n-nodes-portaone.portaone",
+        "type": "CUSTOM.portaone",
         "typeVersion": 1,
         "position": [
           640,
@@ -199,7 +199,7 @@
           "simplify": true
         },
         "name": "PortaOne8",
-        "type": "@digital-boss/n8n-nodes-portaone.portaone",
+        "type": "CUSTOM.portaone",
         "typeVersion": 1,
         "position": [
           460,
@@ -221,7 +221,7 @@
           "simplify": true
         },
         "name": "PortaOne9",
-        "type": "@digital-boss/n8n-nodes-portaone.portaone",
+        "type": "CUSTOM.portaone",
         "typeVersion": 1,
         "position": [
           460,
@@ -240,7 +240,7 @@
           "additionalFields": {}
         },
         "name": "PortaOne10",
-        "type": "@digital-boss/n8n-nodes-portaone.portaone",
+        "type": "CUSTOM.portaone",
         "typeVersion": 1,
         "position": [
           820,
@@ -260,7 +260,7 @@
           "additionalFields": {}
         },
         "name": "PortaOne11",
-        "type": "@digital-boss/n8n-nodes-portaone.portaone",
+        "type": "CUSTOM.portaone",
         "typeVersion": 1,
         "position": [
           1000,
@@ -279,7 +279,7 @@
           "operation": "assignToCustomer"
         },
         "name": "PortaOne12",
-        "type": "@digital-boss/n8n-nodes-portaone.portaone",
+        "type": "CUSTOM.portaone",
         "typeVersion": 1,
         "position": [
           640,
@@ -298,7 +298,7 @@
           "operation": "assignToAccount"
         },
         "name": "PortaOne13",
-        "type": "@digital-boss/n8n-nodes-portaone.portaone",
+        "type": "CUSTOM.portaone",
         "typeVersion": 1,
         "position": [
           820,
@@ -319,7 +319,7 @@
           "additionalFields": {}
         },
         "name": "PortaOne14",
-        "type": "@digital-boss/n8n-nodes-portaone.portaone",
+        "type": "CUSTOM.portaone",
         "typeVersion": 1,
         "position": [
           820,
@@ -338,7 +338,7 @@
           "additionalFields": {}
         },
         "name": "PortaOne15",
-        "type": "@digital-boss/n8n-nodes-portaone.portaone",
+        "type": "CUSTOM.portaone",
         "typeVersion": 1,
         "position": [
           1000,
@@ -358,7 +358,7 @@
           "additionalFields": {}
         },
         "name": "PortaOne16",
-        "type": "@digital-boss/n8n-nodes-portaone.portaone",
+        "type": "CUSTOM.portaone",
         "typeVersion": 1,
         "position": [
           820,
@@ -377,7 +377,7 @@
           "operation": "delete"
         },
         "name": "PortaOne17",
-        "type": "@digital-boss/n8n-nodes-portaone.portaone",
+        "type": "CUSTOM.portaone",
         "typeVersion": 1,
         "position": [
           1000,
@@ -397,7 +397,7 @@
           "additionalFields": {}
         },
         "name": "PortaOne18",
-        "type": "@digital-boss/n8n-nodes-portaone.portaone",
+        "type": "CUSTOM.portaone",
         "typeVersion": 1,
         "position": [
           820,
