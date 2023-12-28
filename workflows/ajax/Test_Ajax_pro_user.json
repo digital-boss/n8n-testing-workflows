@@ -1,0 +1,1448 @@
+{
+  "name": "Test Ajax pro/user",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "f89c8893-325a-4b31-a933-399d396d2165",
+      "name": "When clicking \"Execute Workflow\"",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        40,
+        -160
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "findUser",
+        "login": "a",
+        "phone": "a"
+      },
+      "id": "3358d013-e515-4b82-a849-52a7683733ac",
+      "name": "Ajax",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        240,
+        -160
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "createNewPro",
+        "login": "aa",
+        "passwordHash": "aa",
+        "phone": "ss",
+        "firstName": "aa",
+        "language": "aa",
+        "agreementVersion": 12,
+        "phoneValidationType": "CALL"
+      },
+      "id": "63666647-daf9-46b8-a805-d0381b8f9a59",
+      "name": "Ajax1",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        440,
+        -160
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "contactInfoConfirmation",
+        "login": "a",
+        "phoneToken": "b",
+        "emailToken": "c"
+      },
+      "id": "6ee9f9b1-cbbe-488c-8aaa-f0fe3f4e2dd0",
+      "name": "Ajax2",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        640,
+        -160
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "resetPassword",
+        "phoneOrEmail": "ь"
+      },
+      "id": "5f02a21f-19ce-45c9-bde1-7799a10d3001",
+      "name": "Ajax3",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        840,
+        -160
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "confirmResetPassword",
+        "phoneOrEmail": "a",
+        "additionalFields": {
+          "phoneToken": "a",
+          "mailToken": "b",
+          "newPassword": "c"
+        }
+      },
+      "id": "8a94b0e6-cd32-407b-8fdb-559377f24906",
+      "name": "Ajax4",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        1060,
+        -160
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "getCurrentAccessRequest",
+        "userId": "a",
+        "hubId": "v"
+      },
+      "id": "f44aadbe-c292-47f0-8b14-a384abbc233f",
+      "name": "Ajax5",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        1260,
+        -160
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "updateCurrentAccessRequest",
+        "userId": "a",
+        "hubId": "v",
+        "requestNumber": 10,
+        "declined": true
+      },
+      "id": "e1540abf-b512-487d-8a1e-582f07a15563",
+      "name": "Ajax6",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        1460,
+        -160
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "user",
+        "operation": "findUser",
+        "login": "a",
+        "phone": "b"
+      },
+      "id": "b45cf432-f9df-47b2-ae15-f34495ac5ff0",
+      "name": "Ajax7",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        240,
+        20
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "user",
+        "operation": "createNewUser",
+        "login": "a",
+        "passwordHash": "v",
+        "phone": "c",
+        "firstName": "v",
+        "language": "b",
+        "agreementVersion": 11,
+        "phoneValidationType": "SMS"
+      },
+      "id": "adfa5aff-1f53-4801-b578-933f893e50b9",
+      "name": "Ajax8",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        420,
+        20
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "user",
+        "operation": "contactInfoConfirmation",
+        "login": "a",
+        "phoneToken": "b",
+        "emailToken": "c"
+      },
+      "id": "edf4eee8-447a-4f3c-977f-6093037f6e53",
+      "name": "Ajax9",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        640,
+        20
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "user",
+        "operation": "resetPasswordReset",
+        "phoneOrEmail": "a"
+      },
+      "id": "4c01534c-12c9-4181-b05f-03f9750a7d9b",
+      "name": "Ajax10",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        840,
+        20
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "user",
+        "operation": "confirmPasswordReset",
+        "phoneOrEmail": "a",
+        "additionalFields": {
+          "phoneToken": "123",
+          "mailToken": "aa",
+          "newPassword": "bb"
+        }
+      },
+      "id": "1124128a-bf1e-4404-8c86-1cceda0ffa54",
+      "name": "Ajax11",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        1060,
+        20
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "user",
+        "operation": "getUserInfo",
+        "userId": "a"
+      },
+      "id": "0591ba23-bbaa-417e-9e71-aab27c117bba",
+      "name": "Ajax12",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        1260,
+        20
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "user",
+        "operation": "updateUserInfo",
+        "userId": "a",
+        "firstName": "aa",
+        "language": "vv"
+      },
+      "id": "5d73b61a-a2c3-44d6-9564-fce3daf0dd51",
+      "name": "Ajax13",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        1460,
+        20
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "user",
+        "operation": "deleteUserImage",
+        "userId": "a"
+      },
+      "id": "8fb5e80b-0bed-4be0-9905-af00a0f48466",
+      "name": "Ajax14",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        1820,
+        20
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "user",
+        "operation": "contactInfoConfirmationChange",
+        "userId": "a",
+        "phoneToken": "aaaa",
+        "emailToken": "vvv"
+      },
+      "id": "18a70f47-8061-4a1e-a734-4a9b9765e4e0",
+      "name": "Ajax15",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        240,
+        260
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "user",
+        "operation": "requestChangeUserLogin",
+        "userId": "a",
+        "passwordHash": "asd",
+        "phoneValidationType": "CALL",
+        "newLogin": "aaa"
+      },
+      "id": "418e110e-7237-4c0a-a949-936ed9456ae4",
+      "name": "Ajax16",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        440,
+        260
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "user",
+        "operation": "requestChangeUserPhone",
+        "userId": "a",
+        "passwordHash": "asd",
+        "phoneValidationType": "SMS",
+        "newPhone": "asd"
+      },
+      "id": "839f172c-3d43-45c7-b315-4f381526cdb6",
+      "name": "Ajax17",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        640,
+        260
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "user",
+        "operation": "requestChangeUserPasswordHash",
+        "userId": "a",
+        "passwordHash": "asd",
+        "phoneValidationType": "SMS",
+        "newPasswordHash": "ddd"
+      },
+      "id": "6c10c78b-a5a4-43ca-af5e-e0582d9d5d85",
+      "name": "Ajax18",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        840,
+        260
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "user",
+        "operation": "getBoundUsersList",
+        "userId": "a",
+        "hubId": "as",
+        "additionalFields": {
+          "enrich": true
+        }
+      },
+      "id": "2374d300-0b16-4c9e-b83e-8573993e0eaa",
+      "name": "Ajax19",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        1060,
+        260
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "user",
+        "operation": "boundUserToTheHub",
+        "userId": "a",
+        "hubId": "as",
+        "login": "aaa",
+        "hubBindingRole": "USER",
+        "additionalFields": {
+          "enrich": true
+        }
+      },
+      "id": "2959644f-588b-4172-87c9-8ba4fa1f5769",
+      "name": "Ajax20",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        1260,
+        260
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "user",
+        "operation": "getBoundUserDetails",
+        "userId": "a",
+        "hubId": "as",
+        "boundUserId": "aaa"
+      },
+      "id": "01f5e87a-b7ea-4a8a-932f-9782a1a65477",
+      "name": "Ajax21",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        1460,
+        260
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "user",
+        "operation": "updateBoundUser",
+        "userId": "aa",
+        "hubId": "bb",
+        "boundUserId": "aa",
+        "notificationSettings": {
+          "alarms": [
+            "PUSH"
+          ],
+          "malfunctions": [
+            "PUSH"
+          ],
+          "armings": [
+            "PUSH"
+          ],
+          "events": [
+            "PUSH"
+          ]
+        },
+        "permissions": [
+          "USER_DELETE"
+        ],
+        "groupsPermissions": {
+          "fields": [
+            {
+              "groupId": "aa",
+              "groupPermissions": [
+                "ARM"
+              ]
+            }
+          ]
+        },
+        "restoreAfterAlarmConditionPermissions": [
+          "EXTERNAL_POWER_ACTIVATION"
+        ],
+        "additionalFields": {
+          "imageUrls": {
+            "small": "aa",
+            "medium": "aa",
+            "big": "aa"
+          },
+          "hubBindingRole": "PRO"
+        }
+      },
+      "id": "d2f1d7f4-3bc5-4c3c-bf0e-110e0ea44073",
+      "name": "Ajax22",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        1660,
+        260
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "user",
+        "operation": "unbindUserFromHub",
+        "userId": "aa",
+        "hubId": "bb",
+        "boundUserId": "aa"
+      },
+      "id": "94bee281-8a63-4db3-adfe-8998a1b1df7d",
+      "name": "Ajax23",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        240,
+        460
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "user",
+        "operation": "updateBoundUserSpecificKeyPadPassword",
+        "userId": "aa",
+        "hubId": "bb",
+        "boundUserId": "aa",
+        "newPassword": "56"
+      },
+      "id": "1aa106b7-75c4-4ef5-bf9b-330b0a15bad5",
+      "name": "Ajax24",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        440,
+        460
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "user",
+        "operation": "resetBoundUserSpecificKeyPadPassword",
+        "userId": "aa",
+        "hubId": "bb",
+        "boundUserId": "aa"
+      },
+      "id": "96d75358-6423-41a8-89be-dc3a16595d9a",
+      "name": "Ajax25",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        640,
+        460
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "user",
+        "operation": "updateBoundUserSpecificKeyPadForceDisarmPassword",
+        "userId": "aa",
+        "hubId": "bb",
+        "boundUserId": "aa",
+        "newPassword": "aa"
+      },
+      "id": "da2ff266-9e45-40db-bcd4-f193fefbe0bf",
+      "name": "Ajax26",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        840,
+        460
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "user",
+        "operation": "resetBoundUserSpecificKeyPadForceDisarmPassword",
+        "userId": "aa",
+        "hubId": "bb",
+        "boundUserId": "aa"
+      },
+      "id": "6770ca64-324b-4b03-94d7-3b750ca0886b",
+      "name": "Ajax27",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        1060,
+        460
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "user",
+        "operation": "updatePermissionOnBehalfOfUser",
+        "userId": "aa",
+        "hubId": "bb",
+        "boundUserId": "aa",
+        "deviceId": "gg",
+        "targetObjectType": "STREAMING_CAMERA",
+        "availabilityCondition": "ALWAYS_AVAILABLE",
+        "active": true,
+        "targetDeviceId": "hh"
+      },
+      "id": "edc457c7-db15-46ba-a9ba-8961695bbea3",
+      "name": "Ajax28",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        1260,
+        460
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "user",
+        "operation": "getPermissionForCompanyIdOnHubByUser",
+        "userId": "aa",
+        "hubId": "bb",
+        "companyId": "asd"
+      },
+      "id": "71e8729b-28ba-4f0f-9818-f2ed943f4308",
+      "name": "Ajax29",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        1460,
+        460
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "user",
+        "operation": "updatePermissionOnBehalfOfUserIdForCompanyId",
+        "userId": "aa",
+        "hubId": "ss",
+        "companyId": "dd",
+        "availabilityCondition": "AVAILABLE_IF_DEVICE_ARMED",
+        "devices": {
+          "fields": [
+            {
+              "deviceId": "45",
+              "objectType": "MOTION_CAM_PHOD"
+            }
+          ]
+        },
+        "afterAlarmAvailabilityMinutes": 5
+      },
+      "id": "b44ca33d-2081-4a04-a33d-7b93c300883e",
+      "name": "Ajax30",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        1660,
+        460
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "user",
+        "operation": "getPermissionForCompanyIdOnHubForSurveillanceCameras",
+        "userId": "aa",
+        "hubId": "ss",
+        "companyId": "dd"
+      },
+      "id": "8d715a2b-583d-49d4-b5e1-cd4589338165",
+      "name": "Ajax31",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        240,
+        680
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "user",
+        "operation": "updatePermissionOnBehalfOfUserForCompanyOnHubForSurveillanceCameras",
+        "userId": "aa",
+        "hubId": "ss",
+        "companyId": "dd",
+        "availabilityCondition": "NEVER_AVAILABLE",
+        "devices": {
+          "fields": [
+            {
+              "deviceId": "aa",
+              "objectType": "STREAMING_CAMERA"
+            }
+          ]
+        }
+      },
+      "id": "e248895b-58d0-472b-bf86-24e970afbc4a",
+      "name": "Ajax32",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        440,
+        680
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "user",
+        "operation": "getBoundCompanyList",
+        "companyId": "dd",
+        "hubId": "ss",
+        "additionalFields": {
+          "enrich": true
+        }
+      },
+      "id": "8c83017d-4898-4400-b177-213b14cb2479",
+      "name": "Ajax33",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        640,
+        680
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "user",
+        "operation": "bindUserToTheHub",
+        "companyId": "dd",
+        "hubId": "ss",
+        "login": "ff",
+        "hubBindingRole": "USER"
+      },
+      "id": "dba4f905-54fc-4f69-a77d-8280131448ef",
+      "name": "Ajax34",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        840,
+        680
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "user",
+        "operation": "getBoundCompanyDetails",
+        "companyId": "dd",
+        "hubId": "ss",
+        "boundUserId": "asd"
+      },
+      "id": "a6fcdc90-fcba-46ed-9e7b-a33a65c87dd1",
+      "name": "Ajax35",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        1060,
+        680
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "user",
+        "operation": "updateBoundUserDetails",
+        "companyId": "dd",
+        "hubId": "ss",
+        "boundUserId": "asd",
+        "notificationSettings": {
+          "alarms": [
+            "PUSH"
+          ],
+          "malfunctions": [
+            "PUSH"
+          ],
+          "armings": [
+            "PUSH"
+          ],
+          "events": [
+            "PUSH"
+          ]
+        },
+        "permissions": [
+          "USER_PERMISSIONS_UPDATE"
+        ],
+        "groupsPermissions": {
+          "fields": [
+            {
+              "groupId": "ggh",
+              "groupPermissions": [
+                "ARM"
+              ]
+            }
+          ]
+        },
+        "restoreAfterAlarmConditionPermissions": [
+          "ATS_ACTIVATION"
+        ],
+        "additionalFields": {
+          "imageUrls": {
+            "small": "",
+            "medium": "",
+            "big": ""
+          },
+          "hubBindingRole": "PRO"
+        }
+      },
+      "id": "02f30ed8-8c13-4e23-8387-ac91cf575749",
+      "name": "Ajax36",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        1280,
+        680
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "user",
+        "operation": "unbindCompanyFromHub",
+        "companyId": "dd",
+        "hubId": "ss",
+        "boundUserId": "asd"
+      },
+      "id": "e7613694-dae1-40af-acd7-94bf3bc01983",
+      "name": "Ajax37",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        1480,
+        680
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "Update user image",
+        "width": 150
+      },
+      "id": "9ff01915-c157-4802-98b2-88762fbff43d",
+      "name": "Sticky Note5",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1640,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "content": "Checked and tested\n"
+      },
+      "id": "cd4703fa-52a9-4a1b-a541-814122563be3",
+      "name": "Sticky Note3",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1440,
+        -400
+      ]
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Ajax": {
+      "main": [
+        [
+          {
+            "node": "Ajax1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax1": {
+      "main": [
+        [
+          {
+            "node": "Ajax2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax2": {
+      "main": [
+        [
+          {
+            "node": "Ajax3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When clicking \"Execute Workflow\"": {
+      "main": [
+        [
+          {
+            "node": "Ajax",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax3": {
+      "main": [
+        [
+          {
+            "node": "Ajax4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax4": {
+      "main": [
+        [
+          {
+            "node": "Ajax5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax5": {
+      "main": [
+        [
+          {
+            "node": "Ajax6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax7": {
+      "main": [
+        [
+          {
+            "node": "Ajax8",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax8": {
+      "main": [
+        [
+          {
+            "node": "Ajax9",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax9": {
+      "main": [
+        [
+          {
+            "node": "Ajax10",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax10": {
+      "main": [
+        [
+          {
+            "node": "Ajax11",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax11": {
+      "main": [
+        [
+          {
+            "node": "Ajax12",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax12": {
+      "main": [
+        [
+          {
+            "node": "Ajax13",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax13": {
+      "main": [
+        [
+          {
+            "node": "Ajax14",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax14": {
+      "main": [
+        [
+          {
+            "node": "Ajax15",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax15": {
+      "main": [
+        [
+          {
+            "node": "Ajax16",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax16": {
+      "main": [
+        [
+          {
+            "node": "Ajax17",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax17": {
+      "main": [
+        [
+          {
+            "node": "Ajax18",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax18": {
+      "main": [
+        [
+          {
+            "node": "Ajax19",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax19": {
+      "main": [
+        [
+          {
+            "node": "Ajax20",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax20": {
+      "main": [
+        [
+          {
+            "node": "Ajax21",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax21": {
+      "main": [
+        [
+          {
+            "node": "Ajax22",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax22": {
+      "main": [
+        [
+          {
+            "node": "Ajax23",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax23": {
+      "main": [
+        [
+          {
+            "node": "Ajax24",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax24": {
+      "main": [
+        [
+          {
+            "node": "Ajax25",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax25": {
+      "main": [
+        [
+          {
+            "node": "Ajax26",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax26": {
+      "main": [
+        [
+          {
+            "node": "Ajax27",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax27": {
+      "main": [
+        [
+          {
+            "node": "Ajax28",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax28": {
+      "main": [
+        [
+          {
+            "node": "Ajax29",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax29": {
+      "main": [
+        [
+          {
+            "node": "Ajax30",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax30": {
+      "main": [
+        [
+          {
+            "node": "Ajax31",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax31": {
+      "main": [
+        [
+          {
+            "node": "Ajax32",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax32": {
+      "main": [
+        [
+          {
+            "node": "Ajax33",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax33": {
+      "main": [
+        [
+          {
+            "node": "Ajax34",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax34": {
+      "main": [
+        [
+          {
+            "node": "Ajax35",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax35": {
+      "main": [
+        [
+          {
+            "node": "Ajax36",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax36": {
+      "main": [
+        [
+          {
+            "node": "Ajax37",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "446ed291-2dc0-43b9-b87c-f065f1f7ca17",
+  "id": "Sl96EZjvCcE4uDHV",
+  "meta": {
+    "instanceId": "4b1aa0090df3a11672e4f991eddadfd50db31b5b5bc605a19f710922c72bf67e"
+  },
+  "tags": []
+}

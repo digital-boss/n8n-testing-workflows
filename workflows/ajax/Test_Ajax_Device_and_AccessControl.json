@@ -1,0 +1,872 @@
+{
+  "name": "Test Ajax Device and AccessControl",
+  "nodes": [
+    {
+      "parameters": {
+        "resource": "device",
+        "operation": "getDevicesList",
+        "userId": "asd",
+        "hubId": "dsa",
+        "additionalFields": {
+          "enrich": true
+        }
+      },
+      "id": "def4dce4-2af2-48c9-9212-e37369e4dea6",
+      "name": "Ajax24",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        -60,
+        200
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "device",
+        "operation": "linkDevice",
+        "userId": "asd",
+        "hubId": "dsa"
+      },
+      "id": "c276edc2-11fc-4d0d-894a-4da9cd22303f",
+      "name": "Ajax25",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        140,
+        200
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "#TODO\nNew device binding for body",
+        "width": 157.45941470745586
+      },
+      "id": "3e717842-47e2-43f9-8634-9ff425ec737f",
+      "name": "Sticky Note5",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        120,
+        140
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "device",
+        "operation": "getDeviceInfo",
+        "userId": "asd",
+        "hubId": "dsa",
+        "deviceId": "asd"
+      },
+      "id": "e8c9247f-096d-4828-a221-272b5307784f",
+      "name": "Ajax26",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        340,
+        200
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "device",
+        "operation": "updateDeviceInfo",
+        "userId": "asd",
+        "hubId": "dsa",
+        "deviceId": "asd",
+        "deviceName": "sd",
+        "roomId": "ds",
+        "groupId": "asd"
+      },
+      "id": "23a9afa5-ded0-4945-90fc-24c544504391",
+      "name": "Ajax27",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        540,
+        200
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "device",
+        "operation": "unlinkDeviceFromHub",
+        "userId": "asd",
+        "hubId": "dsa",
+        "deviceId": "asd"
+      },
+      "id": "2049fbdd-3c0f-4940-993e-ec2c25269e3e",
+      "name": "Ajax28",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        740,
+        200
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "device",
+        "operation": "sendCommandToDevice",
+        "userId": "asd",
+        "hubId": "dsa",
+        "deviceId": "asd",
+        "command": "SWITCH_ON",
+        "deviceType": "GlassProtect"
+      },
+      "id": "15838de3-805f-4538-991c-ed6ecfa4e10f",
+      "name": "Ajax29",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        940,
+        200
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "device",
+        "operation": "sendCommandToBindDeviceToRangeExtender",
+        "userId": "asd",
+        "hubId": "dsa",
+        "deviceId": "asd",
+        "rexId": "asdf"
+      },
+      "id": "63d52160-8e75-426b-88c7-fb0aa91f554d",
+      "name": "Ajax30",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        1120,
+        200
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "device",
+        "operation": "sendCommandToUnbindDeviceToRangeExtender",
+        "userId": "asd",
+        "hubId": "dsa",
+        "deviceId": "asd"
+      },
+      "id": "f6eb2e5d-1392-4cef-8519-f5e073e5a481",
+      "name": "Ajax31",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        1320,
+        200
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "device",
+        "operation": "getDevicesListForCompany",
+        "companyId": "asd",
+        "hubId": "dsa",
+        "additionalFields": {
+          "enrich": true
+        }
+      },
+      "id": "999a993e-dca7-41f4-996b-b8503d8815e7",
+      "name": "Ajax32",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        -60,
+        420
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "device",
+        "operation": "getDeviceInfoForCompany",
+        "companyId": "asd",
+        "hubId": "dsa",
+        "deviceId": "asddd"
+      },
+      "id": "ce035439-9c3b-4024-87b8-5b5ba10a848d",
+      "name": "Ajax33",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        140,
+        420
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "device",
+        "operation": "updateDeviceInfoForCompany",
+        "companyId": "asd",
+        "hubId": "dsa",
+        "deviceId": "asddd",
+        "deviceName": "aa",
+        "roomId": "bb",
+        "groupId": "cc"
+      },
+      "id": "b7ad5e72-568f-4a65-af08-013377917f47",
+      "name": "Ajax34",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        340,
+        420
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "device",
+        "operation": "sendCommandToDeviceForCompany",
+        "companyId": "asd",
+        "hubId": "dsa",
+        "deviceId": "asddd",
+        "command": "SWITCH_OFF",
+        "deviceType": "GlassProtectFibra"
+      },
+      "id": "b40ed4f0-ca6c-4c78-b975-7cdc2830153a",
+      "name": "Ajax35",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        540,
+        420
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "device",
+        "operation": "executeScanFibraDevicesCommand",
+        "companyId": "asd",
+        "hubId": "dsa",
+        "command": "START"
+      },
+      "id": "9fe3b8dd-90b2-498f-9014-4c2eaf325d29",
+      "name": "Ajax36",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        740,
+        420
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "device",
+        "operation": "getScanFibraDeviceList",
+        "companyId": "asd",
+        "hubId": "dsa"
+      },
+      "id": "c47c466e-e169-4fc3-b3a1-b30523d4eb6b",
+      "name": "Ajax37",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        940,
+        420
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "accessControl",
+        "operation": "getAccessControlList",
+        "userId": "asd",
+        "hubId": "dsa",
+        "additionalFields": {
+          "enrich": true
+        }
+      },
+      "id": "10f5bf7c-5310-4037-9f9b-7769042ce1a9",
+      "name": "Ajax38",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        -60,
+        620
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "accessControl",
+        "operation": "linkAccessControlEntity",
+        "userId": "asd",
+        "hubId": "dsa"
+      },
+      "id": "7af3ec2f-1e0c-4c18-9f2a-264a5b4c747e",
+      "name": "Ajax39",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        120,
+        620
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "#TODO\nnre access control entitny binding",
+        "width": 150
+      },
+      "id": "4f7bcd61-90c6-4013-b366-33456a1b7535",
+      "name": "Sticky Note8",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        100,
+        560
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "accessControl",
+        "operation": "getEntityInfo",
+        "userId": "asd",
+        "hubId": "dsa",
+        "entityId": "acv"
+      },
+      "id": "a5d50d0b-ba8b-4847-8858-42169962b552",
+      "name": "Ajax40",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        320,
+        620
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "accessControl",
+        "operation": "updateAccessControlEntity",
+        "userId": "asd",
+        "hubId": "dsa",
+        "entityId": "acv",
+        "accessControlEntity": {
+          "id": "yh"
+        }
+      },
+      "id": "be174a9c-acb2-474e-b885-0bd6b7fc1bb8",
+      "name": "Ajax41",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        520,
+        620
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "#TODO\nnre access control entitny binding",
+        "width": 150
+      },
+      "id": "5e7db3ac-f81c-41be-9ccf-75b82025aa50",
+      "name": "Sticky Note10",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        480,
+        580
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "accessControl",
+        "operation": "unbindAccessControlEntityFromHub",
+        "userId": "asd",
+        "hubId": "dsa",
+        "entityId": "acv"
+      },
+      "id": "9d79bf3b-f302-4b37-a248-f3ea4ef0b8b4",
+      "name": "Ajax42",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        740,
+        620
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "accessControl",
+        "operation": "sendCommandToEntity",
+        "userId": "asd",
+        "hubId": "dsa",
+        "entityId": "acv",
+        "command": "DISABLE_ACCESS_CARD",
+        "entityType": "ACCESS_CARD"
+      },
+      "id": "293bee1a-4aca-4630-88ff-4e82f2d8b35f",
+      "name": "Ajax43",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        940,
+        620
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "accessControl",
+        "operation": "getAccessControlRelatedAsyncOperationStatus",
+        "userId": "asd",
+        "hubId": "dsa",
+        "token": "asdf"
+      },
+      "id": "b704a44c-37c8-4d9c-8891-a5d2c1d2b7d3",
+      "name": "Ajax44",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        1140,
+        620
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "accessControl",
+        "operation": "exitCardMode",
+        "userId": "asd",
+        "hubId": "dsa"
+      },
+      "id": "4ccfc65e-a1f9-4367-9592-ac87306fff5f",
+      "name": "Ajax45",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        1360,
+        620
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "accessControl",
+        "operation": "formatAccessCard",
+        "userId": "asd",
+        "hubId": "dsa"
+      },
+      "id": "db3a7bc4-2854-449c-9070-603dae8252e7",
+      "name": "Ajax46",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        1560,
+        620
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "id": "7f40fc26-7254-47f1-9258-21e6212d2790",
+      "name": "When clicking \"Execute Workflow\"",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -260,
+        200
+      ]
+    },
+    {
+      "parameters": {
+        "content": "Tested"
+      },
+      "id": "7a115779-1687-44c3-a807-3146b8090b99",
+      "name": "Sticky Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1440,
+        60
+      ]
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Ajax24": {
+      "main": [
+        [
+          {
+            "node": "Ajax25",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax25": {
+      "main": [
+        [
+          {
+            "node": "Ajax26",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax26": {
+      "main": [
+        [
+          {
+            "node": "Ajax27",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax27": {
+      "main": [
+        [
+          {
+            "node": "Ajax28",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax28": {
+      "main": [
+        [
+          {
+            "node": "Ajax29",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax29": {
+      "main": [
+        [
+          {
+            "node": "Ajax30",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax30": {
+      "main": [
+        [
+          {
+            "node": "Ajax31",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax31": {
+      "main": [
+        [
+          {
+            "node": "Ajax32",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax32": {
+      "main": [
+        [
+          {
+            "node": "Ajax33",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax33": {
+      "main": [
+        [
+          {
+            "node": "Ajax34",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax34": {
+      "main": [
+        [
+          {
+            "node": "Ajax35",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax35": {
+      "main": [
+        [
+          {
+            "node": "Ajax36",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax36": {
+      "main": [
+        [
+          {
+            "node": "Ajax37",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax38": {
+      "main": [
+        [
+          {
+            "node": "Ajax39",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax39": {
+      "main": [
+        [
+          {
+            "node": "Ajax40",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax40": {
+      "main": [
+        [
+          {
+            "node": "Ajax41",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax41": {
+      "main": [
+        [
+          {
+            "node": "Ajax42",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax42": {
+      "main": [
+        [
+          {
+            "node": "Ajax43",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax43": {
+      "main": [
+        [
+          {
+            "node": "Ajax44",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax44": {
+      "main": [
+        [
+          {
+            "node": "Ajax45",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax45": {
+      "main": [
+        [
+          {
+            "node": "Ajax46",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When clicking \"Execute Workflow\"": {
+      "main": [
+        [
+          {
+            "node": "Ajax24",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "0ac4bf2d-8d28-45eb-9866-26adbc535eb8",
+  "id": "YuTc2WRE2f78jNNQ",
+  "meta": {
+    "instanceId": "4b1aa0090df3a11672e4f991eddadfd50db31b5b5bc605a19f710922c72bf67e"
+  },
+  "tags": []
+}

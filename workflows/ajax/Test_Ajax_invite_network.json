@@ -1,0 +1,1225 @@
+{
+  "name": "Test Ajax invite/network",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "7d637366-e4a4-4274-85f4-2c18fcb0d11d",
+      "name": "When clicking \"Execute Workflow\"",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        500,
+        240
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "invite",
+        "operation": "getHubInvites",
+        "userId": "fg",
+        "hubId": "sss"
+      },
+      "id": "3ded1c75-b8d2-4262-8271-d4f36f8e4283",
+      "name": "Ajax32",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        740,
+        240
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "invite",
+        "operation": "revokeInvite",
+        "userId": "fg",
+        "hubId": "sss",
+        "email": "ghjhj"
+      },
+      "id": "6ec067ad-7082-4d9b-b3d0-f1a1bd486388",
+      "name": "Ajax33",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        960,
+        240
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "invite",
+        "operation": "getHubInvitesForCompany",
+        "companyId": "fgffhfh",
+        "hubId": "sss"
+      },
+      "id": "b1ae56cf-2383-4f77-b41f-61af5b21ccdf",
+      "name": "Ajax34",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        1180,
+        240
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "invite",
+        "operation": "revokeInviteForCompany",
+        "companyId": "fgffhfh",
+        "hubId": "sss",
+        "email": "hhjgjjg"
+      },
+      "id": "1c3a3775-9a42-4608-bf5f-125f209bcbe3",
+      "name": "Ajax35",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        1400,
+        240
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "network",
+        "operation": "enableDisableEthernetNetworkChannel",
+        "userId": "aa",
+        "hubId": "vv",
+        "state": "ON"
+      },
+      "id": "8f3266d2-34c3-432d-9192-237e4d680f77",
+      "name": "Ajax36",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        720,
+        480
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "network",
+        "operation": "enableDisableWifiNetworkChannel",
+        "userId": "aa",
+        "hubId": "vv",
+        "state": "ON"
+      },
+      "id": "c39360f6-cb3c-4c96-b6b8-23168d5ab869",
+      "name": "Ajax37",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        940,
+        480
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "network",
+        "operation": "enableDisableGsmNetworkChannel",
+        "userId": "aa",
+        "hubId": "vv",
+        "state": "ON"
+      },
+      "id": "5f1dcb79-c7dd-4023-9cff-4590de11daff",
+      "name": "Ajax38",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        1160,
+        480
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "network",
+        "operation": "updateWifiSettings",
+        "userId": "aa",
+        "hubId": "vv",
+        "dns": "fghh",
+        "ip": "gjhfjf",
+        "gate": "hgjj",
+        "dhcp": true,
+        "mask": "gjg,jjg,"
+      },
+      "id": "5a0801a1-d060-4ee4-8f1a-e016de9f3692",
+      "name": "Ajax39",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        1380,
+        480
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "network",
+        "operation": "getStatusOfUpdateWifiSettingsOperation",
+        "userId": "aa",
+        "hubId": "vv",
+        "token": "gvhjh"
+      },
+      "id": "f4faaf76-5e98-46b8-9ec2-231391a6bd28",
+      "name": "Ajax40",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        1580,
+        480
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "network",
+        "operation": "updateEthernetSettings",
+        "userId": "aa",
+        "hubId": "vv",
+        "dns": "hhjj",
+        "ip": "ddfd",
+        "gate": "gbgnfgffnh",
+        "dhcp": true,
+        "mask": "bfff"
+      },
+      "id": "da175ada-ae46-4feb-9398-7a8b6b94dd70",
+      "name": "Ajax41",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        1800,
+        480
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "network",
+        "operation": "getStatusOfUpdateEthernetSettingsOperation",
+        "userId": "aa",
+        "hubId": "vv",
+        "token": "bjj"
+      },
+      "id": "770793e5-0aca-4554-9f24-a59eee2ceb79",
+      "name": "Ajax42",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        2020,
+        480
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "network",
+        "operation": "updateGsmSettings",
+        "userId": "aa",
+        "hubId": "vv",
+        "disableIcmpBeforeConnecting": true,
+        "virtualOperatorAllowed": true,
+        "roamingEnabled": true
+      },
+      "id": "a1eb5a6c-1925-4d6e-896c-70012e46117c",
+      "name": "Ajax43",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        2220,
+        480
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "network",
+        "operation": "updateGsmSimCardSettings",
+        "userId": "aa",
+        "hubId": "vv",
+        "apn": "gghh",
+        "username": "ggg",
+        "password": "ggg",
+        "additionalFields": {
+          "simCardIndex": 1
+        }
+      },
+      "id": "0d5d8e2a-5232-4800-ba3c-1df27aa0409f",
+      "name": "Ajax44",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        2420,
+        480
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "network",
+        "operation": "getStatusOfUpdateSimCardSettingsOperation",
+        "userId": "aa",
+        "hubId": "vv",
+        "token": "ff"
+      },
+      "id": "050de42c-544c-47c4-86c1-e9b1d29df9c4",
+      "name": "Ajax45",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        2600,
+        480
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "network",
+        "operation": "sendGetBalanceRequest",
+        "userId": "aa",
+        "hubId": "vv",
+        "additionalFields": {
+          "simCardIndex": 2
+        }
+      },
+      "id": "3b93b91a-911b-4cb3-b4bb-f5cc727b9612",
+      "name": "Ajax46",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        2800,
+        480
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "network",
+        "operation": "getBalanceRequestStatus",
+        "userId": "aa",
+        "hubId": "vv",
+        "token": "jjk"
+      },
+      "id": "f09654c3-f8ea-41a9-ac77-ed657631a956",
+      "name": "Ajax47",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        700,
+        720
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "network",
+        "operation": "updateGsmSimCardBalanceNumber",
+        "userId": "aa",
+        "hubId": "vv",
+        "balanceNumber": "gg",
+        "additionalFields": {
+          "simCardIndex": 2
+        }
+      },
+      "id": "ca801eaa-f557-4ef0-9402-883dbc046ec1",
+      "name": "Ajax48",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        920,
+        720
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "network",
+        "operation": "scanWifiNetworks",
+        "userId": "aa",
+        "hubId": "vv"
+      },
+      "id": "6cbd65fb-d125-4578-850b-5e0a446315eb",
+      "name": "Ajax49",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        1140,
+        720
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "network",
+        "operation": "getScanWifiNetworks",
+        "userId": "aa",
+        "hubId": "vv",
+        "token": "fff"
+      },
+      "id": "14bf75ed-5acf-47a9-be72-8762b4dc0f0e",
+      "name": "Ajax50",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        1380,
+        720
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "network",
+        "operation": "joinWifiNetworks",
+        "userId": "aa",
+        "hubId": "vv",
+        "wifiNetworkJoinRequest": "fff"
+      },
+      "id": "cee838fa-2e1c-4c3f-aa0f-71389f7c5869",
+      "name": "Ajax51",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        1620,
+        720
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "Check wifiNetworkJoinRequest",
+        "width": 150
+      },
+      "id": "f2a764eb-4ff0-49aa-b837-882d14a8ac0b",
+      "name": "Sticky Note12",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1580,
+        660
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "network",
+        "operation": "getJoinWifiNetworkOperationStatus",
+        "userId": "aa",
+        "hubId": "vv",
+        "token": "ddd"
+      },
+      "id": "b8c767d3-6acf-452a-9f47-5dec32c6bcce",
+      "name": "Ajax52",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        1800,
+        720
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "network",
+        "operation": "updateDeviceEthernetSettings",
+        "userId": "aa",
+        "hubId": "vv",
+        "deviceId": "aa",
+        "deviceEthernetSettings": "ff"
+      },
+      "id": "7be3b225-57d4-470d-9408-7b6def87ab0a",
+      "name": "Ajax53",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        2020,
+        720
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "Check deviceEthernetSettings",
+        "width": 150
+      },
+      "id": "776d1e91-692f-4860-9522-fad0c3e758ee",
+      "name": "Sticky Note14",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        2000,
+        660
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "network",
+        "operation": "getStatusOfUpdateDeviceEthernetSettingsOperation",
+        "userId": "aa",
+        "hubId": "vv",
+        "deviceId": "aa",
+        "token": "hh"
+      },
+      "id": "16ba7482-72ef-454e-9e47-b1c446f13904",
+      "name": "Ajax54",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        2220,
+        720
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "network",
+        "operation": "enableDisableDeviceEthernetNetworkChannel",
+        "userId": "aa",
+        "hubId": "vv",
+        "deviceId": "aa",
+        "state": "ON"
+      },
+      "id": "1e222b2a-28f2-4bb7-90b0-b46a9cfc3b9a",
+      "name": "Ajax55",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        2420,
+        720
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "network",
+        "operation": "enableDisableEthernetNetworkChannelForCompany",
+        "companyId": "jjj",
+        "hubId": "vv",
+        "state": "ON"
+      },
+      "id": "7043e83f-048a-483d-891c-1d64a1c98f9b",
+      "name": "Ajax56",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        2600,
+        720
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "network",
+        "operation": "enableDisableWifiNetworkChannelForCompany",
+        "companyId": "jjj",
+        "hubId": "vv",
+        "state": "ON"
+      },
+      "id": "884fac38-d153-43b6-972d-2cf686d048fa",
+      "name": "Ajax57",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        2800,
+        720
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "network",
+        "operation": "enableDisableGsmNetworkChannelForCompany",
+        "companyId": "jjj",
+        "hubId": "vv",
+        "state": "ON"
+      },
+      "id": "745ba071-75af-4538-a82c-014202b51744",
+      "name": "Ajax58",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        700,
+        960
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "network",
+        "operation": "updateGsmSettingsForCompany",
+        "companyId": "jjj",
+        "hubId": "vv",
+        "disableIcmpBeforeConnecting": true,
+        "virtualOperatorAllowed": true,
+        "roamingEnabled": true
+      },
+      "id": "c2197b86-fddf-4110-9c3d-437a3413eaf4",
+      "name": "Ajax59",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        920,
+        960
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "network",
+        "operation": "updateGsmSimCardSettingsForCompany",
+        "companyId": "jjj",
+        "hubId": "vv",
+        "apn": "dd",
+        "username": "ss",
+        "password": "aa",
+        "additionalFields": {
+          "simCardIndex": 2
+        }
+      },
+      "id": "9b4ba002-3ffe-449e-98be-2f10140f4238",
+      "name": "Ajax60",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        1140,
+        960
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "network",
+        "operation": "getStatusOfUpdateSimCardSettingsOperationForCompany",
+        "companyId": "jjj",
+        "hubId": "vv",
+        "token": "ggg"
+      },
+      "id": "1572fe4a-a692-4cac-aa92-25144661bc43",
+      "name": "Ajax61",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        1400,
+        960
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "network",
+        "operation": "sendGetBalanceRequestForCompany",
+        "companyId": "jjj",
+        "hubId": "vv",
+        "additionalFields": {}
+      },
+      "id": "4cbaa55d-938b-4f2c-8c7e-aba0569e5e25",
+      "name": "Ajax62",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        1620,
+        960
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "Check simCardBalanceRequest",
+        "width": 150
+      },
+      "id": "8cc26df1-0879-4a76-b7f4-ffe05213d3e1",
+      "name": "Sticky Note17",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1600,
+        920
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "network",
+        "operation": "getBalanceRequestStatusForCompany",
+        "companyId": "jjj",
+        "hubId": "vv",
+        "token": "fgh"
+      },
+      "id": "f65aa63c-6173-4a17-9aba-184ae0da389b",
+      "name": "Ajax63",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        1800,
+        960
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "network",
+        "operation": "updateGsmSimCardBalanceNumberForCompany",
+        "companyId": "jjj",
+        "hubId": "vv",
+        "balanceNumber": "gg",
+        "additionalFields": {
+          "simCardIndex": 2
+        }
+      },
+      "id": "58c4849e-9cc7-47f4-b4db-4906353c56eb",
+      "name": "Ajax64",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        2020,
+        960
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "Tested"
+      },
+      "id": "c5ede45d-462d-4bb7-9976-020426e4c98d",
+      "name": "Sticky Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        2000,
+        -180
+      ]
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Ajax32": {
+      "main": [
+        [
+          {
+            "node": "Ajax33",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax33": {
+      "main": [
+        [
+          {
+            "node": "Ajax34",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax34": {
+      "main": [
+        [
+          {
+            "node": "Ajax35",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax36": {
+      "main": [
+        [
+          {
+            "node": "Ajax37",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax37": {
+      "main": [
+        [
+          {
+            "node": "Ajax38",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax38": {
+      "main": [
+        [
+          {
+            "node": "Ajax39",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax39": {
+      "main": [
+        [
+          {
+            "node": "Ajax40",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax40": {
+      "main": [
+        [
+          {
+            "node": "Ajax41",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax41": {
+      "main": [
+        [
+          {
+            "node": "Ajax42",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax42": {
+      "main": [
+        [
+          {
+            "node": "Ajax43",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax43": {
+      "main": [
+        [
+          {
+            "node": "Ajax44",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax44": {
+      "main": [
+        [
+          {
+            "node": "Ajax45",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax45": {
+      "main": [
+        [
+          {
+            "node": "Ajax46",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax46": {
+      "main": [
+        [
+          {
+            "node": "Ajax47",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax47": {
+      "main": [
+        [
+          {
+            "node": "Ajax48",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax48": {
+      "main": [
+        [
+          {
+            "node": "Ajax49",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax49": {
+      "main": [
+        [
+          {
+            "node": "Ajax50",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax50": {
+      "main": [
+        [
+          {
+            "node": "Ajax51",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax51": {
+      "main": [
+        [
+          {
+            "node": "Ajax52",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax52": {
+      "main": [
+        [
+          {
+            "node": "Ajax53",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax53": {
+      "main": [
+        [
+          {
+            "node": "Ajax54",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax54": {
+      "main": [
+        [
+          {
+            "node": "Ajax55",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax55": {
+      "main": [
+        [
+          {
+            "node": "Ajax56",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax56": {
+      "main": [
+        [
+          {
+            "node": "Ajax57",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax57": {
+      "main": [
+        [
+          {
+            "node": "Ajax58",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax58": {
+      "main": [
+        [
+          {
+            "node": "Ajax59",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax59": {
+      "main": [
+        [
+          {
+            "node": "Ajax60",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax60": {
+      "main": [
+        [
+          {
+            "node": "Ajax61",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax61": {
+      "main": [
+        [
+          {
+            "node": "Ajax62",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax62": {
+      "main": [
+        [
+          {
+            "node": "Ajax63",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax63": {
+      "main": [
+        [
+          {
+            "node": "Ajax64",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When clicking \"Execute Workflow\"": {
+      "main": [
+        [
+          {
+            "node": "Ajax32",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "b481378d-3a2d-4460-90af-54dbc0b7f70a",
+  "id": "4qtUSYsV5ARMUHCO",
+  "meta": {
+    "instanceId": "4b1aa0090df3a11672e4f991eddadfd50db31b5b5bc605a19f710922c72bf67e"
+  },
+  "tags": []
+}

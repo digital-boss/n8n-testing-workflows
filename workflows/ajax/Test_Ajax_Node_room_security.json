@@ -1,0 +1,904 @@
+{
+  "name": "Test Ajax Node room/security",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "2562e8b6-4ea0-40ab-ab63-5e3f7c635b7b",
+      "name": "When clicking \"Execute Workflow\"",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        320,
+        220
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "room",
+        "operation": "findRoom",
+        "userId": "dfgg",
+        "hubId": "fff"
+      },
+      "id": "e44e2b90-2af8-4d3b-9463-27918ae2acd1",
+      "name": "Ajax",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        500,
+        220
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "room",
+        "operation": "createRoom",
+        "userId": "dfgg",
+        "hubId": "fff",
+        "roomName": "gjj"
+      },
+      "id": "1964e2c0-1fc3-49b0-8968-5b0ae1ec9f24",
+      "name": "Ajax1",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        700,
+        220
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "room",
+        "operation": "getRoomInfo",
+        "userId": "dfgg",
+        "hubId": "fff",
+        "roomId": "kkk"
+      },
+      "id": "bc14e0b4-43be-4b3b-b567-be184ef51c31",
+      "name": "Ajax2",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        900,
+        220
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "room",
+        "operation": "updateRoomInfo",
+        "userId": "dfgg",
+        "hubId": "fff",
+        "roomId": "kkk",
+        "imageUrls": {
+          "small": "",
+          "medium": "",
+          "big": ""
+        },
+        "roomName": "sss"
+      },
+      "id": "c597a9f6-c1a3-4505-b6fa-caa388efab1a",
+      "name": "Ajax3",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        1080,
+        220
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "room",
+        "operation": "deleteRoom",
+        "userId": "dfgg",
+        "hubId": "fff",
+        "roomId": "kkk"
+      },
+      "id": "364d0a06-950d-4cf0-a30b-084639354311",
+      "name": "Ajax4",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        1280,
+        220
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "room",
+        "operation": "deleteRoomImage",
+        "userId": "dfgg",
+        "hubId": "fff",
+        "roomId": "kkk"
+      },
+      "id": "42fe943f-f541-4d5a-a904-857647c5a080",
+      "name": "Ajax5",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        1460,
+        220
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "room",
+        "operation": "getRoomList",
+        "companyId": "ggg",
+        "hubId": "fff"
+      },
+      "id": "7ea852ec-1ee9-437f-bf7a-b5bb2762073a",
+      "name": "Ajax6",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        1820,
+        220
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "room",
+        "operation": "getRoomInfoForCompany",
+        "companyId": "ggg",
+        "hubId": "fff",
+        "roomId": "hjj"
+      },
+      "id": "6bee2b45-8d6c-41dc-8364-74c3c33f5d2d",
+      "name": "Ajax7",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        2020,
+        220
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "group",
+        "operation": "findGroup",
+        "userId": "gg",
+        "hubId": "ff"
+      },
+      "id": "13c44eb6-4410-44cc-83b5-5f4891a1bb7c",
+      "name": "Ajax8",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        500,
+        400
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "group",
+        "operation": "createGroup",
+        "userId": "gg",
+        "hubId": "ff",
+        "groupName": "hjj"
+      },
+      "id": "db69393d-1da0-4f97-860f-0cdea1b506fb",
+      "name": "Ajax9",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        700,
+        400
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "group",
+        "operation": "getGroupInfo",
+        "userId": "gg",
+        "hubId": "ff",
+        "groupId": "k"
+      },
+      "id": "23c51bd4-9911-49b4-8442-331a2ebcaf6d",
+      "name": "Ajax10",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        900,
+        400
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "group",
+        "operation": "updateGroupInfo",
+        "userId": "gg",
+        "hubId": "ff",
+        "groupId": "k",
+        "groupName": "hhh",
+        "bulkArmInvolved": true,
+        "bulkDisarmInvolved": true,
+        "twoStageArming": {
+          "enabled": true
+        },
+        "imageUrls": {}
+      },
+      "id": "3734c3ac-887a-4c1e-8972-9597626b422d",
+      "name": "Ajax11",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        1080,
+        400
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "group",
+        "operation": "deleteGroup",
+        "userId": "gg",
+        "hubId": "ff",
+        "groupId": "k"
+      },
+      "id": "44a324dc-3b21-42c1-9289-2636fe7cb945",
+      "name": "Ajax12",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        1280,
+        400
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "group",
+        "operation": "deleteGroup",
+        "userId": "gg",
+        "hubId": "ff",
+        "groupId": "k"
+      },
+      "id": "c9e1869d-6d61-4f1e-9189-a6253c394702",
+      "name": "Ajax13",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        1460,
+        400
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "group",
+        "operation": "deleteGroupImage",
+        "userId": "gg",
+        "hubId": "ff",
+        "groupId": "k"
+      },
+      "id": "005b45c3-d954-4d96-afb7-e39da083fc24",
+      "name": "Ajax14",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        1820,
+        400
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "group",
+        "operation": "getGroupTwoStageArmingOperationStatus",
+        "userId": "gg",
+        "hubId": "ff",
+        "groupId": "hjh",
+        "token": "fff"
+      },
+      "id": "9474f5da-2e55-462a-9e51-436ca2e509fa",
+      "name": "Ajax15",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        2020,
+        400
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "group",
+        "operation": "controlHubArmState",
+        "userId": "gg",
+        "hubId": "ff",
+        "groupId": "hjh",
+        "command": "ARM",
+        "ignoreProblems": true
+      },
+      "id": "4dc09f55-d207-48ff-a41e-a38b54122178",
+      "name": "Ajax16",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        500,
+        640
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "group",
+        "operation": "getGroupList",
+        "companyId": "hg",
+        "hubId": "ff"
+      },
+      "id": "6df51323-d98c-4ecb-9d77-46480b7eac1c",
+      "name": "Ajax17",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        680,
+        640
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "group",
+        "operation": "getGroupDetailedInfo",
+        "companyId": "hg",
+        "hubId": "ff",
+        "groupId": "ff"
+      },
+      "id": "a9ce7563-b283-4574-82fc-f774aa04d897",
+      "name": "Ajax18",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        880,
+        640
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "group",
+        "operation": "controlHubArmStateForCompany",
+        "companyId": "hg",
+        "hubId": "ff",
+        "groupId": "ss",
+        "command": "ARM",
+        "ignoreProblems": true
+      },
+      "id": "5281bd7d-fa05-440d-bbee-b5fefd2527e0",
+      "name": "Ajax19",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        1080,
+        640
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "securityManagement",
+        "operation": "getHubsSecurityManagements",
+        "userId": "aa",
+        "hubId": "asd"
+      },
+      "id": "33130500-1246-400b-9450-88d1ecfba173",
+      "name": "Ajax20",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        480,
+        880
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "securityManagement",
+        "operation": "manageSecurityManagementSettings",
+        "userId": "aa",
+        "hubId": "asd",
+        "securityManagementId": "jj"
+      },
+      "id": "b23cf564-9c5a-42d9-b198-6a290f90d75b",
+      "name": "Ajax21",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        680,
+        880
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "securityManagement",
+        "operation": "getHubsSecurityManagementsForCompany",
+        "companyId": "asd",
+        "hubId": "asd"
+      },
+      "id": "c0b4eb65-18a3-4729-9570-518dd813987b",
+      "name": "Ajax22",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        880,
+        880
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "securityManagement",
+        "operation": "manageSecurityManagementSettingsForCompany",
+        "companyId": "asd",
+        "hubId": "asd",
+        "securityManagementId": "k"
+      },
+      "id": "a0ae3743-8aff-4668-9d46-9929a3851711",
+      "name": "Ajax23",
+      "type": "CUSTOM.ajax",
+      "typeVersion": 1,
+      "position": [
+        1080,
+        880
+      ],
+      "credentials": {
+        "ajaxApi": {
+          "id": "02isd2WCMqiv161R",
+          "name": "Ajax account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "Check security managment - delete last filed adn send epmty body?",
+        "width": 150
+      },
+      "id": "13750b4a-e320-4e7d-b15c-53600c0ce45a",
+      "name": "Sticky Note3",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1080,
+        820
+      ]
+    },
+    {
+      "parameters": {
+        "content": "Update Room image",
+        "width": 150
+      },
+      "id": "55774b92-7f71-475b-b377-855868a9f7b6",
+      "name": "Sticky Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1600,
+        200
+      ]
+    },
+    {
+      "parameters": {
+        "content": "Update Group image",
+        "width": 150
+      },
+      "id": "c4f2bafb-5ee8-447a-9da7-36f6a9ca9d17",
+      "name": "Sticky Note1",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1620,
+        380
+      ]
+    },
+    {
+      "parameters": {
+        "content": "Check security managment - delete last filed adn send epmty body?",
+        "width": 150
+      },
+      "id": "fa643aea-b4bd-49df-b21b-0b851e06a862",
+      "name": "Sticky Note4",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        660,
+        820
+      ]
+    },
+    {
+      "parameters": {
+        "content": "Tested"
+      },
+      "id": "c31d7e6a-d8fe-4580-b524-e60923b45097",
+      "name": "Sticky Note2",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        980,
+        40
+      ]
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When clicking \"Execute Workflow\"": {
+      "main": [
+        [
+          {
+            "node": "Ajax",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax": {
+      "main": [
+        [
+          {
+            "node": "Ajax1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax1": {
+      "main": [
+        [
+          {
+            "node": "Ajax2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax2": {
+      "main": [
+        [
+          {
+            "node": "Ajax3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax3": {
+      "main": [
+        [
+          {
+            "node": "Ajax4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax4": {
+      "main": [
+        [
+          {
+            "node": "Ajax5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax5": {
+      "main": [
+        [
+          {
+            "node": "Ajax6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax6": {
+      "main": [
+        [
+          {
+            "node": "Ajax7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax8": {
+      "main": [
+        [
+          {
+            "node": "Ajax9",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax9": {
+      "main": [
+        [
+          {
+            "node": "Ajax10",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax10": {
+      "main": [
+        [
+          {
+            "node": "Ajax11",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax11": {
+      "main": [
+        [
+          {
+            "node": "Ajax12",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax12": {
+      "main": [
+        [
+          {
+            "node": "Ajax13",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax13": {
+      "main": [
+        [
+          {
+            "node": "Ajax14",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax14": {
+      "main": [
+        [
+          {
+            "node": "Ajax15",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax15": {
+      "main": [
+        [
+          {
+            "node": "Ajax16",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax16": {
+      "main": [
+        [
+          {
+            "node": "Ajax17",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax17": {
+      "main": [
+        [
+          {
+            "node": "Ajax18",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax18": {
+      "main": [
+        [
+          {
+            "node": "Ajax19",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax20": {
+      "main": [
+        [
+          {
+            "node": "Ajax21",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax21": {
+      "main": [
+        [
+          {
+            "node": "Ajax22",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ajax22": {
+      "main": [
+        [
+          {
+            "node": "Ajax23",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "b4b0174c-1f73-4c68-a80f-65bb45127c28",
+  "id": "aBRepxToRV0UnkxK",
+  "meta": {
+    "instanceId": "4b1aa0090df3a11672e4f991eddadfd50db31b5b5bc605a19f710922c72bf67e"
+  },
+  "tags": []
+}
