@@ -1,0 +1,98 @@
+{
+  "name": "Next Cloud Deck",
+  "nodes": [
+    {
+      "parameters": {},
+      "name": "Start",
+      "type": "n8n-nodes-base.start",
+      "typeVersion": 1,
+      "position": [240, 300]
+    },
+    {
+      "parameters": {
+        "resource": "board",
+        "operation": "list",
+        "additionalFields": {
+          "details": true
+        }
+      },
+      "name": "Next cloud deck 1",
+      "type": "CUSTOM.nextCloudDeck",
+      "executeOnce": true,
+      "credentials": {
+        "nextCloudDeckApi": {
+          "username": "clouddemo_admin",
+          "password": "eLBJf-Bn5Yx-Zx4Rz-TsEzX-CsGgX"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "board",
+        "operation": "create",
+        "title": "This is a test title",
+        "color": "blue"
+      },
+      "name": "Next cloud deck 2",
+      "type": "CUSTOM.nextCloudDeck",
+      "executeOnce": true,
+      "credentials": {
+        "nextCloudDeckApi": {
+          "username": "clouddemo_admin",
+          "password": "eLBJf-Bn5Yx-Zx4Rz-TsEzX-CsGgX"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "board",
+        "operation": "update",
+        "id": "={{$json[\"id\"]}}",
+        "title": "This is a modified title",
+        "color": "red",
+        "archived": false
+      },
+      "name": "Next cloud deck 3",
+      "type": "CUSTOM.nextCloudDeck",
+      "executeOnce": true,
+      "credentials": {
+        "nextCloudDeckApi": {
+          "username": "clouddemo_admin",
+          "password": "eLBJf-Bn5Yx-Zx4Rz-TsEzX-CsGgX"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "board",
+        "operation": "get",
+        "id": "={{$json[\"id\"]}}"
+      },
+      "name": "Next cloud deck 4",
+      "type": "CUSTOM.nextCloudDeck",
+      "executeOnce": true,
+      "credentials": {
+        "nextCloudDeckApi": {
+          "username": "clouddemo_admin",
+          "password": "eLBJf-Bn5Yx-Zx4Rz-TsEzX-CsGgX"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "board",
+        "operation": "delete",
+        "id": "={{$json[\"id\"]}}"
+      },
+      "name": "Next cloud deck 4",
+      "type": "CUSTOM.nextCloudDeck",
+      "executeOnce": true,
+      "credentials": {
+        "nextCloudDeckApi": {
+          "username": "clouddemo_admin",
+          "password": "eLBJf-Bn5Yx-Zx4Rz-TsEzX-CsGgX"
+        }
+      }
+    }
+  ]
+}
