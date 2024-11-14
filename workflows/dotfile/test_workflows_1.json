@@ -1,0 +1,3394 @@
+{
+  "name": "Dotfile test workflow_1",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "dbe9da92-a4b5-4a25-8e30-260ba811ff9e",
+      "name": "When clicking ‘Test workflow’",
+      "type": "n8n-nodes-base.manualTrigger",
+      "position": [
+        -1360,
+        660
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "8dc07a51-4130-4fe5-a0c9-44a4159818cb",
+      "name": "Respond to Webhook",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        -300,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## CHECKS",
+        "height": 414.53307686515905,
+        "width": 479.1847437425508
+      },
+      "id": "fbb76f4d-1e0a-4974-bd7a-a7490b7d3c46",
+      "name": "Sticky Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        220,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "52779910-fcf2-48da-807d-987a3dffdd63",
+      "name": "Respond to Webhook1",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        480,
+        380
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "activity",
+        "options": {
+          "authorId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+          "caseId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+          "companyId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+          "individualId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+          "sort": "created_at",
+          "type": "api__created__case",
+          "limit": 50,
+          "page": 1
+        },
+        "requestOptions": {}
+      },
+      "id": "e63cdea4-bd82-405e-b5bf-5bf592b87952",
+      "name": "getAllActivities",
+      "type": "CUSTOM.dotfile",
+      "typeVersion": 1,
+      "position": [
+        -720,
+        460
+      ],
+      "credentials": {
+        "dotfileApi": {
+          "id": "ebEAh3hWpTgLqQ5E",
+          "name": "Dotfile account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "check",
+        "operation": "getAllChecks",
+        "options": {
+          "companyId": "2222",
+          "createdAt": "22/09/2000",
+          "excludeInternal": false,
+          "includeNotRelevant": true,
+          "individualId": "2222",
+          "lastActivityAt": "22/05/2006",
+          "sort": "updated_at",
+          "status": "in_progress",
+          "type": "id_verification",
+          "updatedAt": "11/02/1921",
+          "limit": 50,
+          "page": 1
+        },
+        "requestOptions": {}
+      },
+      "id": "f54d53a8-97c6-462a-9841-0603750280c0",
+      "name": "getAllChecks",
+      "type": "CUSTOM.dotfile",
+      "typeVersion": 1,
+      "position": [
+        60,
+        380
+      ],
+      "credentials": {
+        "dotfileApi": {
+          "id": "ebEAh3hWpTgLqQ5E",
+          "name": "Dotfile account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "path": "v1/checks",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "4024403c-a9aa-4b0c-86e8-efdf66735eea",
+      "name": "getAllChecksWebhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        300,
+        380
+      ],
+      "webhookId": "0cfadc8e-dea9-4088-b859-34f1ab7d52aa"
+    },
+    {
+      "parameters": {
+        "resource": "check",
+        "id": "222222",
+        "requestOptions": {}
+      },
+      "id": "aad9e3d1-0b8b-4772-96f2-efdcaa575b81",
+      "name": "deleteCheck",
+      "type": "CUSTOM.dotfile",
+      "typeVersion": 1,
+      "position": [
+        60,
+        560
+      ],
+      "credentials": {
+        "dotfileApi": {
+          "id": "ebEAh3hWpTgLqQ5E",
+          "name": "Dotfile account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "745da63a-8b4e-49db-b0d3-7c8efbd46e95",
+      "name": "Respond to Webhook2",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        480,
+        560
+      ]
+    },
+    {
+      "parameters": {
+        "httpMethod": "DELETE",
+        "path": "v1/checks/222222",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "bb314155-e053-48a6-88ae-3499c06db648",
+      "name": "deleteCheckWebhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        300,
+        560
+      ],
+      "webhookId": "0cfadc8e-dea9-4088-b859-34f1ab7d52aa"
+    },
+    {
+      "parameters": {
+        "resource": "company",
+        "operation": "get",
+        "id": "2222",
+        "query": {
+          "excludeInternalChecks": true
+        },
+        "requestOptions": {}
+      },
+      "id": "0602d0cd-9682-4faa-a0c6-14be61c6caab",
+      "name": "getCompany",
+      "type": "CUSTOM.dotfile",
+      "typeVersion": 1,
+      "position": [
+        -740,
+        920
+      ],
+      "credentials": {
+        "dotfileApi": {
+          "id": "ebEAh3hWpTgLqQ5E",
+          "name": "Dotfile account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## ACTIVITIES",
+        "height": 271.00846685920715,
+        "width": 436.72386532011393
+      },
+      "id": "23230506-9cf1-4706-b598-3607c962a962",
+      "name": "Sticky Note1",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -560,
+        380
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "5b4765df-9d2d-4c45-877d-ed914f602db6",
+      "name": "Respond to Webhook3",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        -320,
+        920
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## COMPANY",
+        "height": 823.2404602220987,
+        "width": 1109.8005188082184
+      },
+      "id": "08d1af5a-8084-4c56-b51f-afe4cab7f1d1",
+      "name": "Sticky Note2",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -580,
+        840
+      ]
+    },
+    {
+      "parameters": {
+        "path": "/v1/companies/2222",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "4ebb79b8-be63-4240-9c35-7a62d797c28b",
+      "name": "getCompanyWebhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -520,
+        920
+      ],
+      "webhookId": "0cfadc8e-dea9-4088-b859-34f1ab7d52aa"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "5a6c6c7c-0051-40d1-9eac-0f4aac52c98a",
+      "name": "Respond to Webhook4",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        -320,
+        1100
+      ]
+    },
+    {
+      "parameters": {
+        "path": "/v1/companies",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "84b71a98-cc83-4f6a-8c32-a690059bea43",
+      "name": "getAllCompaniesWebhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -520,
+        1100
+      ],
+      "webhookId": "0cfadc8e-dea9-4088-b859-34f1ab7d52aa"
+    },
+    {
+      "parameters": {
+        "resource": "company",
+        "operation": "delete",
+        "id": "2222",
+        "requestOptions": {}
+      },
+      "id": "bbaef3a8-8c22-4755-ac44-734a157cd187",
+      "name": "deleteCompany",
+      "type": "CUSTOM.dotfile",
+      "typeVersion": 1,
+      "position": [
+        -740,
+        1280
+      ],
+      "credentials": {
+        "dotfileApi": {
+          "id": "ebEAh3hWpTgLqQ5E",
+          "name": "Dotfile account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "company",
+        "operation": "getAll",
+        "query": {
+          "country": "USA",
+          "createdAt": "21/04/1998",
+          "lastActivityAt": "22/05/2006",
+          "limit": 50,
+          "name": "this",
+          "page": 1,
+          "registrationNumber": "22222",
+          "sort": "created_at",
+          "updatedAt": "11/11/2011"
+        },
+        "requestOptions": {}
+      },
+      "id": "49854889-1f91-4382-84fb-c1dced5e33f6",
+      "name": "getAllCompanies",
+      "type": "CUSTOM.dotfile",
+      "typeVersion": 1,
+      "position": [
+        -740,
+        1100
+      ],
+      "credentials": {
+        "dotfileApi": {
+          "id": "ebEAh3hWpTgLqQ5E",
+          "name": "Dotfile account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "593c359d-55ba-4e12-bcbe-19ea9c41a007",
+      "name": "Respond to Webhook5",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        -320,
+        1280
+      ]
+    },
+    {
+      "parameters": {
+        "httpMethod": "DELETE",
+        "path": "/v1/companies/2222",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "13f4e06d-46b6-40a5-affe-19e1755398c1",
+      "name": "deleteCompaniesWebhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -520,
+        1280
+      ],
+      "webhookId": "0cfadc8e-dea9-4088-b859-34f1ab7d52aa"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "e19c0611-c374-44ee-ae3d-0ebe5bccb74a",
+      "name": "Respond to Webhook6",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        360,
+        920
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "company",
+        "operation": "update",
+        "id": "2222",
+        "additionalFields": {
+          "address": {
+            "addressFields": {
+              "streetAddress": "Street1",
+              "streetAddress2": "Street2",
+              "postal_code": "22222",
+              "city": "Oklahoma",
+              "state": "USA",
+              "region": "USA",
+              "country": "USA"
+            }
+          },
+          "bankingInformation": {
+            "bankingInformationFields": {
+              "iban": "298478926784627832",
+              "bic": "2222"
+            }
+          },
+          "classifications": {
+            "classificationsFields": {
+              "type": "type1",
+              "code": "22",
+              "description": "none"
+            }
+          },
+          "commercialName": "another name",
+          "country": "USA",
+          "employerIdentificationNumber": "276547263",
+          "entityLegalForm": "form",
+          "legalForm": "y",
+          "name": "example",
+          "registrationDate": "22/05/2006",
+          "registrationNumber": "22424-442-244",
+          "shareCapital": "yes",
+          "status": "not_reported",
+          "taxIdentificationNumber": "324-44444-4444",
+          "websiteUrl": "https://uuuu.com"
+        },
+        "requestOptions": {}
+      },
+      "id": "b8fff565-a87e-404b-aa68-e25691df0f47",
+      "name": "updateCompany",
+      "type": "CUSTOM.dotfile",
+      "typeVersion": 1,
+      "position": [
+        -40,
+        920
+      ],
+      "credentials": {
+        "dotfileApi": {
+          "id": "ebEAh3hWpTgLqQ5E",
+          "name": "Dotfile account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "company",
+        "caseId": "2222",
+        "companyName": "this name",
+        "additionalFields": {
+          "address": {
+            "addressFields": {
+              "streetAddress": "none",
+              "streetAddress2": "this",
+              "postalCode": "222",
+              "city": "usa",
+              "state": "usa",
+              "region": "usa",
+              "country": "usa"
+            }
+          },
+          "bankingInformation": {
+            "bankingInformationFields": {
+              "iban": "28476287",
+              "bic": "12"
+            }
+          },
+          "classifications": {
+            "classificationsFields": {
+              "type": "type1",
+              "code": "22222",
+              "description": "dwsds"
+            }
+          },
+          "commercialName": "no",
+          "country": "usa",
+          "employerIdentificationNumber": "3874683726427",
+          "entityLegalForm": "this",
+          "legalForm": "none",
+          "registrationDate": "21/11/1900",
+          "registrationNumber": "24242",
+          "relations": {
+            "relationsFields": {
+              "toCompanyId": "one",
+              "roles": [
+                "role1"
+              ],
+              "position": "director"
+            }
+          },
+          "shareCapital": "no",
+          "status": "not_reported",
+          "taxIdentificationNumber": "e3333333",
+          "type": "main",
+          "websiteUrl": "dshghshjfsb"
+        },
+        "requestOptions": {}
+      },
+      "id": "7f2d85f0-798b-4f2d-9b81-d16e017edbfd",
+      "name": "createCompany",
+      "type": "CUSTOM.dotfile",
+      "typeVersion": 1,
+      "position": [
+        -40,
+        1100
+      ],
+      "credentials": {
+        "dotfileApi": {
+          "id": "ebEAh3hWpTgLqQ5E",
+          "name": "Dotfile account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "5ecb33d1-5951-42a2-8b25-7bcbf3c8ee6c",
+      "name": "Respond to Webhook7",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        360,
+        1100
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "company",
+        "operation": "getVendorData",
+        "id": "2222",
+        "query": {
+          "fetchedAt": "25/03/2001",
+          "limit": 50,
+          "name": "pappers",
+          "page": 1,
+          "sort": "fetched_at"
+        },
+        "requestOptions": {}
+      },
+      "id": "8c2fbe07-3d7a-4ed9-8581-3f8e9f9d540d",
+      "name": "getVendorData",
+      "type": "CUSTOM.dotfile",
+      "typeVersion": 1,
+      "position": [
+        -40,
+        1280
+      ],
+      "credentials": {
+        "dotfileApi": {
+          "id": "ebEAh3hWpTgLqQ5E",
+          "name": "Dotfile account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "d7ac9701-ec94-46f7-ae76-aa0a03554208",
+      "name": "Respond to Webhook8",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        360,
+        1280
+      ]
+    },
+    {
+      "parameters": {
+        "path": "=/v1/companies/2222/vendor-data",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "913becea-61d5-436d-a261-9622966899a3",
+      "name": "getVendorDataWebhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        180,
+        1280
+      ],
+      "webhookId": "0cfadc8e-dea9-4088-b859-34f1ab7d52aa"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "91e34350-b9ae-4078-85d0-31a720638782",
+      "name": "Respond to Webhook9",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        100,
+        1480
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "company",
+        "operation": "setCompanyRelevance",
+        "id": "2222",
+        "isRelevant": true,
+        "requestOptions": {}
+      },
+      "id": "3d8e0546-de22-41bc-95ff-662a1e3b91d9",
+      "name": "setCompanyRelevance",
+      "type": "CUSTOM.dotfile",
+      "typeVersion": 1,
+      "position": [
+        -320,
+        1480
+      ],
+      "credentials": {
+        "dotfileApi": {
+          "id": "ebEAh3hWpTgLqQ5E",
+          "name": "Dotfile account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "=/v1/companies/2222/set-relevant",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "074be09d-1a24-425f-b58f-6931cac7ff7a",
+      "name": "setCompanyRelevanceWebhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -80,
+        1480
+      ],
+      "webhookId": "0cfadc8e-dea9-4088-b859-34f1ab7d52aa"
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "/v1/companies",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "9e9f080e-cc94-4720-b68c-dd93c5215ce5",
+      "name": "createCompanyWebhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        180,
+        1100
+      ],
+      "webhookId": "0cfadc8e-dea9-4088-b859-34f1ab7d52aa"
+    },
+    {
+      "parameters": {
+        "httpMethod": "PATCH",
+        "path": "/v1/companies/2222",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "d57039f1-546d-4112-9886-2c2760277277",
+      "name": "updateCompanyWebhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        180,
+        920
+      ],
+      "webhookId": "0cfadc8e-dea9-4088-b859-34f1ab7d52aa"
+    },
+    {
+      "parameters": {
+        "content": "## INDIVIDUAL",
+        "height": 696.3658187384304,
+        "width": 1132.1320284863014
+      },
+      "id": "fbc14e27-3d5c-450a-a1eb-0aa6ef880f35",
+      "name": "Sticky Note3",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        940,
+        840
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "individual",
+        "operation": "get",
+        "id": "2222",
+        "query": {
+          "excludeInternalChecks": true
+        },
+        "requestOptions": {}
+      },
+      "id": "7cbf6fe8-26b3-4210-9a1e-3b3d7017444d",
+      "name": "getIndividual",
+      "type": "CUSTOM.dotfile",
+      "typeVersion": 1,
+      "position": [
+        800,
+        920
+      ],
+      "credentials": {
+        "dotfileApi": {
+          "id": "ebEAh3hWpTgLqQ5E",
+          "name": "Dotfile account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "d951a038-1f3a-4731-b93c-dbe1cd87143f",
+      "name": "Respond to Webhook10",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        1220,
+        920
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "06e5e038-f153-4f1a-bc16-32cc1465b7fe",
+      "name": "Respond to Webhook11",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        1220,
+        1120
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "individual",
+        "operation": "delete",
+        "id": "2222",
+        "requestOptions": {}
+      },
+      "id": "fccbfbbd-a5f7-49cb-96e0-5237c080daf0",
+      "name": "deleteIndividual",
+      "type": "CUSTOM.dotfile",
+      "typeVersion": 1,
+      "position": [
+        800,
+        1320
+      ],
+      "credentials": {
+        "dotfileApi": {
+          "id": "ebEAh3hWpTgLqQ5E",
+          "name": "Dotfile account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "individual",
+        "operation": "getAll",
+        "query": {
+          "birthDate": "2001-02-01T00:00:00",
+          "createdAt": "25/09/2020",
+          "email": "name@email.com",
+          "first_name": "this",
+          "lastActivityAt": "22/09/1995",
+          "lastName": "My",
+          "limit": 50,
+          "page": 1,
+          "sort": "created_at",
+          "updated_at": "09/08/1998"
+        },
+        "requestOptions": {}
+      },
+      "id": "185bc9d7-bf24-4443-8cb1-b65a62c63bb6",
+      "name": "getManyIndividuals",
+      "type": "CUSTOM.dotfile",
+      "typeVersion": 1,
+      "position": [
+        800,
+        1120
+      ],
+      "credentials": {
+        "dotfileApi": {
+          "id": "ebEAh3hWpTgLqQ5E",
+          "name": "Dotfile account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "b7e93de2-d7ce-491a-bb3b-5aa398327edb",
+      "name": "Respond to Webhook12",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        1220,
+        1320
+      ]
+    },
+    {
+      "parameters": {
+        "path": "/v1/individuals",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "38035573-9549-4a2a-86d7-f6de752d04c5",
+      "name": "getManyIndividualsWebhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        1020,
+        1120
+      ],
+      "webhookId": "0cfadc8e-dea9-4088-b859-34f1ab7d52aa"
+    },
+    {
+      "parameters": {
+        "path": "/v1/individuals/2222",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "b0b65539-47d1-4e6f-9bd4-3f574d23c473",
+      "name": "getIndividualWebhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        1020,
+        920
+      ],
+      "webhookId": "0cfadc8e-dea9-4088-b859-34f1ab7d52aa"
+    },
+    {
+      "parameters": {
+        "httpMethod": "DELETE",
+        "path": "/v1/individuals/2222",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "6a5ad1ee-d012-4e43-82bd-cc0cfeb5d858",
+      "name": "deleteIndividualWebhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        1020,
+        1320
+      ],
+      "webhookId": "0cfadc8e-dea9-4088-b859-34f1ab7d52aa"
+    },
+    {
+      "parameters": {
+        "resource": "individual",
+        "operation": "update",
+        "id": "2222",
+        "additionalFields": {
+          "address": {
+            "addressFields": {
+              "streetAddress": "none",
+              "streetAddress2": "this",
+              "postal_code": "22",
+              "city": "This",
+              "state": "Statee",
+              "region": "Region 1",
+              "country": "USA"
+            }
+          },
+          "bankingInformation": {
+            "bankingInformationFields": {
+              "iban": "222222222222",
+              "bic": "12342"
+            }
+          },
+          "birthCountry": "Usa",
+          "birthDate": "22/07/1998",
+          "birthPlace": "USA",
+          "email": "a@gmail.com",
+          "firstName": "MyName",
+          "isBeneficialOwner": false,
+          "isBusinessContact": false,
+          "isDelegator": true,
+          "lastName": "MyName",
+          "maidenName": "This",
+          "middleName": "None",
+          "ownershipPercentage": 22,
+          "phoneNumber": "29472983",
+          "position": "Director",
+          "roles": [
+            "role1"
+          ],
+          "socialSecurityNumber": "24",
+          "taxIdentificationNumber": "242876482787",
+          "votingRightsPercentage": 100
+        },
+        "requestOptions": {}
+      },
+      "id": "624a8076-2148-4542-8c2b-ebe0dca11bfc",
+      "name": "updateIndividual",
+      "type": "CUSTOM.dotfile",
+      "typeVersion": 1,
+      "position": [
+        1520,
+        920
+      ],
+      "credentials": {
+        "dotfileApi": {
+          "id": "ebEAh3hWpTgLqQ5E",
+          "name": "Dotfile account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "httpMethod": "PATCH",
+        "path": "/v1/individuals/2222",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "b38b088a-e566-4d57-aeae-f35679c67246",
+      "name": "updateIndividualWebhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        1720,
+        920
+      ],
+      "webhookId": "0cfadc8e-dea9-4088-b859-34f1ab7d52aa"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "b7e978bc-de20-49af-a2f6-816d6458daf8",
+      "name": "Respond to Webhook13",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        1900,
+        920
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "individual",
+        "caseId": "2222",
+        "firstName": "new",
+        "lastName": "client",
+        "additionalFields": {
+          "address": {
+            "addressFields": {
+              "streetAddress": "this",
+              "streetAddress2": "that",
+              "postalCode": "2222",
+              "city": "that",
+              "state": "usa",
+              "region": "usa",
+              "country": "usa"
+            }
+          },
+          "bankingInformation": {
+            "bankingInformationFields": {
+              "iban": "248972846872647826",
+              "bic": "00000"
+            }
+          },
+          "birthCountry": "usa",
+          "birthDate": "8/09/2020",
+          "birthPlace": "usa",
+          "email": "2@gmail.com",
+          "isBeneficialOwner": true,
+          "isBusinessContact": true,
+          "isDelegator": false,
+          "maidenName": "myName",
+          "middleName": "this",
+          "ownershipPercentage": 0,
+          "phoneNumber": "29472864",
+          "position": "none",
+          "relations": {
+            "relationsFields": {
+              "toCompanyId": "724763",
+              "roles": [
+                "role1"
+              ],
+              "position": "none"
+            }
+          },
+          "roles": [
+            "role1",
+            "role2"
+          ],
+          "socialSecurityNumber": "8647826873",
+          "taxIdentificationNumber": "333333333333",
+          "votingRightsPercentage": 0
+        },
+        "requestOptions": {}
+      },
+      "id": "ad35ce56-e0d1-44f7-91e9-d75bb27b01c2",
+      "name": "createIndividual",
+      "type": "CUSTOM.dotfile",
+      "typeVersion": 1,
+      "position": [
+        1520,
+        1120
+      ],
+      "credentials": {
+        "dotfileApi": {
+          "id": "ebEAh3hWpTgLqQ5E",
+          "name": "Dotfile account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "/v1/individuals",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "0b5a9653-cdba-4934-837f-755b194568d9",
+      "name": "createIndividualWebhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        1720,
+        1120
+      ],
+      "webhookId": "0cfadc8e-dea9-4088-b859-34f1ab7d52aa"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "dbb4e47c-fbd5-41af-9391-f4ed69fa8b98",
+      "name": "Respond to Webhook14",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        1900,
+        1120
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "individual",
+        "operation": "setIndividualRelevance",
+        "id": "2222",
+        "isRelevant": true,
+        "requestOptions": {}
+      },
+      "id": "757ecf43-3f9c-4b57-a930-cb895f0dd76e",
+      "name": "setIndividualRelevance",
+      "type": "CUSTOM.dotfile",
+      "typeVersion": 1,
+      "position": [
+        1520,
+        1320
+      ],
+      "credentials": {
+        "dotfileApi": {
+          "id": "ebEAh3hWpTgLqQ5E",
+          "name": "Dotfile account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "12b52ca9-0abf-4714-8eff-a855b3c129b9",
+      "name": "Respond to Webhook15",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        1900,
+        1320
+      ]
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "/v1/individuals/2222/set-relevant",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "c1b91f37-26ce-45ad-9c78-1b4b76790e2d",
+      "name": "setIndividualRelevanceWebhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        1720,
+        1320
+      ],
+      "webhookId": "0cfadc8e-dea9-4088-b859-34f1ab7d52aa"
+    },
+    {
+      "parameters": {
+        "content": "## TAG",
+        "height": 823.2404602220987,
+        "width": 1109.8005188082184
+      },
+      "id": "cead330b-3798-4248-93fa-71012d505304",
+      "name": "Sticky Note4",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -580,
+        1740
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "tag",
+        "operation": "get",
+        "id": "2222",
+        "requestOptions": {}
+      },
+      "id": "9ca20791-f665-4d19-85f4-01ce30a85369",
+      "name": "getTag",
+      "type": "CUSTOM.dotfile",
+      "typeVersion": 1,
+      "position": [
+        -740,
+        1820
+      ],
+      "credentials": {
+        "dotfileApi": {
+          "id": "ebEAh3hWpTgLqQ5E",
+          "name": "Dotfile account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "path": "/v1/tags/2222",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "7f6f47cd-7748-47e0-90df-d92ab00531c9",
+      "name": "getTagWebhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -520,
+        1820
+      ],
+      "webhookId": "0cfadc8e-dea9-4088-b859-34f1ab7d52aa"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "6adb26dd-b9eb-4642-bd28-a0f348cc7657",
+      "name": "Respond to Webhook16",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        -320,
+        1820
+      ]
+    },
+    {
+      "parameters": {
+        "path": "/v1/tags",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "b3b3b947-e942-4666-bc03-81cca46fcaf6",
+      "name": "getAllTagsWebhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -520,
+        2000
+      ],
+      "webhookId": "0cfadc8e-dea9-4088-b859-34f1ab7d52aa"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "cf0eb430-0b63-4d56-b2ab-ee04973190ee",
+      "name": "Respond to Webhook17",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        -320,
+        2000
+      ]
+    },
+    {
+      "parameters": {
+        "httpMethod": "PATCH",
+        "path": "/v1/tags/2222",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "4b437af1-add9-47a5-980e-3e95bbd419d3",
+      "name": "updateTagWebhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -520,
+        2180
+      ],
+      "webhookId": "0cfadc8e-dea9-4088-b859-34f1ab7d52aa"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "294176b3-02f4-4cb4-9049-e03ebf0a95d6",
+      "name": "Respond to Webhook18",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        -320,
+        2180
+      ]
+    },
+    {
+      "parameters": {
+        "httpMethod": "DELETE",
+        "path": "/v1/tags/2222",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "f334fd1a-ea42-4721-9c89-1a280e2d148e",
+      "name": "deleteTagWebhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -520,
+        2360
+      ],
+      "webhookId": "0cfadc8e-dea9-4088-b859-34f1ab7d52aa"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "a8ed2a5d-10a9-4508-9d7b-68dac890ea95",
+      "name": "Respond to Webhook19",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        -320,
+        2360
+      ]
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "/v1/tags",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "ef524a80-7fd0-4570-9436-9cb8b2825266",
+      "name": "createTagWebhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        160,
+        1820
+      ],
+      "webhookId": "0cfadc8e-dea9-4088-b859-34f1ab7d52aa"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "f249599d-e034-4347-bf24-975722f873aa",
+      "name": "Respond to Webhook20",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        340,
+        1820
+      ]
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "/v1/cases/2222/tags",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "64a174cf-a777-4179-84e4-8342f2ea24e4",
+      "name": "addCaseTagsWebhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        160,
+        2000
+      ],
+      "webhookId": "0cfadc8e-dea9-4088-b859-34f1ab7d52aa"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "2ed6b8ce-0adb-49aa-850f-addb86efbc79",
+      "name": "Respond to Webhook21",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        340,
+        2000
+      ]
+    },
+    {
+      "parameters": {
+        "httpMethod": "DELETE",
+        "path": "/v1/cases/2222/tags",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "87f47cf5-6883-4726-a842-4017e20e6b14",
+      "name": "deleteCaseTagsWebhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        160,
+        2180
+      ],
+      "webhookId": "0cfadc8e-dea9-4088-b859-34f1ab7d52aa"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "289a8f0d-c1ab-438d-bb4d-62a6fc45e13c",
+      "name": "Respond to Webhook22",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        340,
+        2180
+      ]
+    },
+    {
+      "parameters": {
+        "path": "/v1/cases/2222/tags",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "4be414d6-5c31-4390-a37d-8d4dbecf81e7",
+      "name": "getCaseTagsWebhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        160,
+        2360
+      ],
+      "webhookId": "0cfadc8e-dea9-4088-b859-34f1ab7d52aa"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "3d47d79c-dc75-4e5f-b5ac-5c6364a10535",
+      "name": "Respond to Webhook23",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        340,
+        2360
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "tag",
+        "operation": "getCaseTags",
+        "id": "2222",
+        "requestOptions": {}
+      },
+      "id": "31607d54-cfa6-4c3c-942b-9fc1c0d28e95",
+      "name": "getCaseTags",
+      "type": "CUSTOM.dotfile",
+      "typeVersion": 1,
+      "position": [
+        -40,
+        2360
+      ],
+      "credentials": {
+        "dotfileApi": {
+          "id": "ebEAh3hWpTgLqQ5E",
+          "name": "Dotfile account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "tag",
+        "operation": "addCaseTags",
+        "id": "2222",
+        "tags": [
+          "tag 1",
+          "tag 2"
+        ],
+        "requestOptions": {}
+      },
+      "id": "a3e788f2-d25d-425e-964c-0e8575e055b2",
+      "name": "addCaseTags",
+      "type": "CUSTOM.dotfile",
+      "typeVersion": 1,
+      "position": [
+        -40,
+        2000
+      ],
+      "credentials": {
+        "dotfileApi": {
+          "id": "ebEAh3hWpTgLqQ5E",
+          "name": "Dotfile account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "tag",
+        "operation": "deleteCaseTags",
+        "id": "2222",
+        "tags": [
+          "tag1"
+        ],
+        "requestOptions": {}
+      },
+      "id": "ff14ba37-9d30-4370-8b29-899fa2019048",
+      "name": "deleteCaseTags",
+      "type": "CUSTOM.dotfile",
+      "typeVersion": 1,
+      "position": [
+        -40,
+        2180
+      ],
+      "credentials": {
+        "dotfileApi": {
+          "id": "ebEAh3hWpTgLqQ5E",
+          "name": "Dotfile account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "tag",
+        "label": "test label",
+        "requestOptions": {}
+      },
+      "id": "f8d53d1f-df72-4ce2-b695-5d6ed4a5b8c9",
+      "name": "createTag",
+      "type": "CUSTOM.dotfile",
+      "typeVersion": 1,
+      "position": [
+        -40,
+        1820
+      ],
+      "credentials": {
+        "dotfileApi": {
+          "id": "ebEAh3hWpTgLqQ5E",
+          "name": "Dotfile account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "tag",
+        "operation": "getAll",
+        "query": {
+          "createdAt": "22/10/1999",
+          "label": "this",
+          "limit": 50,
+          "page": 1,
+          "sort": "created_at"
+        },
+        "requestOptions": {}
+      },
+      "id": "1624e600-6515-4d93-9b20-316eca04d276",
+      "name": "getAllTags",
+      "type": "CUSTOM.dotfile",
+      "typeVersion": 1,
+      "position": [
+        -740,
+        2000
+      ],
+      "credentials": {
+        "dotfileApi": {
+          "id": "ebEAh3hWpTgLqQ5E",
+          "name": "Dotfile account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "tag",
+        "operation": "update",
+        "id": "2222",
+        "label": "new label",
+        "requestOptions": {}
+      },
+      "id": "b1f24d19-1cf9-4797-87de-938a672a16b9",
+      "name": "updateTag",
+      "type": "CUSTOM.dotfile",
+      "typeVersion": 1,
+      "position": [
+        -740,
+        2180
+      ],
+      "credentials": {
+        "dotfileApi": {
+          "id": "ebEAh3hWpTgLqQ5E",
+          "name": "Dotfile account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "tag",
+        "operation": "delete",
+        "id": "2222",
+        "requestOptions": {}
+      },
+      "id": "bf59184b-c0d1-4365-bd3c-7650ce4e998c",
+      "name": "deleteTag",
+      "type": "CUSTOM.dotfile",
+      "typeVersion": 1,
+      "position": [
+        -740,
+        2360
+      ],
+      "credentials": {
+        "dotfileApi": {
+          "id": "ebEAh3hWpTgLqQ5E",
+          "name": "Dotfile account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## DOCUMENT CHECK\n",
+        "height": 634.3869337182924,
+        "width": 1109.8005188082184
+      },
+      "id": "913aebf7-a12b-4993-9932-d35aee9d979c",
+      "name": "Sticky Note5",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        940,
+        1760
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "243b5f9d-b84b-46bf-b880-5ae1eeadc23d",
+      "name": "Respond to Webhook24",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        1200,
+        1840
+      ]
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "=/v1/checks/document",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "dff8ea1f-09fa-46d2-a2af-247ab3398879",
+      "name": "createDocumentCheckWebhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        1000,
+        2020
+      ],
+      "webhookId": "0cfadc8e-dea9-4088-b859-34f1ab7d52aa"
+    },
+    {
+      "parameters": {
+        "path": "=/v1/checks/document/2222",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "80932516-ba6f-42b3-a8c9-1f99f7170508",
+      "name": "getDocumentCheckWebhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        1000,
+        1840
+      ],
+      "webhookId": "0cfadc8e-dea9-4088-b859-34f1ab7d52aa"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "ed133de5-7340-44aa-bec7-3b2e666c7157",
+      "name": "Respond to Webhook25",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        1200,
+        2020
+      ]
+    },
+    {
+      "parameters": {
+        "httpMethod": "PATCH",
+        "path": "/v1/checks/document/2222/review",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "8025f639-d4fe-4613-a250-6560a308cac7",
+      "name": "reviewDocumentCheckWebhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        1000,
+        2200
+      ],
+      "webhookId": "0cfadc8e-dea9-4088-b859-34f1ab7d52aa"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "7dee9fe7-79b2-40d6-a25c-191a9e0df04b",
+      "name": "Respond to Webhook26",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        1200,
+        2200
+      ]
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "/v1/checks/document/2222/force_review",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "772c1ee8-2528-42fa-a1a7-97f43bbccabd",
+      "name": "forceReviewDocumentCheckWebhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        1660,
+        1840
+      ],
+      "webhookId": "0cfadc8e-dea9-4088-b859-34f1ab7d52aa"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "335b0d6c-f40a-4278-8b85-e7861c2ff129",
+      "name": "Respond to Webhook27",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        1860,
+        1840
+      ]
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "/v1/checks/document/2222/add_files",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "cb287456-70df-407e-a3be-1ac1216b03fb",
+      "name": "addFilesWebhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        1660,
+        2020
+      ],
+      "webhookId": "0cfadc8e-dea9-4088-b859-34f1ab7d52aa"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "cbc2f992-b4e0-40e6-8c8c-272b8f4361c5",
+      "name": "Respond to Webhook28",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        1860,
+        2020
+      ]
+    },
+    {
+      "parameters": {
+        "path": "/v1/custom_document_types",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "75de72d5-8898-4c1e-86bb-738a83aab42f",
+      "name": "getAllDocumentChecksWebhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        1660,
+        2200
+      ],
+      "webhookId": "0cfadc8e-dea9-4088-b859-34f1ab7d52aa"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "79b2d617-cf32-4a46-baea-c0308ff166c4",
+      "name": "Respond to Webhook29",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        1860,
+        2200
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "documentCheck",
+        "operation": "get",
+        "id": "2222",
+        "requestOptions": {}
+      },
+      "id": "44e0b9df-f3d0-478a-97bc-25ac67ec176e",
+      "name": "getDocumentCheck",
+      "type": "CUSTOM.dotfile",
+      "typeVersion": 1,
+      "position": [
+        800,
+        1840
+      ],
+      "credentials": {
+        "dotfileApi": {
+          "id": "ebEAh3hWpTgLqQ5E",
+          "name": "Dotfile account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "documentCheck",
+        "operation": "create",
+        "companyId": "2222",
+        "settings": {
+          "settingsFields": {
+            "documentTypeKey": "type1",
+            "documentAnalysis": {
+              "documentAnalysisFields": {
+                "automaticRejection": true,
+                "parameters": {
+                  "parametersFields": {
+                    "model": "this1",
+                    "authorizedDocuments": [
+                      "none"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "additionalFields": {
+          "data": {
+            "dataFields": {
+              "files": {
+                "filesFields": {
+                  "uploadRef": "ref1"
+                }
+              }
+            }
+          }
+        },
+        "requestOptions": {}
+      },
+      "id": "2f455daf-ad69-4996-8b2f-c7f49e5bbe72",
+      "name": "createDocumentCheck",
+      "type": "CUSTOM.dotfile",
+      "typeVersion": 1,
+      "position": [
+        800,
+        2020
+      ],
+      "credentials": {
+        "dotfileApi": {
+          "id": "ebEAh3hWpTgLqQ5E",
+          "name": "Dotfile account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "documentCheck",
+        "operation": "forceReview",
+        "id": "2222",
+        "requestOptions": {}
+      },
+      "id": "4f873f77-f654-4526-b8ff-1517e757b6f0",
+      "name": "forceReview",
+      "type": "CUSTOM.dotfile",
+      "typeVersion": 1,
+      "position": [
+        1460,
+        1840
+      ],
+      "credentials": {
+        "dotfileApi": {
+          "id": "ebEAh3hWpTgLqQ5E",
+          "name": "Dotfile account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "documentCheck",
+        "operation": "review",
+        "id": "2222",
+        "additionalFields": {},
+        "requestOptions": {}
+      },
+      "id": "0b6e32ff-3bfe-4ce3-98df-7eb878c44804",
+      "name": "review",
+      "type": "CUSTOM.dotfile",
+      "typeVersion": 1,
+      "position": [
+        800,
+        2200
+      ],
+      "credentials": {
+        "dotfileApi": {
+          "id": "ebEAh3hWpTgLqQ5E",
+          "name": "Dotfile account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "documentCheck",
+        "operation": "addFiles",
+        "id": "2222",
+        "files": {
+          "filesFields": {
+            "uploadRef": "ref1"
+          }
+        },
+        "additionalFields": {
+          "settings": {
+            "settingsFields": {
+              "documentAnalysis": {
+                "documentAnalysisFields": {
+                  "automaticRejection": true,
+                  "automaticApproval": true,
+                  "parameters": {
+                    "parametersFields": {
+                      "model": "model-1",
+                      "authorizedDocuments": [
+                        "document1"
+                      ],
+                      "max_age_in_days": 1
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestOptions": {}
+      },
+      "id": "4508d200-58d8-45e9-be41-36079828078f",
+      "name": "addFiles",
+      "type": "CUSTOM.dotfile",
+      "typeVersion": 1,
+      "position": [
+        1460,
+        2020
+      ],
+      "credentials": {
+        "dotfileApi": {
+          "id": "ebEAh3hWpTgLqQ5E",
+          "name": "Dotfile account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "documentCheck",
+        "query": {
+          "createdAt": "09/04/2023",
+          "key": "2",
+          "label": "sssss",
+          "limit": 50,
+          "page": 1,
+          "sort": "created_at.desc",
+          "updatedAt": "19/06/1998"
+        },
+        "requestOptions": {}
+      },
+      "id": "c834a965-5900-4a43-836a-93f4ac8bb02f",
+      "name": "getAllDocumentTypes",
+      "type": "CUSTOM.dotfile",
+      "typeVersion": 1,
+      "position": [
+        1460,
+        2200
+      ],
+      "credentials": {
+        "dotfileApi": {
+          "id": "ebEAh3hWpTgLqQ5E",
+          "name": "Dotfile account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "path": "v1/activities",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "aace634a-de5a-43b6-a8a2-c7c0d25a2050",
+      "name": "getAllActivitiesWebhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -500,
+        460
+      ],
+      "webhookId": "0cfadc8e-dea9-4088-b859-34f1ab7d52aa"
+    },
+    {
+      "parameters": {
+        "content": "## CLIENT PORTAL\n",
+        "height": 414.53307686515905,
+        "width": 559.8775126797325
+      },
+      "id": "be156426-3e77-4909-93b9-73c8f872d2a5",
+      "name": "Sticky Note6",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        980,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "3845bbe6-81e1-4082-9b7f-dd595abe19ec",
+      "name": "Respond to Webhook30",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        1280,
+        400
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "clientPortal",
+        "query": {
+          "createdAt": "21/09/2003",
+          "defaultLanguage": "EN",
+          "limit": 50,
+          "name": "New name",
+          "page": 1,
+          "sort": "created_at",
+          "status": "offline",
+          "updatedAt": "11/11/2011"
+        },
+        "requestOptions": {}
+      },
+      "id": "76c028ad-0c1e-4010-88b0-bf292d367ee4",
+      "name": "getAllClientPortals1",
+      "type": "CUSTOM.dotfile",
+      "typeVersion": 1,
+      "position": [
+        840,
+        400
+      ],
+      "credentials": {
+        "dotfileApi": {
+          "id": "ebEAh3hWpTgLqQ5E",
+          "name": "Dotfile account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "path": "/v1/client-portals",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "93e8fa6f-9662-444b-95e6-f65f95e6a679",
+      "name": "getAllClientPortalsWebhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        1080,
+        400
+      ],
+      "webhookId": "0cfadc8e-dea9-4088-b859-34f1ab7d52aa"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "9acb779a-ddb7-48be-bb14-cd96a82d0067",
+      "name": "Respond to Webhook31",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        1280,
+        560
+      ]
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "/v1/cases/2222/share-client-portal-link",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "d2f33885-68e5-412e-b80d-d1b6d84757b8",
+      "name": "shareClientPortalWehook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        1080,
+        560
+      ],
+      "webhookId": "0cfadc8e-dea9-4088-b859-34f1ab7d52aa"
+    },
+    {
+      "parameters": {
+        "resource": "clientPortal",
+        "operation": "shareClientPortal",
+        "id": "2222",
+        "clientPortalId": "934878934782",
+        "additionalFields": {
+          "businessContactId": "18736178"
+        },
+        "requestOptions": {}
+      },
+      "id": "509aec62-6eff-48e5-bbb6-5d8359b0e0d7",
+      "name": "shareClientPortalLink",
+      "type": "CUSTOM.dotfile",
+      "typeVersion": 1,
+      "position": [
+        840,
+        560
+      ],
+      "credentials": {
+        "dotfileApi": {
+          "id": "ebEAh3hWpTgLqQ5E",
+          "name": "Dotfile account"
+        }
+      }
+    }
+  ],
+  "pinData": {
+    "deleteCheck": [
+      {
+        "json": {
+          "headers": {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "x-dotfile-api-key": "",
+            "user-agent": "n8n",
+            "accept-encoding": "gzip, compress, deflate, br",
+            "host": "localhost:5678",
+            "connection": "close"
+          },
+          "params": {},
+          "query": {},
+          "body": {},
+          "webhookUrl": "http://localhost:5678/webhook/v1/checks/222222",
+          "executionMode": "production"
+        }
+      }
+    ],
+    "deleteCompany": [
+      {
+        "json": {
+          "headers": {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "x-dotfile-api-key": "",
+            "user-agent": "n8n",
+            "accept-encoding": "gzip, compress, deflate, br",
+            "host": "localhost:5678",
+            "connection": "close"
+          },
+          "params": {},
+          "query": {},
+          "body": {},
+          "webhookUrl": "http://localhost:5678/webhook/v1/companies/2222",
+          "executionMode": "production"
+        }
+      }
+    ],
+    "setCompanyRelevance": [
+      {
+        "json": {
+          "headers": {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "x-dotfile-api-key": "",
+            "user-agent": "n8n",
+            "content-length": "20",
+            "accept-encoding": "gzip, compress, deflate, br",
+            "host": "localhost:5678",
+            "connection": "close"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "is_relevant": true
+          },
+          "webhookUrl": "http://localhost:5678/webhook/v1/companies/2222/set-relevant",
+          "executionMode": "production"
+        }
+      }
+    ],
+    "getIndividual": [
+      {
+        "json": {
+          "headers": {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "x-dotfile-api-key": "",
+            "user-agent": "n8n",
+            "accept-encoding": "gzip, compress, deflate, br",
+            "host": "localhost:5678",
+            "connection": "close"
+          },
+          "params": {},
+          "query": {
+            "exclude_internal_checks": "true"
+          },
+          "body": {},
+          "webhookUrl": "http://localhost:5678/webhook/v1/individuals/2222",
+          "executionMode": "production"
+        }
+      }
+    ],
+    "deleteIndividual": [
+      {
+        "json": {
+          "headers": {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "x-dotfile-api-key": "",
+            "user-agent": "n8n",
+            "accept-encoding": "gzip, compress, deflate, br",
+            "host": "localhost:5678",
+            "connection": "close"
+          },
+          "params": {},
+          "query": {},
+          "body": {},
+          "webhookUrl": "http://localhost:5678/webhook/v1/individuals/2222",
+          "executionMode": "production"
+        }
+      }
+    ],
+    "setIndividualRelevance": [
+      {
+        "json": {
+          "headers": {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "x-dotfile-api-key": "",
+            "user-agent": "n8n",
+            "content-length": "20",
+            "accept-encoding": "gzip, compress, deflate, br",
+            "host": "localhost:5678",
+            "connection": "close"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "is_relevant": true
+          },
+          "webhookUrl": "http://localhost:5678/webhook/v1/individuals/2222/set-relevant",
+          "executionMode": "production"
+        }
+      }
+    ],
+    "addCaseTags": [
+      {
+        "json": {
+          "headers": {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "x-dotfile-api-key": "",
+            "user-agent": "n8n",
+            "content-length": "26",
+            "accept-encoding": "gzip, compress, deflate, br",
+            "host": "localhost:5678",
+            "connection": "close"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "tags": [
+              "tag 1",
+              "tag 2"
+            ]
+          },
+          "webhookUrl": "http://localhost:5678/webhook/v1/cases/2222/tags",
+          "executionMode": "production"
+        }
+      }
+    ],
+    "getCaseTags": [
+      {
+        "json": {
+          "headers": {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "x-dotfile-api-key": "",
+            "user-agent": "n8n",
+            "accept-encoding": "gzip, compress, deflate, br",
+            "host": "localhost:5678",
+            "connection": "close"
+          },
+          "params": {},
+          "query": {},
+          "body": {},
+          "webhookUrl": "http://localhost:5678/webhook/v1/cases/2222/tags",
+          "executionMode": "production"
+        }
+      }
+    ],
+    "deleteCaseTags": [
+      {
+        "json": {
+          "headers": {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "x-dotfile-api-key": "",
+            "user-agent": "n8n",
+            "content-length": "17",
+            "accept-encoding": "gzip, compress, deflate, br",
+            "host": "localhost:5678",
+            "connection": "close"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "tags": [
+              "tag1"
+            ]
+          },
+          "webhookUrl": "http://localhost:5678/webhook/v1/cases/2222/tags",
+          "executionMode": "production"
+        }
+      }
+    ],
+    "getTag": [
+      {
+        "json": {
+          "headers": {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "x-dotfile-api-key": "",
+            "user-agent": "n8n",
+            "accept-encoding": "gzip, compress, deflate, br",
+            "host": "localhost:5678",
+            "connection": "close"
+          },
+          "params": {},
+          "query": {},
+          "body": {},
+          "webhookUrl": "http://localhost:5678/webhook/v1/tags/2222",
+          "executionMode": "production"
+        }
+      }
+    ],
+    "deleteTag": [
+      {
+        "json": {
+          "headers": {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "x-dotfile-api-key": "",
+            "user-agent": "n8n",
+            "accept-encoding": "gzip, compress, deflate, br",
+            "host": "localhost:5678",
+            "connection": "close"
+          },
+          "params": {},
+          "query": {},
+          "body": {},
+          "webhookUrl": "http://localhost:5678/webhook/v1/tags/2222",
+          "executionMode": "production"
+        }
+      }
+    ],
+    "createTag": [
+      {
+        "json": {
+          "headers": {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "x-dotfile-api-key": "",
+            "user-agent": "n8n",
+            "content-length": "22",
+            "accept-encoding": "gzip, compress, deflate, br",
+            "host": "localhost:5678",
+            "connection": "close"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "label": "test label"
+          },
+          "webhookUrl": "http://localhost:5678/webhook/v1/tags",
+          "executionMode": "production"
+        }
+      }
+    ],
+    "updateTag": [
+      {
+        "json": {
+          "headers": {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "x-dotfile-api-key": "",
+            "user-agent": "n8n",
+            "content-length": "21",
+            "accept-encoding": "gzip, compress, deflate, br",
+            "host": "localhost:5678",
+            "connection": "close"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "label": "new label"
+          },
+          "webhookUrl": "http://localhost:5678/webhook/v1/tags/2222",
+          "executionMode": "production"
+        }
+      }
+    ],
+    "getDocumentCheck": [
+      {
+        "json": {
+          "headers": {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "x-dotfile-api-key": "",
+            "user-agent": "n8n",
+            "accept-encoding": "gzip, compress, deflate, br",
+            "host": "localhost:5678",
+            "connection": "close"
+          },
+          "params": {},
+          "query": {},
+          "body": {},
+          "webhookUrl": "http://localhost:5678/webhook/v1/checks/document/2222",
+          "executionMode": "production"
+        }
+      }
+    ],
+    "forceReview": [
+      {
+        "json": {
+          "headers": {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "x-dotfile-api-key": "",
+            "user-agent": "n8n",
+            "accept-encoding": "gzip, compress, deflate, br",
+            "host": "localhost:5678",
+            "connection": "close",
+            "content-length": "0"
+          },
+          "params": {},
+          "query": {},
+          "body": {},
+          "webhookUrl": "http://localhost:5678/webhook/v1/checks/document/2222/force_review",
+          "executionMode": "production"
+        }
+      }
+    ],
+    "addFiles": [
+      {
+        "json": {
+          "headers": {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "x-dotfile-api-key": "",
+            "user-agent": "n8n",
+            "content-length": "209",
+            "accept-encoding": "gzip, compress, deflate, br",
+            "host": "localhost:5678",
+            "connection": "close"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "files": {
+              "upload_ref": "ref1"
+            },
+            "settings": {
+              "document_analysis": {
+                "automatic_rejection": true,
+                "automatic_approval": true,
+                "parameters": {
+                  "model": "model-1",
+                  "authorized_documents": [
+                    "document1"
+                  ],
+                  "max_age_in_days": 1
+                }
+              }
+            }
+          },
+          "webhookUrl": "http://localhost:5678/webhook/v1/checks/document/2222/add_files",
+          "executionMode": "production"
+        }
+      }
+    ],
+    "getCompany": [
+      {
+        "json": {
+          "headers": {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "x-dotfile-api-key": "",
+            "user-agent": "n8n",
+            "accept-encoding": "gzip, compress, deflate, br",
+            "host": "localhost:5678",
+            "connection": "close"
+          },
+          "params": {},
+          "query": {
+            "exclude_internal_checks": "true"
+          },
+          "body": {},
+          "webhookUrl": "http://localhost:5678/webhook/v1/companies/2222",
+          "executionMode": "production"
+        }
+      }
+    ],
+    "getVendorData": [
+      {
+        "json": {
+          "headers": {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "x-dotfile-api-key": "",
+            "user-agent": "n8n",
+            "accept-encoding": "gzip, compress, deflate, br",
+            "host": "localhost:5678",
+            "connection": "close"
+          },
+          "params": {},
+          "query": {
+            "fetched_at": "25/03/2001",
+            "limit": "50",
+            "name": "pappers",
+            "page": "1",
+            "sort": "fetched_at"
+          },
+          "body": {},
+          "webhookUrl": "http://localhost:5678/webhook/v1/companies/2222/vendor-data",
+          "executionMode": "production"
+        }
+      }
+    ],
+    "updateCompany": [
+      {
+        "json": {
+          "headers": {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "x-dotfile-api-key": "",
+            "user-agent": "n8n",
+            "content-length": "621",
+            "accept-encoding": "gzip, compress, deflate, br",
+            "host": "localhost:5678",
+            "connection": "close"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "address": {
+              "street_address": "Street1",
+              "street_address_2": "Street2",
+              "postal_code": "22222",
+              "city": "Oklahoma",
+              "state": "USA",
+              "region": "USA"
+            },
+            "banking_information": {
+              "iban": "298478926784627832",
+              "bic": "2222"
+            },
+            "classifications": {
+              "type": "type1",
+              "code": "22",
+              "description": "none"
+            },
+            "commercial_name": "another name",
+            "country": "USA",
+            "employer_identification_number": "276547263",
+            "entity_legal_form": "form",
+            "legal_form": "y",
+            "name": "example",
+            "registration_date": "22/05/2006",
+            "registration_number": "22424-442-244",
+            "share_capital": "yes",
+            "status": "not_reported",
+            "tax_identification_number": "324-44444-4444",
+            "website_url": "https://uuuu.com"
+          },
+          "webhookUrl": "http://localhost:5678/webhook/v1/companies/2222",
+          "executionMode": "production"
+        }
+      }
+    ],
+    "updateIndividual": [
+      {
+        "json": {
+          "headers": {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "x-dotfile-api-key": "",
+            "user-agent": "n8n",
+            "content-length": "635",
+            "accept-encoding": "gzip, compress, deflate, br",
+            "host": "localhost:5678",
+            "connection": "close"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "address": {
+              "street_address": "none",
+              "street_address_2": "this",
+              "postal_code": "22",
+              "city": "This",
+              "state": "Statee",
+              "region": "USA"
+            },
+            "banking_information": {
+              "iban": "222222222222",
+              "bic": "12342"
+            },
+            "birth_country": "Usa",
+            "birth_date": "22/07/1998",
+            "birth_place": "USA",
+            "email": "a@gmail.com",
+            "first_name": "MyName",
+            "is_beneficial_owner": false,
+            "is_business_contact": false,
+            "is_delegator": true,
+            "last_name": "MyName",
+            "maiden_name": "This",
+            "middle_name": "None",
+            "ownership_percentage": 22,
+            "phone_number": "29472983",
+            "position": "Director",
+            "roles": [
+              "role1"
+            ],
+            "social_security_number": "24",
+            "tax_identification_number": "242876482787",
+            "voting_rights_percentage": 100
+          },
+          "webhookUrl": "http://localhost:5678/webhook/v1/individuals/2222",
+          "executionMode": "production"
+        }
+      }
+    ],
+    "createIndividual": [
+      {
+        "json": {
+          "headers": {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "x-dotfile-api-key": "",
+            "user-agent": "n8n",
+            "content-length": "808",
+            "accept-encoding": "gzip, compress, deflate, br",
+            "host": "localhost:5678",
+            "connection": "close"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "case_id": "2222",
+            "first_name": "new",
+            "last_name": "client",
+            "address": {
+              "street_address": "this",
+              "street_address_2": "that",
+              "postal_code": "2222",
+              "city": "that",
+              "state": "usa",
+              "region": "usa",
+              "country": "usa"
+            },
+            "banking_information": {
+              "iban": "248972846872647826",
+              "bic": "00000"
+            },
+            "birth_country": "usa",
+            "birth_date": "8/09/2020",
+            "birth_place": "usa",
+            "email": "2@gmail.com",
+            "is_beneficial_owner": true,
+            "is_business_contact": true,
+            "is_delegator": false,
+            "maiden_name": "myName",
+            "middle_name": "this",
+            "ownership_percentage": 0,
+            "phone_number": "29472864",
+            "position": "none",
+            "relations": {
+              "to_company_id": "724763",
+              "voting_rights_percentage": 0,
+              "ownership_percentage": 0,
+              "roles": [
+                "role1"
+              ],
+              "position": "none"
+            },
+            "roles": [
+              "role1",
+              "role2"
+            ],
+            "social_security_number": "8647826873",
+            "tax_identification_number": "333333333333",
+            "voting_rights_percentage": 0
+          },
+          "webhookUrl": "http://localhost:5678/webhook/v1/individuals",
+          "executionMode": "production"
+        }
+      }
+    ],
+    "getAllTags": [
+      {
+        "json": {
+          "headers": {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "x-dotfile-api-key": "",
+            "user-agent": "n8n",
+            "accept-encoding": "gzip, compress, deflate, br",
+            "host": "localhost:5678",
+            "connection": "close"
+          },
+          "params": {},
+          "query": {
+            "created_at": "22/10/1999",
+            "label": "this",
+            "limit": "50",
+            "page": "1",
+            "sort": "created_at"
+          },
+          "body": {},
+          "webhookUrl": "http://localhost:5678/webhook/v1/tags",
+          "executionMode": "production"
+        }
+      }
+    ],
+    "createDocumentCheck": [
+      {
+        "json": {
+          "headers": {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "x-dotfile-api-key": "",
+            "user-agent": "n8n",
+            "content-length": "251",
+            "accept-encoding": "gzip, compress, deflate, br",
+            "host": "localhost:5678",
+            "connection": "close"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "company_id": "2222",
+            "settings": {
+              "document_type_key": "type1",
+              "document_analysis": {
+                "automatic_rejection": true,
+                "automatic_approval": false,
+                "parameters": {
+                  "model": "this1",
+                  "authorized_documents": [
+                    "none"
+                  ],
+                  "max_age_in_days": 0
+                }
+              }
+            },
+            "files": {
+              "upload_ref": "ref1"
+            }
+          },
+          "webhookUrl": "http://localhost:5678/webhook/v1/checks/document",
+          "executionMode": "production"
+        }
+      }
+    ],
+    "getAllDocumentTypes": [
+      {
+        "json": {
+          "headers": {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "x-dotfile-api-key": "",
+            "user-agent": "n8n",
+            "accept-encoding": "gzip, compress, deflate, br",
+            "host": "localhost:5678",
+            "connection": "close"
+          },
+          "params": {},
+          "query": {
+            "created_at": "09/04/2023",
+            "key": "2",
+            "label": "sssss",
+            "limit": "50",
+            "page": "1",
+            "sort": "created_at.desc",
+            "updated_at": "19/06/1998"
+          },
+          "body": {},
+          "webhookUrl": "http://localhost:5678/webhook/v1/custom_document_types",
+          "executionMode": "production"
+        }
+      }
+    ],
+    "getManyIndividuals": [
+      {
+        "json": {
+          "headers": {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "x-dotfile-api-key": "",
+            "user-agent": "n8n",
+            "accept-encoding": "gzip, compress, deflate, br",
+            "host": "localhost:5678",
+            "connection": "close"
+          },
+          "params": {},
+          "query": {
+            "birth_date": "2001-02-01T00:00:00",
+            "created_at": "25/09/2020",
+            "email": "name@email.com",
+            "first_name": "this",
+            "last_activity_at": "22/09/1995",
+            "last_name": "My",
+            "limit": "50",
+            "page": "1",
+            "sort": "created_at",
+            "updated_at": "09/08/1998"
+          },
+          "body": {},
+          "webhookUrl": "http://localhost:5678/webhook/v1/individuals",
+          "executionMode": "production"
+        }
+      }
+    ],
+    "getAllChecks": [
+      {
+        "json": {
+          "headers": {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "x-dotfile-api-key": "",
+            "user-agent": "n8n",
+            "accept-encoding": "gzip, compress, deflate, br",
+            "host": "localhost:5678",
+            "connection": "close"
+          },
+          "params": {},
+          "query": {
+            "company_id": "2222",
+            "created_at": "22/09/2000",
+            "exclude_internal": "false",
+            "include_not_relevant": "true",
+            "individual_id": "2222",
+            "last_activity_at": "22/05/2006",
+            "sort": "updated_at",
+            "status": "in_progress",
+            "type": "id_verification",
+            "updated_at": "11/02/1921",
+            "limit": "50",
+            "page": "1"
+          },
+          "body": {},
+          "webhookUrl": "http://localhost:5678/webhook/v1/checks",
+          "executionMode": "production"
+        }
+      }
+    ],
+    "getAllCompanies": [
+      {
+        "json": {
+          "headers": {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "x-dotfile-api-key": "",
+            "user-agent": "n8n",
+            "accept-encoding": "gzip, compress, deflate, br",
+            "host": "localhost:5678",
+            "connection": "close"
+          },
+          "params": {},
+          "query": {
+            "country": "USA",
+            "createdAt": "21/04/1998",
+            "last_activity_at": "22/05/2006",
+            "limit": "50",
+            "name": "this",
+            "page": "1",
+            "registration_number": "22222",
+            "sort": "created_at",
+            "updated_at": "11/11/2011"
+          },
+          "body": {},
+          "webhookUrl": "http://localhost:5678/webhook/v1/companies",
+          "executionMode": "production"
+        }
+      }
+    ],
+    "review": [
+      {
+        "json": {
+          "headers": {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "x-dotfile-api-key": "",
+            "user-agent": "n8n",
+            "content-length": "20",
+            "accept-encoding": "gzip, compress, deflate, br",
+            "host": "localhost:5678",
+            "connection": "close"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "action": "approve"
+          },
+          "webhookUrl": "http://localhost:5678/webhook/v1/checks/document/2222/review",
+          "executionMode": "production"
+        }
+      }
+    ],
+    "getAllClientPortals1": [
+      {
+        "json": {
+          "headers": {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "x-dotfile-api-key": "",
+            "user-agent": "n8n",
+            "accept-encoding": "gzip, compress, deflate, br",
+            "host": "localhost:5678",
+            "connection": "close"
+          },
+          "params": {},
+          "query": {
+            "created_at": "21/09/2003",
+            "default_language": "EN",
+            "limit": "50",
+            "name": "New name",
+            "page": "1",
+            "sort": "created_at",
+            "status": "offline",
+            "updated_at": "11/11/2011"
+          },
+          "body": {},
+          "webhookUrl": "http://localhost:5678/webhook/v1/client-portals",
+          "executionMode": "production"
+        }
+      }
+    ],
+    "shareClientPortalLink": [
+      {
+        "json": {
+          "headers": {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "x-dotfile-api-key": "",
+            "user-agent": "n8n",
+            "content-length": "68",
+            "accept-encoding": "gzip, compress, deflate, br",
+            "host": "localhost:5678",
+            "connection": "close"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "client_portal_id": "934878934782",
+            "business_contact_id": "18736178"
+          },
+          "webhookUrl": "http://localhost:5678/webhook/v1/cases/2222/share-client-portal-link",
+          "executionMode": "production"
+        }
+      }
+    ],
+    "createCompany": [
+      {
+        "json": {
+          "headers": {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "x-dotfile-api-key": "",
+            "user-agent": "n8n",
+            "content-length": "756",
+            "accept-encoding": "gzip, compress, deflate, br",
+            "host": "localhost:5678",
+            "connection": "close"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "case_id": "2222",
+            "name": "this name",
+            "address": {
+              "street_address": "none",
+              "street_address_2": "this",
+              "postal_code": "222",
+              "city": "usa",
+              "state": "usa",
+              "region": "usa",
+              "country": "usa"
+            },
+            "banking_information": {
+              "iban": "28476287",
+              "bic": "12"
+            },
+            "classifications": {
+              "type": "type1",
+              "code": "22222",
+              "description": "dwsds"
+            },
+            "commercial_name": "no",
+            "country": "usa",
+            "employer_identification_number": "3874683726427",
+            "entity_legal_form": "this",
+            "legal_form": "none",
+            "registration_date": "21/11/1900",
+            "registration_number": "24242",
+            "relations": {
+              "to_company_id": "one",
+              "voting_rights_percentage": 0,
+              "ownership_percentage": 0,
+              "roles": [
+                "role1"
+              ],
+              "position": "director"
+            },
+            "share_capital": "no",
+            "status": "not_reported",
+            "tax_identification_number": "e3333333",
+            "type": "main",
+            "website_url": "dshghshjfsb"
+          },
+          "webhookUrl": "http://localhost:5678/webhook/v1/companies",
+          "executionMode": "production"
+        }
+      }
+    ],
+    "getAllActivities": [
+      {
+        "json": {
+          "headers": {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "x-dotfile-api-key": "",
+            "user-agent": "n8n",
+            "accept-encoding": "gzip, compress, deflate, br",
+            "host": "localhost:5678",
+            "connection": "close"
+          },
+          "params": {},
+          "query": {
+            "author_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "case_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "company_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "individual_id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "sort": "created_at",
+            "type": "api__created__case",
+            "limit": "50",
+            "page": "1"
+          },
+          "body": {},
+          "webhookUrl": "http://localhost:5678/webhook/v1/activities",
+          "executionMode": "production"
+        }
+      }
+    ]
+  },
+  "connections": {
+    "getAllChecksWebhook": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "deleteCheckWebhook": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "getCompanyWebhook": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "getAllCompaniesWebhook": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "deleteCompaniesWebhook": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "getVendorDataWebhook": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook8",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "setCompanyRelevanceWebhook": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook9",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "createCompanyWebhook": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "updateCompanyWebhook": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "getManyIndividualsWebhook": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook11",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "getIndividualWebhook": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook10",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "deleteIndividualWebhook": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook12",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "updateIndividualWebhook": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook13",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "createIndividualWebhook": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook14",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "setIndividualRelevanceWebhook": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook15",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "getTagWebhook": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook16",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "getAllTagsWebhook": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook17",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "updateTagWebhook": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook18",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "deleteTagWebhook": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook19",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "createTagWebhook": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook20",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "addCaseTagsWebhook": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook21",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "deleteCaseTagsWebhook": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook22",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "getCaseTagsWebhook": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook23",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "getDocumentCheckWebhook": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook24",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "createDocumentCheckWebhook": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook25",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "reviewDocumentCheckWebhook": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook26",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "forceReviewDocumentCheckWebhook": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook27",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "addFilesWebhook": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook28",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "getAllDocumentChecksWebhook": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook29",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "getAllActivitiesWebhook": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "getAllClientPortalsWebhook": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook30",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "shareClientPortalWehook": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook31",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "e60c0f48-a425-431f-a1a8-e183fb6265ce",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "26f38eb23ad84214537831cfef4032299ffac994ff18d5cb72e82d31ac4ceac4"
+  },
+  "id": "Vk8pfgdpoK7CVbhF",
+  "tags": []
+}
