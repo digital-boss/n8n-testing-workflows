@@ -1,0 +1,2167 @@
+{
+  "name": "Dotfile Test",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "2f38c46f-62c2-41d9-bec7-691f4443e87a",
+      "name": "When clicking ‘Test workflow’",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        1960,
+        200
+      ]
+    },
+    {
+      "parameters": {
+        "companyId": "123",
+        "additionalFields": {
+          "settings": {
+            "settingsFields": {
+              "fuzziness": 12,
+              "list_types": [
+                "11"
+              ],
+              "enable_entity_filter": true
+            }
+          }
+        },
+        "requestOptions": {}
+      },
+      "id": "dc1a099d-0ae2-4fd2-9a25-ea7717750df1",
+      "name": "Create",
+      "type": "CUSTOM.dotfile",
+      "typeVersion": 1,
+      "position": [
+        -520,
+        468
+      ],
+      "credentials": {
+        "dotfileApi": {
+          "id": "MSXyP4OSOACqMWKf",
+          "name": "Dotfile account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## AML check\n\n",
+        "height": 918.4371738306031,
+        "width": 169.98480953143758
+      },
+      "id": "8190425e-e39d-4808-9c7e-056000c99688",
+      "name": "Sticky Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -540,
+        360
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "review",
+        "id": "123",
+        "action": "reject",
+        "updateFields": {
+          "comment": "111",
+          "override": true
+        },
+        "requestOptions": {}
+      },
+      "id": "4aab3148-2d4e-40df-b601-310b4b9581c1",
+      "name": "Review",
+      "type": "CUSTOM.dotfile",
+      "typeVersion": 1,
+      "position": [
+        -520,
+        800
+      ],
+      "credentials": {
+        "dotfileApi": {
+          "id": "MSXyP4OSOACqMWKf",
+          "name": "Dotfile account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "reviewHits",
+        "id": "123",
+        "hitIds": [
+          "123",
+          "222"
+        ],
+        "updateFields": {
+          "comment": "111"
+        },
+        "requestOptions": {}
+      },
+      "id": "8e544d1f-9bf4-4a20-8fc8-9c26f77742d0",
+      "name": "Review Hits",
+      "type": "CUSTOM.dotfile",
+      "typeVersion": 1,
+      "position": [
+        -520,
+        940
+      ],
+      "credentials": {
+        "dotfileApi": {
+          "id": "MSXyP4OSOACqMWKf",
+          "name": "Dotfile account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "updateMonitoring",
+        "id": "123",
+        "isMonitored": true,
+        "requestOptions": {}
+      },
+      "id": "16573972-758a-4049-9dcd-53fdb9b5f3e2",
+      "name": "Update Monitoring",
+      "type": "CUSTOM.dotfile",
+      "typeVersion": 1,
+      "position": [
+        -520,
+        1100
+      ],
+      "credentials": {
+        "dotfileApi": {
+          "id": "MSXyP4OSOACqMWKf",
+          "name": "Dotfile account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "id": "123",
+        "requestOptions": {}
+      },
+      "id": "98cb1cb8-74cc-4a98-a62d-be4d90fb3675",
+      "name": "Get",
+      "type": "CUSTOM.dotfile",
+      "typeVersion": 1,
+      "position": [
+        -520,
+        640
+      ],
+      "credentials": {
+        "dotfileApi": {
+          "id": "MSXyP4OSOACqMWKf",
+          "name": "Dotfile account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "case",
+        "name": "test",
+        "additionalFields": {
+          "assigneeId": "11",
+          "customProperties": "{\n  \"test\": \"new\"\n}",
+          "externalId": "111",
+          "metadata": "{\n  \"test\": \"new\"\n}",
+          "status": "open",
+          "tags": [
+            "11",
+            "22"
+          ],
+          "templateId": "22"
+        },
+        "requestOptions": {}
+      },
+      "id": "42e81c37-14c0-44fe-829b-6e478d19044d",
+      "name": "Create Case",
+      "type": "CUSTOM.dotfile",
+      "typeVersion": 1,
+      "position": [
+        -300,
+        480
+      ],
+      "credentials": {
+        "dotfileApi": {
+          "id": "MSXyP4OSOACqMWKf",
+          "name": "Dotfile account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## Cases\n",
+        "height": 919.0762551493684,
+        "width": 888.5629247713989
+      },
+      "id": "f793e04f-047b-4da0-ae58-7aa767759888",
+      "name": "Sticky Note1",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -340,
+        360
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "case",
+        "operation": "caseRelationCreate",
+        "caseId": "123",
+        "additionalFields": {
+          "ownershipPercentage": 3,
+          "position": "33",
+          "roles": [
+            "legal_representative",
+            "shareholder"
+          ],
+          "toCompanyId": "33",
+          "votingRightsPercentage": 3
+        },
+        "requestOptions": {}
+      },
+      "id": "8fa5e7f4-3d93-4c28-8d67-2a2b287b8417",
+      "name": "Create Case Relation",
+      "type": "CUSTOM.dotfile",
+      "typeVersion": 1,
+      "position": [
+        -300,
+        840
+      ],
+      "credentials": {
+        "dotfileApi": {
+          "id": "MSXyP4OSOACqMWKf",
+          "name": "Dotfile account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## TODO\ncheck Roles",
+        "height": 101.63207828535812,
+        "width": 150,
+        "color": 5
+      },
+      "id": "e7c02302-e295-4b12-b8b2-6f90bcdbdb7f",
+      "name": "Sticky Note3",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -160,
+        840
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "case",
+        "operation": "caseReviewCreate",
+        "id": "123",
+        "additionalFields": {
+          "comment": "22",
+          "reviewedAt": "2024-11-15T00:00:00",
+          "nextReviewAt": "2024-11-12T22:40:07"
+        },
+        "requestOptions": {}
+      },
+      "id": "e502a093-bd54-4509-8ca7-20887241e706",
+      "name": "Create Case Review",
+      "type": "CUSTOM.dotfile",
+      "typeVersion": 1,
+      "position": [
+        -300,
+        1140
+      ],
+      "credentials": {
+        "dotfileApi": {
+          "id": "MSXyP4OSOACqMWKf",
+          "name": "Dotfile account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "case",
+        "operation": "riskCreate",
+        "id": "123",
+        "additionalFields": {
+          "components": "{\"ttt\": \"tttt\"}",
+          "flags": "{\"new\": \"test\"}",
+          "score": 3
+        },
+        "requestOptions": {}
+      },
+      "id": "6bf225c0-4712-434b-887d-196c71de99d6",
+      "name": "Create Risk Assessment",
+      "type": "CUSTOM.dotfile",
+      "typeVersion": 1,
+      "position": [
+        40,
+        660
+      ],
+      "credentials": {
+        "dotfileApi": {
+          "id": "MSXyP4OSOACqMWKf",
+          "name": "Dotfile account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## TODO\nNeed to send custom key and value not fixed.\nIs that the correct way?",
+        "height": 135.243276450719,
+        "width": 184.65829272703303,
+        "color": 5
+      },
+      "id": "d4b6526c-5b1c-429b-a028-3097f64bd117",
+      "name": "Sticky Note4",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        180,
+        660
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "case",
+        "operation": "caseDelete",
+        "id": "123",
+        "requestOptions": {}
+      },
+      "id": "4e3a4cb2-9249-45aa-a2ec-6bb5b1dd8440",
+      "name": "Delete Case",
+      "type": "CUSTOM.dotfile",
+      "typeVersion": 1,
+      "position": [
+        40,
+        980
+      ],
+      "credentials": {
+        "dotfileApi": {
+          "id": "MSXyP4OSOACqMWKf",
+          "name": "Dotfile account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "case",
+        "operation": "caseRelationDelete",
+        "caseId": "123",
+        "caseRelationId": "111",
+        "requestOptions": {}
+      },
+      "id": "50ed7bf8-467b-4866-91cb-9cf64a94c130",
+      "name": "Delete Case Relation",
+      "type": "CUSTOM.dotfile",
+      "typeVersion": 1,
+      "position": [
+        360,
+        520
+      ],
+      "credentials": {
+        "dotfileApi": {
+          "id": "MSXyP4OSOACqMWKf",
+          "name": "Dotfile account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "case",
+        "operation": "caseGenerateReport",
+        "id": "123",
+        "additionalFields": {
+          "timezone": "Europe/Paris"
+        },
+        "requestOptions": {}
+      },
+      "id": "fdd7652b-a526-454e-9954-18fd77f22be4",
+      "name": "Generate Case Report",
+      "type": "CUSTOM.dotfile",
+      "typeVersion": 1,
+      "position": [
+        -300,
+        660
+      ],
+      "credentials": {
+        "dotfileApi": {
+          "id": "MSXyP4OSOACqMWKf",
+          "name": "Dotfile account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "case",
+        "operation": "caseGet",
+        "id": "123",
+        "query": {
+          "exclude_internal_checks": true,
+          "include_not_relevant": true
+        },
+        "requestOptions": {}
+      },
+      "id": "b92fffad-9ca3-429e-8daf-67ca2077f1c7",
+      "name": "Get Case",
+      "type": "CUSTOM.dotfile",
+      "typeVersion": 1,
+      "position": [
+        -300,
+        980
+      ],
+      "credentials": {
+        "dotfileApi": {
+          "id": "MSXyP4OSOACqMWKf",
+          "name": "Dotfile account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "case",
+        "operation": "caseGetDocument",
+        "id": "123",
+        "query": {
+          "company_id": "123",
+          "include_check_history": true,
+          "include_not_relevant": true,
+          "individual_id": "11",
+          "type": "check__id_document"
+        },
+        "requestOptions": {}
+      },
+      "id": "1482d3c2-082d-4373-9945-2bb21a800f81",
+      "name": "Get Case Document",
+      "type": "CUSTOM.dotfile",
+      "typeVersion": 1,
+      "position": [
+        40,
+        500
+      ],
+      "credentials": {
+        "dotfileApi": {
+          "id": "MSXyP4OSOACqMWKf",
+          "name": "Dotfile account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "case",
+        "operation": "caseGetManyNotes",
+        "id": "123",
+        "query": {
+          "created_at": "1111",
+          "limit": 50,
+          "page": 1,
+          "sort": "created_at",
+          "updated_at": "2024-11-26T00:00:00"
+        },
+        "requestOptions": {}
+      },
+      "id": "4efa047f-7762-4f73-8134-070448c1715b",
+      "name": "Get Many Case Notes",
+      "type": "CUSTOM.dotfile",
+      "typeVersion": 1,
+      "position": [
+        40,
+        820
+      ],
+      "credentials": {
+        "dotfileApi": {
+          "id": "MSXyP4OSOACqMWKf",
+          "name": "Dotfile account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "case",
+        "operation": "caseGetMany",
+        "query": {
+          "assignee_id": "11",
+          "created_at": "111",
+          "external_id": "111111",
+          "last_activity_at": "1111",
+          "limit": 50,
+          "name": "deee",
+          "page": 5,
+          "sort": "created_at",
+          "status": "draft",
+          "tags": "333",
+          "updated_at": "2024-11-20T00:00:00"
+        },
+        "requestOptions": {}
+      },
+      "id": "ba347671-ed65-481b-8da7-aa1faa64feb2",
+      "name": "Get Many Cases",
+      "type": "CUSTOM.dotfile",
+      "typeVersion": 1,
+      "position": [
+        40,
+        1140
+      ],
+      "credentials": {
+        "dotfileApi": {
+          "id": "MSXyP4OSOACqMWKf",
+          "name": "Dotfile account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "case",
+        "operation": "caseUpdate",
+        "id": "123",
+        "updateFields": {
+          "assigneeId": "",
+          "customProperties": "{\n  \"test\": \"new\"\n}",
+          "externalId": "111",
+          "metadata": "{\n  \"test\": \"new\"\n}",
+          "name": "test",
+          "status": "approved",
+          "templateId": "2222"
+        },
+        "requestOptions": {}
+      },
+      "id": "936ca811-348b-4058-b008-631d6c8de843",
+      "name": "Update Case",
+      "type": "CUSTOM.dotfile",
+      "typeVersion": 1,
+      "position": [
+        360,
+        680
+      ],
+      "credentials": {
+        "dotfileApi": {
+          "id": "MSXyP4OSOACqMWKf",
+          "name": "Dotfile account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "case",
+        "operation": "caseRelationUpdate",
+        "caseId": "123",
+        "caseRelationId": "456",
+        "updateFields": {
+          "ownershipPercentage": 2,
+          "position": "22eee",
+          "roles": [
+            "legal_representative",
+            "shareholder"
+          ],
+          "toCompanyId": "222",
+          "votingRightsPercentage": 1233
+        },
+        "requestOptions": {}
+      },
+      "id": "5e48f2b7-e830-49bd-bbb9-eec49d47df94",
+      "name": "Update Case Relation",
+      "type": "CUSTOM.dotfile",
+      "typeVersion": 1,
+      "position": [
+        360,
+        860
+      ],
+      "credentials": {
+        "dotfileApi": {
+          "id": "MSXyP4OSOACqMWKf",
+          "name": "Dotfile account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## TODO\nNeed to send custom key and value not fixed.\nIs that the correct way?",
+        "height": 141.32642335671545,
+        "width": 150,
+        "color": 5
+      },
+      "id": "2646b938-fc0e-4360-b6e1-8898c4fe2757",
+      "name": "Sticky Note5",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -180,
+        480
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Id Document Check\n\n",
+        "height": 784.6079418986799,
+        "width": 217.78096379283846
+      },
+      "id": "7df116ea-6072-4bcf-9344-51aa0afbbf8d",
+      "name": "Sticky Note2",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        580,
+        380
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "idDocumentCheck",
+        "operation": "addFile",
+        "id": "123",
+        "frontUploadRef": "111",
+        "additionalFields": {
+          "backUploadRef": "fff"
+        },
+        "requestOptions": {}
+      },
+      "id": "22122e00-a5e5-4064-94e5-59fe448c8440",
+      "name": "Add File",
+      "type": "CUSTOM.dotfile",
+      "typeVersion": 1,
+      "position": [
+        600,
+        480
+      ],
+      "credentials": {
+        "dotfileApi": {
+          "id": "MSXyP4OSOACqMWKf",
+          "name": "Dotfile account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "idDocumentCheck",
+        "individualId": "123",
+        "additionalFields": {
+          "data": {
+            "dataFields": {
+              "front_upload_ref": "33",
+              "back_upload_ref": "22"
+            }
+          },
+          "settings": {
+            "settingsFields": {
+              "automatic_approval": true,
+              "automatic_rejection": true
+            }
+          }
+        },
+        "requestOptions": {}
+      },
+      "id": "8547bdfe-71b8-49fd-a60b-594b547d5760",
+      "name": "Create Document",
+      "type": "CUSTOM.dotfile",
+      "typeVersion": 1,
+      "position": [
+        600,
+        660
+      ],
+      "credentials": {
+        "dotfileApi": {
+          "id": "MSXyP4OSOACqMWKf",
+          "name": "Dotfile account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "idDocumentCheck",
+        "operation": "getDocument",
+        "id": "123",
+        "requestOptions": {}
+      },
+      "id": "b1559b90-2e65-47ca-aab0-6d6c7936e980",
+      "name": "Get Document",
+      "type": "CUSTOM.dotfile",
+      "typeVersion": 1,
+      "position": [
+        600,
+        840
+      ],
+      "credentials": {
+        "dotfileApi": {
+          "id": "MSXyP4OSOACqMWKf",
+          "name": "Dotfile account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "idDocumentCheck",
+        "operation": "reviewDocument",
+        "id": "123",
+        "action": "reject",
+        "updateFields": {
+          "comment": "222",
+          "override": true
+        },
+        "requestOptions": {}
+      },
+      "id": "ba48d677-5124-4f57-b7c5-2e2c918765f0",
+      "name": "Review Document",
+      "type": "CUSTOM.dotfile",
+      "typeVersion": 1,
+      "position": [
+        600,
+        1000
+      ],
+      "credentials": {
+        "dotfileApi": {
+          "id": "MSXyP4OSOACqMWKf",
+          "name": "Dotfile account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## Id Verification Check\n\n",
+        "height": 781.5663684456817,
+        "width": 236.0304045108279
+      },
+      "id": "f19cabe3-604b-40a8-bf7b-8c64520d5ef0",
+      "name": "Sticky Note6",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        840,
+        380
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "idVerificationCheck",
+        "individualId": "123",
+        "additionalFields": {
+          "settings": {
+            "settingsFields": {
+              "vendor": "checkout",
+              "mode": "expert",
+              "automatic_approval": true,
+              "automatic_rejection": true,
+              "redirect_url": "ffff"
+            }
+          }
+        },
+        "requestOptions": {}
+      },
+      "id": "511b8ca4-58b2-4fd4-8c12-7915518224ff",
+      "name": "Create Verification",
+      "type": "CUSTOM.dotfile",
+      "typeVersion": 1,
+      "position": [
+        860,
+        480
+      ],
+      "credentials": {
+        "dotfileApi": {
+          "id": "MSXyP4OSOACqMWKf",
+          "name": "Dotfile account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "idVerificationCheck",
+        "operation": "getVerification",
+        "id": "123",
+        "requestOptions": {}
+      },
+      "id": "1e53292b-f7f5-450c-b114-05fb5e261e7b",
+      "name": "Get Verification",
+      "type": "CUSTOM.dotfile",
+      "typeVersion": 1,
+      "position": [
+        860,
+        640
+      ],
+      "credentials": {
+        "dotfileApi": {
+          "id": "MSXyP4OSOACqMWKf",
+          "name": "Dotfile account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "idVerificationCheck",
+        "operation": "refreshVerificationUrl",
+        "id": "123",
+        "requestOptions": {}
+      },
+      "id": "31a2470a-cd24-4583-b056-a096d5bf9109",
+      "name": "Refresh Verification Url",
+      "type": "CUSTOM.dotfile",
+      "typeVersion": 1,
+      "position": [
+        860,
+        820
+      ],
+      "credentials": {
+        "dotfileApi": {
+          "id": "MSXyP4OSOACqMWKf",
+          "name": "Dotfile account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "idVerificationCheck",
+        "operation": "reviewVerification",
+        "id": "123",
+        "action": "reject",
+        "updateFields": {
+          "comment": "111",
+          "override": true
+        },
+        "requestOptions": {}
+      },
+      "id": "d2a49ecd-98bc-4efb-b6ac-c5763425ea5f",
+      "name": "Review Verification",
+      "type": "CUSTOM.dotfile",
+      "typeVersion": 1,
+      "position": [
+        860,
+        1000
+      ],
+      "credentials": {
+        "dotfileApi": {
+          "id": "MSXyP4OSOACqMWKf",
+          "name": "Dotfile account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## Notes\n\n",
+        "height": 446.993288615874,
+        "width": 187.3652292628559
+      },
+      "id": "e2bb4b0a-9a10-45eb-97c1-6e1ca873e32c",
+      "name": "Sticky Note7",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1120,
+        380
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "note",
+        "caseId": "123",
+        "content": "11",
+        "requestOptions": {}
+      },
+      "id": "4d1c7fdd-1497-4528-a5aa-c8b23d6966c0",
+      "name": "Create Note",
+      "type": "CUSTOM.dotfile",
+      "typeVersion": 1,
+      "position": [
+        1140,
+        480
+      ],
+      "credentials": {
+        "dotfileApi": {
+          "id": "MSXyP4OSOACqMWKf",
+          "name": "Dotfile account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "note",
+        "operation": "createNoteComment",
+        "id": "123",
+        "content": "ttt",
+        "requestOptions": {}
+      },
+      "id": "20157cc2-920b-4698-8169-5e0ab45d4545",
+      "name": "Create Note Comment",
+      "type": "CUSTOM.dotfile",
+      "typeVersion": 1,
+      "position": [
+        1140,
+        660
+      ],
+      "credentials": {
+        "dotfileApi": {
+          "id": "MSXyP4OSOACqMWKf",
+          "name": "Dotfile account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## Files\n",
+        "height": 443.95171516287587,
+        "width": 293.8203001177947
+      },
+      "id": "fbb3152b-8abb-4d72-ad80-9e232481afc7",
+      "name": "Sticky Note8",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1360,
+        380
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "id": "123",
+        "requestOptions": {}
+      },
+      "id": "2cafd5c4-0d2b-4aae-9340-db642ecce240",
+      "name": "Get File",
+      "type": "CUSTOM.dotfile",
+      "typeVersion": 1,
+      "position": [
+        1380,
+        460
+      ],
+      "credentials": {
+        "dotfileApi": {
+          "id": "MSXyP4OSOACqMWKf",
+          "name": "Dotfile account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "operation": "uploadFile",
+        "file": "test.pdf",
+        "additionalFields": {},
+        "requestOptions": {}
+      },
+      "id": "d8056f5d-17fa-411f-96b3-fef11fb36cfa",
+      "name": "Upload File",
+      "type": "CUSTOM.dotfile",
+      "typeVersion": 1,
+      "position": [
+        1380,
+        680
+      ],
+      "credentials": {
+        "dotfileApi": {
+          "id": "MSXyP4OSOACqMWKf",
+          "name": "Dotfile account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## TODO\nCheck is this correct for upload file",
+        "height": 117.41797165802447,
+        "width": 150,
+        "color": 5
+      },
+      "id": "a48091e6-7e53-4ba1-b468-4fd7fca30ec1",
+      "name": "Sticky Note9",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1520,
+        680
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Company Data",
+        "height": 803.0756186669394,
+        "width": 375.84242622674753
+      },
+      "id": "80deecf9-5e70-4519-a5db-fe1eedee7ec5",
+      "name": "Sticky Note10",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1700,
+        380
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "companyData",
+        "companyId": "123",
+        "productRef": "111",
+        "requestOptions": {}
+      },
+      "id": "f788a255-95ff-4167-bf50-9c45d8c6b1f4",
+      "name": "Create1",
+      "type": "CUSTOM.dotfile",
+      "typeVersion": 1,
+      "position": [
+        1720,
+        460
+      ],
+      "credentials": {
+        "dotfileApi": {
+          "id": "MSXyP4OSOACqMWKf",
+          "name": "Dotfile account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "companyData",
+        "operation": "get",
+        "search_ref": "123",
+        "requestOptions": {}
+      },
+      "id": "ba74d3a9-f3bc-4e66-ba09-8c8f77954e43",
+      "name": "Get1",
+      "type": "CUSTOM.dotfile",
+      "typeVersion": 1,
+      "position": [
+        1720,
+        660
+      ],
+      "credentials": {
+        "dotfileApi": {
+          "id": "MSXyP4OSOACqMWKf",
+          "name": "Dotfile account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "companyData",
+        "operation": "getAvailableDocuments",
+        "query": {
+          "company_id": "123",
+          "country": "22",
+          "registration_number": "222"
+        },
+        "requestOptions": {}
+      },
+      "id": "21d07296-12bf-4b11-8259-e9602b5cb314",
+      "name": "Get Available Documents",
+      "type": "CUSTOM.dotfile",
+      "typeVersion": 1,
+      "position": [
+        1720,
+        840
+      ],
+      "credentials": {
+        "dotfileApi": {
+          "id": "MSXyP4OSOACqMWKf",
+          "name": "Dotfile account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "companyData",
+        "operation": "getMany",
+        "query": {
+          "code": "11",
+          "include_none": true,
+          "vendor": "creditsafe"
+        },
+        "requestOptions": {}
+      },
+      "id": "2c10495c-7b2d-4212-b122-b38a3aceac39",
+      "name": "Get Many",
+      "type": "CUSTOM.dotfile",
+      "typeVersion": 1,
+      "position": [
+        1720,
+        1040
+      ],
+      "credentials": {
+        "dotfileApi": {
+          "id": "MSXyP4OSOACqMWKf",
+          "name": "Dotfile account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "companyData",
+        "operation": "listEntity",
+        "query": {
+          "country": "11",
+          "subdivision": "22"
+        },
+        "requestOptions": {}
+      },
+      "id": "34a0bbea-d7bc-424f-bcf4-9b9250200a77",
+      "name": "List Entity",
+      "type": "CUSTOM.dotfile",
+      "typeVersion": 1,
+      "position": [
+        1920,
+        460
+      ],
+      "credentials": {
+        "dotfileApi": {
+          "id": "MSXyP4OSOACqMWKf",
+          "name": "Dotfile account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "companyData",
+        "operation": "search",
+        "country": "123",
+        "query": {
+          "name": "rr",
+          "registration_number": "eee"
+        },
+        "requestOptions": {}
+      },
+      "id": "2ccd7343-5819-4c23-9df9-77378fc9b51a",
+      "name": "Search",
+      "type": "CUSTOM.dotfile",
+      "typeVersion": 1,
+      "position": [
+        1920,
+        660
+      ],
+      "credentials": {
+        "dotfileApi": {
+          "id": "MSXyP4OSOACqMWKf",
+          "name": "Dotfile account"
+        }
+      }
+    }
+  ],
+  "pinData": {
+    "Create": [
+      {
+        "json": {
+          "headers": {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "x-dotfile-api-key": "123",
+            "user-agent": "n8n",
+            "content-length": "96",
+            "accept-encoding": "gzip, compress, deflate, br",
+            "host": "localhost:5678",
+            "connection": "keep-alive"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "company_id": "123",
+            "settings": {
+              "fuzziness": 12,
+              "list_types": [
+                "11"
+              ],
+              "enable_entity_filter": true
+            }
+          },
+          "webhookUrl": "http://localhost:5678/webhook/create/v1/checks/aml",
+          "executionMode": "production"
+        }
+      }
+    ],
+    "Review": [
+      {
+        "json": {
+          "headers": {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "x-dotfile-api-key": "123",
+            "user-agent": "n8n",
+            "content-length": "51",
+            "accept-encoding": "gzip, compress, deflate, br",
+            "host": "localhost:5678",
+            "connection": "keep-alive"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "action": "reject",
+            "comment": "111",
+            "override": true
+          },
+          "webhookUrl": "http://localhost:5678/webhook/v1/checks/aml/123/review",
+          "executionMode": "production"
+        }
+      }
+    ],
+    "Review Hits": [
+      {
+        "json": {
+          "headers": {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "x-dotfile-api-key": "123",
+            "user-agent": "n8n",
+            "content-length": "60",
+            "accept-encoding": "gzip, compress, deflate, br",
+            "host": "localhost:5678",
+            "connection": "keep-alive"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "action": "confirm",
+            "hit_ids": [
+              "123",
+              "222"
+            ],
+            "comment": "111"
+          },
+          "webhookUrl": "http://localhost:5678/webhook/v1/checks/aml/123/hits/review",
+          "executionMode": "production"
+        }
+      }
+    ],
+    "Update Monitoring": [
+      {
+        "json": {
+          "headers": {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "x-dotfile-api-key": "123",
+            "user-agent": "n8n",
+            "content-length": "21",
+            "accept-encoding": "gzip, compress, deflate, br",
+            "host": "localhost:5678",
+            "connection": "keep-alive"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "is_monitored": true
+          },
+          "webhookUrl": "http://localhost:5678/webhook/v1/checks/aml/123/monitoring",
+          "executionMode": "production"
+        }
+      }
+    ],
+    "Create Case Review": [
+      {
+        "json": {
+          "headers": {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "x-dotfile-api-key": "123",
+            "user-agent": "n8n",
+            "content-length": "111",
+            "accept-encoding": "gzip, compress, deflate, br",
+            "host": "localhost:5678",
+            "connection": "keep-alive"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "status": "approved",
+            "comment": "22",
+            "reviewed_at": "2024-11-15T00:00:00",
+            "next_review_at": "2024-11-12T22:40:07"
+          },
+          "webhookUrl": "http://localhost:5678/webhook/v1/cases/123/reviews",
+          "executionMode": "production"
+        }
+      }
+    ],
+    "Create Risk Assessment": [
+      {
+        "json": {
+          "headers": {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "x-dotfile-api-key": "123",
+            "user-agent": "n8n",
+            "content-length": "84",
+            "accept-encoding": "gzip, compress, deflate, br",
+            "host": "localhost:5678",
+            "connection": "keep-alive"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "level": "not_defined",
+            "components": {
+              "ttt": "tttt"
+            },
+            "flags": {
+              "new": "test"
+            },
+            "score": 3
+          },
+          "webhookUrl": "http://localhost:5678/webhook/v1/cases/123/risks",
+          "executionMode": "production"
+        }
+      }
+    ],
+    "Delete Case": [
+      {
+        "json": {
+          "headers": {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "x-dotfile-api-key": "123",
+            "user-agent": "n8n",
+            "accept-encoding": "gzip, compress, deflate, br",
+            "host": "localhost:5678",
+            "connection": "keep-alive"
+          },
+          "params": {},
+          "query": {},
+          "body": {},
+          "webhookUrl": "http://localhost:5678/webhook/v1/cases/123",
+          "executionMode": "production"
+        }
+      }
+    ],
+    "Delete Case Relation": [
+      {
+        "json": {
+          "headers": {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "x-dotfile-api-key": "123",
+            "user-agent": "n8n",
+            "accept-encoding": "gzip, compress, deflate, br",
+            "host": "localhost:5678",
+            "connection": "keep-alive"
+          },
+          "params": {},
+          "query": {},
+          "body": {},
+          "webhookUrl": "http://localhost:5678/webhook/v1/cases/123/relations/111",
+          "executionMode": "production"
+        }
+      }
+    ],
+    "Generate Case Report": [
+      {
+        "json": {
+          "headers": {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "x-dotfile-api-key": "123",
+            "user-agent": "n8n",
+            "content-length": "27",
+            "accept-encoding": "gzip, compress, deflate, br",
+            "host": "localhost:5678",
+            "connection": "keep-alive"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "timezone": "Europe/Paris"
+          },
+          "webhookUrl": "http://localhost:5678/webhook/v1/cases/123/generate-report",
+          "executionMode": "production"
+        }
+      }
+    ],
+    "Get Case Document": [
+      {
+        "json": {
+          "headers": {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "x-dotfile-api-key": "123",
+            "user-agent": "n8n",
+            "accept-encoding": "gzip, compress, deflate, br",
+            "host": "localhost:5678",
+            "connection": "keep-alive"
+          },
+          "params": {},
+          "query": {
+            "company_id": "123",
+            "include_check_history": "true",
+            "include_not_relevant": "true",
+            "individual_id": "11",
+            "type": "check__id_document"
+          },
+          "body": {},
+          "webhookUrl": "http://localhost:5678/webhook/v1/cases/123/documents",
+          "executionMode": "production"
+        }
+      }
+    ],
+    "Get Many Case Notes": [
+      {
+        "json": {
+          "headers": {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "x-dotfile-api-key": "123",
+            "user-agent": "n8n",
+            "accept-encoding": "gzip, compress, deflate, br",
+            "host": "localhost:5678",
+            "connection": "keep-alive"
+          },
+          "params": {},
+          "query": {
+            "created_at": "1111",
+            "limit": "50",
+            "page": "1",
+            "sort": "created_at",
+            "updated_at": "2024-11-26T00:00:00"
+          },
+          "body": {},
+          "webhookUrl": "http://localhost:5678/webhook/v1/cases/123/notes",
+          "executionMode": "production"
+        }
+      }
+    ],
+    "Get Case": [
+      {
+        "json": {
+          "headers": {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "x-dotfile-api-key": "123",
+            "user-agent": "n8n",
+            "accept-encoding": "gzip, compress, deflate, br",
+            "host": "localhost:5678",
+            "connection": "keep-alive"
+          },
+          "params": {},
+          "query": {
+            "exclude_internal_checks": "true",
+            "include_not_relevant": "true"
+          },
+          "body": {},
+          "webhookUrl": "http://localhost:5678/webhook/v1/cases/123",
+          "executionMode": "production"
+        }
+      }
+    ],
+    "Get Many Cases": [
+      {
+        "json": {
+          "headers": {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "x-dotfile-api-key": "123",
+            "user-agent": "n8n",
+            "accept-encoding": "gzip, compress, deflate, br",
+            "host": "localhost:5678",
+            "connection": "keep-alive"
+          },
+          "params": {},
+          "query": {
+            "assignee_id": "11",
+            "created_at": "111",
+            "external_id": "111111",
+            "last_activity_at": "1111",
+            "limit": "50",
+            "name": "deee",
+            "page": "5",
+            "sort": "created_at",
+            "status": "draft",
+            "tags": "333",
+            "updated_at": "2024-11-20T00:00:00"
+          },
+          "body": {},
+          "webhookUrl": "http://localhost:5678/webhook/v1/cases",
+          "executionMode": "production"
+        }
+      }
+    ],
+    "Update Case": [
+      {
+        "json": {
+          "headers": {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "x-dotfile-api-key": "123",
+            "user-agent": "n8n",
+            "content-length": "154",
+            "accept-encoding": "gzip, compress, deflate, br",
+            "host": "localhost:5678",
+            "connection": "keep-alive"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "assignee_id": "",
+            "custom_properties": {
+              "test": "new"
+            },
+            "external_id": "111",
+            "metadata": {
+              "test": "new"
+            },
+            "name": "test",
+            "status": "approved",
+            "template_id": "2222"
+          },
+          "webhookUrl": "http://localhost:5678/webhook/v1/cases/123",
+          "executionMode": "production"
+        }
+      }
+    ],
+    "Create Case Relation": [
+      {
+        "json": {
+          "headers": {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "x-dotfile-api-key": "123",
+            "user-agent": "n8n",
+            "content-length": "160",
+            "accept-encoding": "gzip, compress, deflate, br",
+            "host": "localhost:5678",
+            "connection": "keep-alive"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "from_company_id": "",
+            "ownership_percentage": 3,
+            "position": "33",
+            "roles": [
+              "legal_representative",
+              "shareholder"
+            ],
+            "to_company_id": "33",
+            "voting_rights_percentage": 3
+          },
+          "webhookUrl": "http://localhost:5678/webhook/v1/cases/123/relations",
+          "executionMode": "production"
+        }
+      }
+    ],
+    "Create Case": [
+      {
+        "json": {
+          "headers": {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "x-dotfile-api-key": "123",
+            "user-agent": "n8n",
+            "content-length": "169",
+            "accept-encoding": "gzip, compress, deflate, br",
+            "host": "localhost:5678",
+            "connection": "keep-alive"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "name": "test",
+            "assignee_id": "11",
+            "custom_properties": {
+              "test": "new"
+            },
+            "external_id": "111",
+            "metadata": {
+              "test": "new"
+            },
+            "status": "open",
+            "tags": [
+              "11",
+              "22"
+            ],
+            "template_id": "22"
+          },
+          "webhookUrl": "http://localhost:5678/webhook/v1/cases",
+          "executionMode": "production"
+        }
+      }
+    ],
+    "Add File": [
+      {
+        "json": {
+          "headers": {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "x-dotfile-api-key": "123",
+            "user-agent": "n8n",
+            "content-length": "50",
+            "accept-encoding": "gzip, compress, deflate, br",
+            "host": "localhost:5678",
+            "connection": "keep-alive"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "front_upload_ref": "111",
+            "back_upload_ref": "fff"
+          },
+          "webhookUrl": "http://localhost:5678/webhook/v1/checks/id_document/123/add_files",
+          "executionMode": "production"
+        }
+      }
+    ],
+    "Create Document": [
+      {
+        "json": {
+          "headers": {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "x-dotfile-api-key": "123",
+            "user-agent": "n8n",
+            "content-length": "145",
+            "accept-encoding": "gzip, compress, deflate, br",
+            "host": "localhost:5678",
+            "connection": "keep-alive"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "individual_id": "123",
+            "data": {
+              "front_upload_ref": "33",
+              "back_upload_ref": "22"
+            },
+            "settings": {
+              "automatic_approval": true,
+              "automatic_rejection": true
+            }
+          },
+          "webhookUrl": "http://localhost:5678/webhook/v1/checks/id_document",
+          "executionMode": "production"
+        }
+      }
+    ],
+    "Review Document": [
+      {
+        "json": {
+          "headers": {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "x-dotfile-api-key": "123",
+            "user-agent": "n8n",
+            "content-length": "51",
+            "accept-encoding": "gzip, compress, deflate, br",
+            "host": "localhost:5678",
+            "connection": "keep-alive"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "action": "reject",
+            "comment": "222",
+            "override": true
+          },
+          "webhookUrl": "http://localhost:5678/webhook/v1/checks/id_document/123/review",
+          "executionMode": "production"
+        }
+      }
+    ],
+    "Create Verification": [
+      {
+        "json": {
+          "headers": {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "x-dotfile-api-key": "123",
+            "user-agent": "n8n",
+            "content-length": "112",
+            "accept-encoding": "gzip, compress, deflate, br",
+            "host": "localhost:5678",
+            "connection": "keep-alive"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "vendor": "checkout",
+            "mode": "expert",
+            "automatic_approval": true,
+            "automatic_rejection": true,
+            "redirect_url": "ffff"
+          },
+          "webhookUrl": "http://localhost:5678/webhook/v1/checks/id_verification",
+          "executionMode": "production"
+        }
+      }
+    ],
+    "Get Verification": [
+      {
+        "json": {
+          "headers": {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "x-dotfile-api-key": "123",
+            "user-agent": "n8n",
+            "accept-encoding": "gzip, compress, deflate, br",
+            "host": "localhost:5678",
+            "connection": "keep-alive"
+          },
+          "params": {},
+          "query": {},
+          "body": {},
+          "webhookUrl": "http://localhost:5678/webhook/v1/checks/id_verification/123",
+          "executionMode": "production"
+        }
+      }
+    ],
+    "Refresh Verification Url": [
+      {
+        "json": {
+          "headers": {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "x-dotfile-api-key": "123",
+            "user-agent": "n8n",
+            "accept-encoding": "gzip, compress, deflate, br",
+            "host": "localhost:5678",
+            "connection": "keep-alive",
+            "content-length": "0"
+          },
+          "params": {},
+          "query": {},
+          "body": {},
+          "webhookUrl": "http://localhost:5678/webhook/v1/checks/id_verification/123/refresh_url",
+          "executionMode": "production"
+        }
+      }
+    ],
+    "Review Verification": [
+      {
+        "json": {
+          "headers": {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "x-dotfile-api-key": "123",
+            "user-agent": "n8n",
+            "content-length": "51",
+            "accept-encoding": "gzip, compress, deflate, br",
+            "host": "localhost:5678",
+            "connection": "keep-alive"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "action": "reject",
+            "comment": "111",
+            "override": true
+          },
+          "webhookUrl": "http://localhost:5678/webhook/v1/checks/id_verification/123/review",
+          "executionMode": "production"
+        }
+      }
+    ],
+    "Create Note": [
+      {
+        "json": {
+          "headers": {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "x-dotfile-api-key": "123",
+            "user-agent": "n8n",
+            "content-length": "32",
+            "accept-encoding": "gzip, compress, deflate, br",
+            "host": "localhost:5678",
+            "connection": "keep-alive"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "case_id": "123",
+            "content": "11"
+          },
+          "webhookUrl": "http://localhost:5678/webhook/v1/notes",
+          "executionMode": "production"
+        }
+      }
+    ],
+    "Create Note Comment": [
+      {
+        "json": {
+          "headers": {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "x-dotfile-api-key": "123",
+            "user-agent": "n8n",
+            "content-length": "17",
+            "accept-encoding": "gzip, compress, deflate, br",
+            "host": "localhost:5678",
+            "connection": "keep-alive"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "content": "ttt"
+          },
+          "webhookUrl": "http://localhost:5678/webhook/v1/notes/123/comments",
+          "executionMode": "production"
+        }
+      }
+    ],
+    "Get File": [
+      {
+        "json": {
+          "headers": {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "x-dotfile-api-key": "123",
+            "user-agent": "n8n",
+            "accept-encoding": "gzip, compress, deflate, br",
+            "host": "localhost:5678",
+            "connection": "keep-alive"
+          },
+          "params": {},
+          "query": {},
+          "body": {},
+          "webhookUrl": "http://localhost:5678/webhook/v1/files/123",
+          "executionMode": "production"
+        }
+      }
+    ],
+    "Upload File": [
+      {
+        "json": {
+          "headers": {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "x-dotfile-api-key": "123",
+            "user-agent": "n8n",
+            "content-length": "2",
+            "accept-encoding": "gzip, compress, deflate, br",
+            "host": "localhost:5678",
+            "connection": "keep-alive"
+          },
+          "params": {},
+          "query": {},
+          "body": {},
+          "webhookUrl": "http://localhost:5678/webhook/v1/files/upload",
+          "executionMode": "production"
+        }
+      }
+    ],
+    "Create1": [
+      {
+        "json": {
+          "headers": {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "x-dotfile-api-key": "123",
+            "user-agent": "n8n",
+            "content-length": "40",
+            "accept-encoding": "gzip, compress, deflate, br",
+            "host": "localhost:5678",
+            "connection": "keep-alive"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "company_id": "123",
+            "product_ref": "111"
+          },
+          "webhookUrl": "http://localhost:5678/webhook/v1/company-data/document-orders",
+          "executionMode": "production"
+        }
+      }
+    ],
+    "Get1": [
+      {
+        "json": {
+          "headers": {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "x-dotfile-api-key": "123",
+            "user-agent": "n8n",
+            "accept-encoding": "gzip, compress, deflate, br",
+            "host": "localhost:5678",
+            "connection": "keep-alive"
+          },
+          "params": {},
+          "query": {},
+          "body": {},
+          "webhookUrl": "http://localhost:5678/webhook/v1/company-data/fetch/123",
+          "executionMode": "production"
+        }
+      }
+    ],
+    "Get Available Documents": [
+      {
+        "json": {
+          "headers": {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "x-dotfile-api-key": "123",
+            "user-agent": "n8n",
+            "accept-encoding": "gzip, compress, deflate, br",
+            "host": "localhost:5678",
+            "connection": "keep-alive"
+          },
+          "params": {},
+          "query": {
+            "company_id": "123",
+            "country": "22",
+            "registration_number": "222"
+          },
+          "body": {},
+          "webhookUrl": "http://localhost:5678/webhook/v1/company-data/available-documents",
+          "executionMode": "production"
+        }
+      }
+    ],
+    "Get Many": [
+      {
+        "json": {
+          "headers": {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "x-dotfile-api-key": "123",
+            "user-agent": "n8n",
+            "accept-encoding": "gzip, compress, deflate, br",
+            "host": "localhost:5678",
+            "connection": "keep-alive"
+          },
+          "params": {},
+          "query": {
+            "code": "11",
+            "include_none": "true",
+            "vendor": "creditsafe"
+          },
+          "body": {},
+          "webhookUrl": "http://localhost:5678/webhook/v1/company-data/countries",
+          "executionMode": "production"
+        }
+      }
+    ],
+    "List Entity": [
+      {
+        "json": {
+          "headers": {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "x-dotfile-api-key": "123",
+            "user-agent": "n8n",
+            "accept-encoding": "gzip, compress, deflate, br",
+            "host": "localhost:5678",
+            "connection": "keep-alive"
+          },
+          "params": {},
+          "query": {
+            "country": "11",
+            "subdivision": "22"
+          },
+          "body": {},
+          "webhookUrl": "http://localhost:5678/webhook/v1/company-data/entity-legal-forms",
+          "executionMode": "production"
+        }
+      }
+    ],
+    "Search": [
+      {
+        "json": {
+          "headers": {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "x-dotfile-api-key": "123",
+            "user-agent": "n8n",
+            "accept-encoding": "gzip, compress, deflate, br",
+            "host": "localhost:5678",
+            "connection": "keep-alive"
+          },
+          "params": {},
+          "query": {
+            "country": "123",
+            "name": "rr",
+            "registration_number": "eee"
+          },
+          "body": {},
+          "webhookUrl": "http://localhost:5678/webhook/v1/company-data/search",
+          "executionMode": "production"
+        }
+      }
+    ]
+  },
+  "connections": {
+    "When clicking ‘Test workflow’": {
+      "main": [
+        [
+          {
+            "node": "Create Case",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Create Case Relation",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Create Case Review",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Create Risk Assessment",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Delete Case",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Create",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Get",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Review",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Review Hits",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Update Monitoring",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Delete Case Relation",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Generate Case Report",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Get Case",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Get Case Document",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Get Many Case Notes",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Get Many Cases",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Update Case",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Update Case Relation",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Add File",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Create Document",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Get Document",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Review Document",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Create Verification",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Get Verification",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Refresh Verification Url",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Review Verification",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Create Note",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Create Note Comment",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Get File",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Upload File",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Create1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Get1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Get Available Documents",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Get Many",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "List Entity",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Search",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "c2d2c84a-4c32-458c-887f-5bdc36d9129f",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "4b1aa0090df3a11672e4f991eddadfd50db31b5b5bc605a19f710922c72bf67e"
+  },
+  "id": "XOU0iSocOvUiZvXB",
+  "tags": []
+}
