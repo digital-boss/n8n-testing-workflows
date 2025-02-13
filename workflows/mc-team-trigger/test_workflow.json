@@ -1,0 +1,747 @@
+{
+  "name": "test_workflow",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.microsoftTeamsTrigger",
+      "typeVersion": 1,
+      "position": [
+        -1120,
+        -880
+      ],
+      "id": "986a7a21-fe73-470d-9c70-c0275f9b3bc8",
+      "name": "New Channel",
+      "webhookId": "60729b83-4589-4231-991b-959eba2dbd1d",
+      "credentials": {
+        "microsoftTeamsOAuth2Api": {
+          "id": "GGptAL7WECf3gIip",
+          "name": "Microsoft Teams account"
+        }
+      },
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://graph.microsoft.com/v1.0/subscriptions",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "microsoftTeamsOAuth2Api",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n   \"changeType\": \"created\",\n   \"notificationUrl\": \"https://f5f5-87-121-13-38.ngrok-free.app/webhook/test\",\n   \"resource\": \"/teams/b0ac86ae-93e5-4cff-bccb-729c0790d54b/channels\",\n   \"expirationDateTime\":\"2025-02-05T18:23:45.9356913Z\",\n   \"clientState\": \"secretClientValue\",\n   \"latestSupportedTlsVersion\": \"v1_2\",\n  \"lifecycleNotificationUrl\": \"https://f5f5-87-121-13-38.ngrok-free.app/webhook/test\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -2340,
+        -900
+      ],
+      "id": "7919382b-8fcd-4ab8-bd17-a65f59263e34",
+      "name": "Create Subscription",
+      "credentials": {
+        "microsoftTeamsOAuth2Api": {
+          "id": "GGptAL7WECf3gIip",
+          "name": "Microsoft Teams account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "https://graph.microsoft.com/v1.0/subscriptions/9b098ad5-524e-4d1e-8dcd-81b642c26d51",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "microsoftTeamsOAuth2Api",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -2140,
+        -900
+      ],
+      "id": "accad622-a6cf-4d51-845f-0d77128b84e8",
+      "name": "Get Subscription",
+      "credentials": {
+        "microsoftTeamsOAuth2Api": {
+          "id": "GGptAL7WECf3gIip",
+          "name": "Microsoft Teams account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "DELETE",
+        "url": "https://graph.microsoft.com/v1.0/subscriptions/9b098ad5-524e-4d1e-8dcd-81b642c26d51",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "microsoftTeamsOAuth2Api",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -1760,
+        -900
+      ],
+      "id": "f2b6f209-6b84-455f-95ba-ae0340daf709",
+      "name": "Delete Subscription",
+      "credentials": {
+        "microsoftTeamsOAuth2Api": {
+          "id": "GGptAL7WECf3gIip",
+          "name": "Microsoft Teams account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## HTTP reqeust\nConfigurate http nodes for create, get and delete subscriptions",
+        "height": 200,
+        "width": 740
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -2360,
+        -980
+      ],
+      "typeVersion": 1,
+      "id": "6026e8c3-9592-46bb-af10-80e598ad6f5f",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "teamId": {
+          "__rl": true,
+          "value": "b0ac86ae-93e5-4cff-bccb-729c0790d54b",
+          "mode": "list",
+          "cachedResultName": "new test"
+        },
+        "name": "new22",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.microsoftTeams",
+      "typeVersion": 2,
+      "position": [
+        -40,
+        -880
+      ],
+      "id": "e4870e79-e1a8-4145-aeae-3390baf3c72b",
+      "name": "Create New Channel",
+      "credentials": {
+        "microsoftTeamsOAuth2Api": {
+          "id": "GGptAL7WECf3gIip",
+          "name": "Microsoft Teams account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "channelMessage",
+        "teamId": {
+          "__rl": true,
+          "value": "b0ac86ae-93e5-4cff-bccb-729c0790d54b",
+          "mode": "list",
+          "cachedResultName": "new test"
+        },
+        "channelId": {
+          "__rl": true,
+          "value": "19:8db558cd672f403698b1f26d97437e50@thread.tacv2",
+          "mode": "list",
+          "cachedResultName": "new",
+          "cachedResultUrl": "https://teams.microsoft.com/l/channel/19%3A8db558cd672f403698b1f26d97437e50%40thread.tacv2/new?groupId=b0ac86ae-93e5-4cff-bccb-729c0790d54b&tenantId=5c1e7f70-5571-4bae-b3cd-656683a71598&allowXTenantAccess=True&ngc=True"
+        },
+        "message": "tteeessstttt",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.microsoftTeams",
+      "typeVersion": 2,
+      "position": [
+        -40,
+        -720
+      ],
+      "id": "689a2bd7-e9b1-4019-8d7c-47a647bb2357",
+      "name": "Create New Channel Message",
+      "credentials": {
+        "microsoftTeamsOAuth2Api": {
+          "id": "GGptAL7WECf3gIip",
+          "name": "Microsoft Teams account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "https://graph.microsoft.com/v1.0/subscriptions",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "microsoftTeamsOAuth2Api",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -1940,
+        -900
+      ],
+      "id": "118618ff-ff33-4b27-aefb-0a04c1cb4b1e",
+      "name": "Get All Subscription",
+      "credentials": {
+        "microsoftTeamsOAuth2Api": {
+          "id": "GGptAL7WECf3gIip",
+          "name": "Microsoft Teams account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## Trigger nodes",
+        "height": 80
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -1160,
+        -980
+      ],
+      "typeVersion": 1,
+      "id": "06d2c668-9005-4f7e-9d9c-69a893939ba8",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "content": "## Regular nodes",
+        "height": 80
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -80,
+        -980
+      ],
+      "typeVersion": 1,
+      "id": "58b4acf0-778c-4fd0-8dcd-b46aab4ffdbb",
+      "name": "Sticky Note2"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.microsoftTeamsTrigger",
+      "typeVersion": 1,
+      "position": [
+        -1120,
+        -680
+      ],
+      "id": "301868b2-b7a7-404c-874f-7fd52a8dcd8e",
+      "name": "New Channel Message",
+      "webhookId": "60729b83-4589-4231-991b-959eba2dbd1d",
+      "credentials": {
+        "microsoftTeamsOAuth2Api": {
+          "id": "GGptAL7WECf3gIip",
+          "name": "Microsoft Teams account"
+        }
+      },
+      "disabled": true
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.microsoftTeamsTrigger",
+      "typeVersion": 1,
+      "position": [
+        -1120,
+        -480
+      ],
+      "id": "67889444-de5c-40fa-9372-a0c6ec5bdc6b",
+      "name": "New Chat Message",
+      "webhookId": "60729b83-4589-4231-991b-959eba2dbd1d",
+      "credentials": {
+        "microsoftTeamsOAuth2Api": {
+          "id": "GGptAL7WECf3gIip",
+          "name": "Microsoft Teams account"
+        }
+      },
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "resource": "chatMessage",
+        "chatId": {
+          "__rl": true,
+          "value": "19:eadc3547bdc349e88b6a73f1e21946a6@thread.v2",
+          "mode": "list",
+          "cachedResultName": "new (group)",
+          "cachedResultUrl": "https://teams.microsoft.com/l/chat/19%3Aeadc3547bdc349e88b6a73f1e21946a6%40thread.v2/0?tenantId=5c1e7f70-5571-4bae-b3cd-656683a71598"
+        },
+        "message": "tteeessstttt",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.microsoftTeams",
+      "typeVersion": 2,
+      "position": [
+        -40,
+        -520
+      ],
+      "id": "1104514b-60da-4c33-86a1-4ec6bde67cf0",
+      "name": "Create New Chat Message",
+      "credentials": {
+        "microsoftTeamsOAuth2Api": {
+          "id": "GGptAL7WECf3gIip",
+          "name": "Microsoft Teams account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.microsoftTeamsTrigger",
+      "typeVersion": 1,
+      "position": [
+        -1120,
+        -280
+      ],
+      "id": "19d1be3b-5889-45bc-8cc0-55e829e087b3",
+      "name": "New Team Member",
+      "webhookId": "60729b83-4589-4231-991b-959eba2dbd1d",
+      "credentials": {
+        "microsoftTeamsOAuth2Api": {
+          "id": "GGptAL7WECf3gIip",
+          "name": "Microsoft Teams account"
+        }
+      },
+      "disabled": true
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.microsoftTeamsTrigger",
+      "typeVersion": 1,
+      "position": [
+        -1120,
+        -60
+      ],
+      "id": "75d47a81-7f07-4dc0-8c44-c7012b2cb470",
+      "name": "Any Event",
+      "webhookId": "60729b83-4589-4231-991b-959eba2dbd1d",
+      "credentials": {
+        "microsoftTeamsOAuth2Api": {
+          "id": "GGptAL7WECf3gIip",
+          "name": "Microsoft Teams account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## TODO\nRemove any event - not supported",
+        "height": 100,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -1420,
+        -40
+      ],
+      "typeVersion": 1,
+      "id": "7acb41d2-1821-4cb8-860d-2558c430abd1",
+      "name": "Sticky Note4"
+    },
+    {
+      "parameters": {
+        "content": "## TODO\nTell Gulio that is add a limit 3 nodes - it take too long for activate the wf",
+        "height": 120,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -1400,
+        -740
+      ],
+      "typeVersion": 1,
+      "id": "e14df71c-a2c9-466e-b294-e73c148e2560",
+      "name": "Sticky Note5"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.microsoftTeamsTrigger",
+      "typeVersion": 1,
+      "position": [
+        -900,
+        -480
+      ],
+      "id": "e8f07efd-7923-46eb-8ce0-2df8ca4fb497",
+      "name": "New Chat Message/Watch All Chats",
+      "webhookId": "ca6512f8-ef83-4b89-a40b-312a8e9789e2",
+      "credentials": {
+        "microsoftTeamsOAuth2Api": {
+          "id": "GGptAL7WECf3gIip",
+          "name": "Microsoft Teams account"
+        }
+      },
+      "disabled": true
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.microsoftTeamsTrigger",
+      "typeVersion": 1,
+      "position": [
+        -900,
+        -680
+      ],
+      "id": "8b708293-fd09-4282-b4d4-d7540e327c6d",
+      "name": "New Channel Message/Watch All channels",
+      "webhookId": "60729b83-4589-4231-991b-959eba2dbd1d",
+      "credentials": {
+        "microsoftTeamsOAuth2Api": {
+          "id": "GGptAL7WECf3gIip",
+          "name": "Microsoft Teams account"
+        }
+      },
+      "disabled": true
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.microsoftTeamsTrigger",
+      "typeVersion": 1,
+      "position": [
+        -680,
+        -680
+      ],
+      "id": "b5c19306-80e8-4b1e-8b79-ce17235a624d",
+      "name": "New Channel Message/Watch All Teams",
+      "webhookId": "60729b83-4589-4231-991b-959eba2dbd1d",
+      "credentials": {
+        "microsoftTeamsOAuth2Api": {
+          "id": "GGptAL7WECf3gIip",
+          "name": "Microsoft Teams account"
+        }
+      },
+      "disabled": true
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.microsoftTeamsTrigger",
+      "typeVersion": 1,
+      "position": [
+        -900,
+        -880
+      ],
+      "id": "a12d2697-8433-4c4c-8994-1d7cfb16e6a9",
+      "name": "New Channel/Watch All Teams",
+      "webhookId": "60729b83-4589-4231-991b-959eba2dbd1d",
+      "credentials": {
+        "microsoftTeamsOAuth2Api": {
+          "id": "GGptAL7WECf3gIip",
+          "name": "Microsoft Teams account"
+        }
+      },
+      "disabled": true
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.microsoftTeamsTrigger",
+      "typeVersion": 1,
+      "position": [
+        -900,
+        -280
+      ],
+      "id": "e3b98d1c-83cc-4483-b527-7fed5205579a",
+      "name": "New Team Member/Watch All Teams",
+      "webhookId": "60729b83-4589-4231-991b-959eba2dbd1d",
+      "credentials": {
+        "microsoftTeamsOAuth2Api": {
+          "id": "GGptAL7WECf3gIip",
+          "name": "Microsoft Teams account"
+        }
+      },
+      "disabled": true
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.microsoftTeamsTrigger",
+      "typeVersion": 1,
+      "position": [
+        -1120,
+        160
+      ],
+      "id": "0f17895e-1dfa-4bb9-892b-ab2a03fed80b",
+      "name": "New Team",
+      "webhookId": "60729b83-4589-4231-991b-959eba2dbd1d",
+      "credentials": {
+        "microsoftTeamsOAuth2Api": {
+          "id": "GGptAL7WECf3gIip",
+          "name": "Microsoft Teams account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.microsoftTeamsTrigger",
+      "typeVersion": 1,
+      "position": [
+        -1120,
+        380
+      ],
+      "id": "e248ee0c-c2c1-4ffa-9b42-649a3e26702b",
+      "name": "New Chat",
+      "webhookId": "60729b83-4589-4231-991b-959eba2dbd1d",
+      "credentials": {
+        "microsoftTeamsOAuth2Api": {
+          "id": "GGptAL7WECf3gIip",
+          "name": "Microsoft Teams account"
+        }
+      },
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "content": "## TODO\nRemove new team - not supported",
+        "height": 100,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -1420,
+        160
+      ],
+      "typeVersion": 1,
+      "id": "fba2f37b-d08c-4140-af3b-38a82ec113c4",
+      "name": "Sticky Note6"
+    },
+    {
+      "parameters": {
+        "content": "## Configurate credentials\n\n1. ### Set Up Azure AD App:\n   - Create an app in Azure AD.\n   - Add Redirect URI: https://<your-tunnel-url>/oauth2-credential/callback.\n   - Note down Client ID, Tenant ID, and Client Secret.\n\n2. ### Start n8n with Tunnel or ngrok:\n   - Use n8n Tunnel\n       - pnpm start:tunnel\n   - Set WEBHOOK_URL:\n       - export WEBHOOK_URL=https://<your-tunnel-url>\n   - Use ngrok\n      - Install ngrok:\n        - npm install -g ngrok\n      - Start ngrok:\n        - ngrok http 5678\n      - Set WEBHOOK_URL:\n        - export WEBHOOK_URL=https://<your-ngrok-url>\n3. ### Configure Credentials in n8n:\n   - Add Client ID and Client Secret\n\n### Common Issues\n   - Redirect URI Mismatch: Ensure the Redirect URI in Azure matches the WEBHOOK_URL.\n   - Permissions Issues: Ensure the app has the required permissions and admin consent.\n   - Tunnel/ngrok URL Changes: Update the WEBHOOK_URL and Redirect URI if the URL changes.",
+        "height": 660,
+        "width": 760,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -2400,
+        -400
+      ],
+      "typeVersion": 1,
+      "id": "9e34b4d8-c54d-4ce5-a2b9-adec89e9a946",
+      "name": "Sticky Note3"
+    }
+  ],
+  "pinData": {
+    "Create Subscription": [
+      {
+        "json": {
+          "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#subscriptions/$entity",
+          "id": "9b098ad5-524e-4d1e-8dcd-81b642c26d51",
+          "resource": "/teams/b0ac86ae-93e5-4cff-bccb-729c0790d54b/channels",
+          "applicationId": "b129e4ed-fff5-4fdb-99ed-af5bb3467aa0",
+          "changeType": "created",
+          "clientState": "secretClientValue",
+          "notificationUrl": "https://f5f5-87-121-13-38.ngrok-free.app/webhook/test",
+          "notificationQueryOptions": null,
+          "lifecycleNotificationUrl": "https://f5f5-87-121-13-38.ngrok-free.app/webhook/test",
+          "expirationDateTime": "2025-02-05T18:23:45.9356913Z",
+          "creatorId": "fcb62f3a-04cc-440e-9f3f-9327d691023f",
+          "includeResourceData": null,
+          "latestSupportedTlsVersion": "v1_2",
+          "encryptionCertificate": null,
+          "encryptionCertificateId": null,
+          "notificationUrlAppId": null
+        }
+      }
+    ],
+    "Get Subscription": [
+      {
+        "json": {
+          "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#subscriptions/$entity",
+          "id": "9b098ad5-524e-4d1e-8dcd-81b642c26d51",
+          "resource": "/teams/b0ac86ae-93e5-4cff-bccb-729c0790d54b/channels",
+          "applicationId": "b129e4ed-fff5-4fdb-99ed-af5bb3467aa0",
+          "changeType": "created",
+          "clientState": "secretClientValue",
+          "notificationUrl": "https://f5f5-87-121-13-38.ngrok-free.app/webhook/test",
+          "notificationQueryOptions": null,
+          "lifecycleNotificationUrl": "https://f5f5-87-121-13-38.ngrok-free.app/webhook/test",
+          "expirationDateTime": "2025-02-05T18:23:45.9356913Z",
+          "creatorId": "fcb62f3a-04cc-440e-9f3f-9327d691023f",
+          "includeResourceData": null,
+          "latestSupportedTlsVersion": "v1_2",
+          "encryptionCertificate": null,
+          "encryptionCertificateId": null,
+          "notificationUrlAppId": null
+        }
+      }
+    ],
+    "Delete Subscription": [
+      {
+        "json": {}
+      }
+    ],
+    "Create New Channel": [
+      {
+        "json": {
+          "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#teams('b0ac86ae-93e5-4cff-bccb-729c0790d54b')/channels/$entity",
+          "id": "19:6a1f8088bef54dea92aa9c1a77dea78e@thread.tacv2",
+          "createdDateTime": "2025-02-04T20:16:29.1232952Z",
+          "displayName": "new22",
+          "description": null,
+          "isFavoriteByDefault": false,
+          "email": "",
+          "webUrl": "https://teams.microsoft.com/l/channel/19%3a6a1f8088bef54dea92aa9c1a77dea78e%40thread.tacv2/new22?groupId=b0ac86ae-93e5-4cff-bccb-729c0790d54b&tenantId=5c1e7f70-5571-4bae-b3cd-656683a71598",
+          "membershipType": "standard",
+          "isArchived": false
+        }
+      }
+    ],
+    "New Channel": [
+      {
+        "json": {
+          "id": "19:6a1f8088bef54dea92aa9c1a77dea78e@thread.tacv2",
+          "@odata.type": "#Microsoft.Graph.channel",
+          "@odata.id": "teams('b0ac86ae-93e5-4cff-bccb-729c0790d54b')/channels('19:6a1f8088bef54dea92aa9c1a77dea78e@thread.tacv2')"
+        }
+      }
+    ],
+    "New Channel Message": [
+      {
+        "json": {
+          "id": "1738700421146",
+          "@odata.type": "#Microsoft.Graph.chatMessage",
+          "@odata.id": "teams('b0ac86ae-93e5-4cff-bccb-729c0790d54b')/channels('19:8db558cd672f403698b1f26d97437e50@thread.tacv2')/messages('1738700421146')"
+        }
+      }
+    ],
+    "New Chat Message": [
+      {
+        "json": {
+          "id": "1738700583474",
+          "@odata.type": "#Microsoft.Graph.chatMessage",
+          "@odata.id": "chats('19:eadc3547bdc349e88b6a73f1e21946a6@thread.v2')/messages('1738700583474')"
+        }
+      }
+    ],
+    "Create New Chat Message": [
+      {
+        "json": {
+          "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#chats('19%3Aeadc3547bdc349e88b6a73f1e21946a6%40thread.v2')/messages/$entity",
+          "id": "1738700583474",
+          "replyToId": null,
+          "etag": "1738700583474",
+          "messageType": "message",
+          "createdDateTime": "2025-02-04T20:23:03.474Z",
+          "lastModifiedDateTime": "2025-02-04T20:23:03.474Z",
+          "lastEditedDateTime": null,
+          "deletedDateTime": null,
+          "subject": null,
+          "summary": null,
+          "chatId": "19:eadc3547bdc349e88b6a73f1e21946a6@thread.v2",
+          "importance": "normal",
+          "locale": "en-us",
+          "webUrl": null,
+          "channelIdentity": null,
+          "policyViolation": null,
+          "eventDetail": null,
+          "from": {
+            "application": null,
+            "device": null,
+            "user": {
+              "@odata.type": "#microsoft.graph.teamworkUserIdentity",
+              "id": "fcb62f3a-04cc-440e-9f3f-9327d691023f",
+              "displayName": "Stanimira Rikova",
+              "userIdentityType": "aadUser",
+              "tenantId": "5c1e7f70-5571-4bae-b3cd-656683a71598"
+            }
+          },
+          "body": {
+            "contentType": "html",
+            "content": "tteeessstttt<br>\n<br>\n<em> Powered by <a href=\"https://f5f5-87-121-13-38.ngrok-free.app/workflow/w3oZRianUE21FdsW?utm_source=n8n-internal&amp;utm_medium=powered_by&amp;utm_campaign=n8n-nodes-base.microsoftTeams_89e65be0357665f2979194b835f6d640a06bafcde3fe7370430baa3de4d0a22d\">this n8n workflow</a> </em>"
+          },
+          "attachments": [],
+          "mentions": [],
+          "reactions": []
+        }
+      }
+    ],
+    "New Team Member": [
+      {
+        "json": {
+          "id": "MCMjMSMjNWMxZTdmNzAtNTU3MS00YmFlLWIzY2QtNjU2NjgzYTcxNTk4IyM4NWIyM2ZjNC1lZWU0LTRlNjktOGUzMi04OGRiNjg2MzJiOTUjIzE4MDcxNzVjLWE5MzMtNGFiOS05ZDBjLWI3N2VmMDAxYzAzMQ==",
+          "@odata.type": "#Microsoft.Graph.conversationMember",
+          "@odata.id": "teams('85b23fc4-eee4-4e69-8e32-88db68632b95')/members('MCMjMSMjNWMxZTdmNzAtNTU3MS00YmFlLWIzY2QtNjU2NjgzYTcxNTk4IyM4NWIyM2ZjNC1lZWU0LTRlNjktOGUzMi04OGRiNjg2MzJiOTUjIzE4MDcxNzVjLWE5MzMtNGFiOS05ZDBjLWI3N2VmMDAxYzAzMQ==')"
+        }
+      }
+    ],
+    "New Channel Message/Watch All channels": [
+      {
+        "json": {
+          "id": "19:XQ1VM4NmKOVWr1l0K3w2raA8gfSg1ByXEdM9MdWr9NQ1@thread.tacv2",
+          "@odata.type": "#Microsoft.Graph.channel",
+          "@odata.id": "teams('b0ac86ae-93e5-4cff-bccb-729c0790d54b')/channels('19:XQ1VM4NmKOVWr1l0K3w2raA8gfSg1ByXEdM9MdWr9NQ1@thread.tacv2')"
+        }
+      }
+    ],
+    "New Channel/Watch All Teams": [
+      {
+        "json": {
+          "id": "19:4a-9PzE-R0pl1MFnJwA46PPw_Jlql9cjlA92JObQebA1@thread.tacv2",
+          "@odata.type": "#Microsoft.Graph.channel",
+          "@odata.id": "teams('b0ac86ae-93e5-4cff-bccb-729c0790d54b')/channels('19:4a-9PzE-R0pl1MFnJwA46PPw_Jlql9cjlA92JObQebA1@thread.tacv2')"
+        }
+      }
+    ],
+    "New Team Member/Watch All Teams": [
+      {
+        "json": {
+          "id": "MCMjMSMjNWMxZTdmNzAtNTU3MS00YmFlLWIzY2QtNjU2NjgzYTcxNTk4IyNjMTg3OThmZS01NTZmLTQ5OTQtYTIzZi05MDRhMjFhZjg0YzkjIzMyZDg0YmIzLWY4OTQtNGEyMC04ZmI3LTM5MDMyMmRjYjA5NQ==",
+          "@odata.type": "#Microsoft.Graph.conversationMember",
+          "@odata.id": "teams('c18798fe-556f-4994-a23f-904a21af84c9')/members('MCMjMSMjNWMxZTdmNzAtNTU3MS00YmFlLWIzY2QtNjU2NjgzYTcxNTk4IyNjMTg3OThmZS01NTZmLTQ5OTQtYTIzZi05MDRhMjFhZjg0YzkjIzMyZDg0YmIzLWY4OTQtNGEyMC04ZmI3LTM5MDMyMmRjYjA5NQ==')"
+        }
+      }
+    ],
+    "New Channel Message/Watch All Teams": [
+      {
+        "json": {
+          "id": "1738967752083",
+          "@odata.type": "#Microsoft.Graph.chatMessage",
+          "@odata.id": "teams('b0ac86ae-93e5-4cff-bccb-729c0790d54b')/channels('19:7S_f6u8oNkjndR0Xpf-nnpdyw5IS9EBeQkwSBXVGRxY1@thread.tacv2')/messages('1738967752083')"
+        }
+      }
+    ],
+    "New Chat Message/Watch All Chats": [
+      {
+        "json": {
+          "id": "1738970564166",
+          "@odata.type": "#Microsoft.Graph.chatMessage",
+          "@odata.id": "chats('19:32d84bb3-f894-4a20-8fb7-390322dcb095_fcb62f3a-04cc-440e-9f3f-9327d691023f@unq.gbl.spaces')/messages('1738970564166')"
+        }
+      }
+    ],
+    "New Chat": [
+      {
+        "json": {
+          "id": "19:9f31918a79ae4212ab4a7d1a9593e361@thread.v2",
+          "@odata.type": "#Microsoft.Graph.chat",
+          "@odata.id": "chats('19:9f31918a79ae4212ab4a7d1a9593e361@thread.v2')"
+        }
+      }
+    ]
+  },
+  "connections": {
+    "New Channel": {
+      "main": [
+        []
+      ]
+    },
+    "Get All Subscription": {
+      "main": [
+        []
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "cf36d6a3-f18d-4c83-892f-60b7b7f68441",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "89e65be0357665f2979194b835f6d640a06bafcde3fe7370430baa3de4d0a22d"
+  },
+  "id": "w3oZRianUE21FdsW",
+  "tags": []
+}
