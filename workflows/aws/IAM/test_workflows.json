@@ -1,0 +1,693 @@
+{
+  "name": "AWS IAM Test Workflow",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -660,
+        280
+      ],
+      "id": "b4205abf-7102-4e53-8aed-7bd047acfaf4",
+      "name": "When clicking ‘Test workflow’"
+    },
+    {
+      "parameters": {
+        "content": "## USERS\n\n",
+        "height": 580,
+        "width": 900
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        300,
+        120
+      ],
+      "typeVersion": 1,
+      "id": "0807b5e5-d9cd-40e5-8789-32d69eb09f46",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "UserName": {
+          "__rl": true,
+          "value": "NewUser7",
+          "mode": "list",
+          "cachedResultName": "NewUser7"
+        },
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.awsIam",
+      "typeVersion": 1,
+      "position": [
+        360,
+        220
+      ],
+      "id": "d3b9509e-03df-439a-9c61-d12da04bc465",
+      "name": "AWS IAM4",
+      "credentials": {
+        "aws": {
+          "id": "9jaRLOceaJvYwd8S",
+          "name": "AWS US EAST"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "UserName": {
+          "__rl": true,
+          "value": "NewUserNameFor8",
+          "mode": "list",
+          "cachedResultName": "NewUserNameFor8"
+        },
+        "NewUserName": "NewUserNameFor9",
+        "additionalFields": {
+          "NewPath": "/dfdf/"
+        },
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.awsIam",
+      "typeVersion": 1,
+      "position": [
+        760,
+        220
+      ],
+      "id": "638c53fb-8acb-4cca-a640-10b266e11488",
+      "name": "AWS IAM6",
+      "credentials": {
+        "aws": {
+          "id": "9jaRLOceaJvYwd8S",
+          "name": "AWS US EAST"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "addToGroup",
+        "UserName": {
+          "__rl": true,
+          "value": "NewUser8",
+          "mode": "list",
+          "cachedResultName": "NewUser8"
+        },
+        "GroupName": {
+          "__rl": true,
+          "value": "NewOns222",
+          "mode": "list",
+          "cachedResultName": "NewOns222"
+        },
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.awsIam",
+      "typeVersion": 1,
+      "position": [
+        360,
+        400
+      ],
+      "id": "0377bf7f-c64a-4ba9-9888-c29b2d28ce76",
+      "name": "AWS IAM7",
+      "credentials": {
+        "aws": {
+          "id": "9jaRLOceaJvYwd8S",
+          "name": "AWS US EAST"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "removeFromGroup",
+        "UserName": {
+          "__rl": true,
+          "value": "NewUser8",
+          "mode": "list",
+          "cachedResultName": "NewUser8"
+        },
+        "GroupName": {
+          "__rl": true,
+          "value": "NewOns222",
+          "mode": "list",
+          "cachedResultName": "NewOns222"
+        },
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.awsIam",
+      "typeVersion": 1,
+      "position": [
+        560,
+        400
+      ],
+      "id": "7f86cbda-f64e-4d17-b154-ae918e6d5d68",
+      "name": "AWS IAM8",
+      "credentials": {
+        "aws": {
+          "id": "9jaRLOceaJvYwd8S",
+          "name": "AWS US EAST"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "limit": 1,
+        "additionalFields": {
+          "PathPrefix": "/this/"
+        },
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.awsIam",
+      "typeVersion": 1,
+      "position": [
+        760,
+        400
+      ],
+      "id": "17e81856-cc26-4ee4-90f4-e85c2e53f310",
+      "name": "AWS IAM9",
+      "credentials": {
+        "aws": {
+          "id": "9jaRLOceaJvYwd8S",
+          "name": "AWS US EAST"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "delete",
+        "UserName": {
+          "__rl": true,
+          "value": "OnlyOne3",
+          "mode": "list",
+          "cachedResultName": "OnlyOne3"
+        },
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.awsIam",
+      "typeVersion": 1,
+      "position": [
+        560,
+        220
+      ],
+      "id": "04463e77-4f20-4f88-b300-dbd32fa33d08",
+      "name": "AWS IAM10",
+      "credentials": {
+        "aws": {
+          "id": "9jaRLOceaJvYwd8S",
+          "name": "AWS US EAST"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "group",
+        "operation": "create",
+        "NewName": "NewGroupThis2",
+        "additionalFields": {
+          "Path": "/path/new/this/"
+        },
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.awsIam",
+      "typeVersion": 1,
+      "position": [
+        -140,
+        240
+      ],
+      "id": "cae05776-974f-41da-a21c-4a899f025478",
+      "name": "AWS IAM12",
+      "credentials": {
+        "aws": {
+          "id": "9jaRLOceaJvYwd8S",
+          "name": "AWS US EAST"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "group",
+        "limit": 5,
+        "includeUsers": true,
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.awsIam",
+      "typeVersion": 1,
+      "position": [
+        60,
+        240
+      ],
+      "id": "f5fe6ef8-15bb-4947-8b61-65f38dac1a15",
+      "name": "AWS IAM13",
+      "credentials": {
+        "aws": {
+          "id": "9jaRLOceaJvYwd8S",
+          "name": "AWS US EAST"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "group",
+        "operation": "update",
+        "GroupName": {
+          "__rl": true,
+          "value": "NewGroup55",
+          "mode": "list",
+          "cachedResultName": "NewGroup55"
+        },
+        "NewGroupName": "NewGroup99",
+        "additionalFields": {
+          "NewPath": "/NewPath/this/"
+        },
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.awsIam",
+      "typeVersion": 1,
+      "position": [
+        -340,
+        440
+      ],
+      "id": "88ec7f75-3cf2-426b-857c-5dd95fad5532",
+      "name": "AWS IAM14",
+      "credentials": {
+        "aws": {
+          "id": "9jaRLOceaJvYwd8S",
+          "name": "AWS US EAST"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "group",
+        "operation": "delete",
+        "GroupName": {
+          "__rl": true,
+          "value": "NewOns2222",
+          "mode": "list",
+          "cachedResultName": "NewOns2222"
+        },
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.awsIam",
+      "typeVersion": 1,
+      "position": [
+        -140,
+        440
+      ],
+      "id": "047d4edd-2ebc-4a32-91a9-d179c29dcc6e",
+      "name": "AWS IAM",
+      "credentials": {
+        "aws": {
+          "id": "9jaRLOceaJvYwd8S",
+          "name": "AWS US EAST"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "group",
+        "operation": "get",
+        "GroupName": {
+          "__rl": true,
+          "value": "cognito",
+          "mode": "list",
+          "cachedResultName": "cognito"
+        },
+        "includeUsers": true,
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.awsIam",
+      "typeVersion": 1,
+      "position": [
+        -340,
+        240
+      ],
+      "id": "f8df9c45-f96e-408c-9946-d3fb0002c048",
+      "name": "AWS IAM15",
+      "credentials": {
+        "aws": {
+          "id": "9jaRLOceaJvYwd8S",
+          "name": "AWS US EAST"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## GROUPS\n",
+        "height": 580,
+        "width": 680
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -420,
+        120
+      ],
+      "typeVersion": 1,
+      "id": "2e97ba4d-f47a-4646-a2c6-90dcb7bc5974",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "operation": "create",
+        "userNameNew": "Jonas2",
+        "additionalFields": {
+          "Path": "/this/path/",
+          "Tags": {
+            "tags": [
+              {
+                "key": "dept",
+                "value": "engineering"
+              }
+            ]
+          }
+        },
+        "requestOptions": {}
+      },
+      "type": "n8n-nodes-base.awsIam",
+      "typeVersion": 1,
+      "position": [
+        960,
+        220
+      ],
+      "id": "611a24c1-bb41-4dd4-bc04-986618d778d6",
+      "name": "AWS IAM1",
+      "credentials": {
+        "aws": {
+          "id": "9jaRLOceaJvYwd8S",
+          "name": "AWS US EAST"
+        }
+      }
+    }
+  ],
+  "pinData": {
+    "AWS IAM10": [
+      {
+        "json": {
+          "DeleteUserResponse": {
+            "ResponseMetadata": {
+              "RequestId": "4f0092f7-aedc-49f2-a390-60cf32d0070a"
+            }
+          }
+        }
+      }
+    ],
+    "AWS IAM15": [
+      {
+        "json": {
+          "Arn": "arn:aws:iam::130450532146:group/cognito",
+          "CreateDate": 1730804196,
+          "GroupId": "AGPAR4X3VE4ZMVEFLBSRB",
+          "GroupName": "cognito",
+          "Path": "/",
+          "Users": [
+            {
+              "Arn": "arn:aws:iam::130450532146:user/accounts@digital-boss.de",
+              "CreateDate": 1733911052,
+              "PasswordLastUsed": null,
+              "Path": "/",
+              "PermissionsBoundary": null,
+              "Tags": null,
+              "UserId": "AIDAR4X3VE4ZANWXRN2L2",
+              "UserName": "accounts@digital-boss.de"
+            },
+            {
+              "Arn": "arn:aws:iam::130450532146:user/NewUser8",
+              "CreateDate": 1738149263,
+              "PasswordLastUsed": null,
+              "Path": "/",
+              "PermissionsBoundary": null,
+              "Tags": null,
+              "UserId": "AIDAR4X3VE4ZJAR4WZDFG",
+              "UserName": "NewUser8"
+            }
+          ]
+        }
+      }
+    ],
+    "AWS IAM12": [
+      {
+        "json": {
+          "CreateGroupResponse": {
+            "CreateGroupResult": {
+              "Group": {
+                "Arn": "arn:aws:iam::130450532146:group/path/new/this/NewGroupThis2",
+                "CreateDate": 1739259322,
+                "GroupId": "AGPAR4X3VE4ZERGOBBSBH",
+                "GroupName": "NewGroupThis2",
+                "Path": "/path/new/this/"
+              }
+            },
+            "ResponseMetadata": {
+              "RequestId": "b142c5ae-8135-4207-97e3-543a66d88342"
+            }
+          }
+        }
+      }
+    ],
+    "AWS IAM13": [
+      {
+        "json": {
+          "Arn": "arn:aws:iam::130450532146:group/test/Admin7",
+          "CreateDate": 1733436631,
+          "GroupId": "AGPAR4X3VE4ZAFFY5EDUJ",
+          "GroupName": "Admin7",
+          "Path": "/test/",
+          "Users": [
+            {
+              "Arn": "arn:aws:iam::130450532146:user/testnew/New",
+              "CreateDate": 1733486897,
+              "PasswordLastUsed": null,
+              "Path": "/testnew/",
+              "PermissionsBoundary": null,
+              "Tags": null,
+              "UserId": "AIDAR4X3VE4ZPPR2DTG5E",
+              "UserName": "New"
+            }
+          ]
+        }
+      },
+      {
+        "json": {
+          "Arn": "arn:aws:iam::130450532146:group/cognito",
+          "CreateDate": 1730804196,
+          "GroupId": "AGPAR4X3VE4ZMVEFLBSRB",
+          "GroupName": "cognito",
+          "Path": "/",
+          "Users": [
+            {
+              "Arn": "arn:aws:iam::130450532146:user/accounts@digital-boss.de",
+              "CreateDate": 1733911052,
+              "PasswordLastUsed": null,
+              "Path": "/",
+              "PermissionsBoundary": null,
+              "Tags": null,
+              "UserId": "AIDAR4X3VE4ZANWXRN2L2",
+              "UserName": "accounts@digital-boss.de"
+            },
+            {
+              "Arn": "arn:aws:iam::130450532146:user/NewUser8",
+              "CreateDate": 1738149263,
+              "PasswordLastUsed": null,
+              "Path": "/",
+              "PermissionsBoundary": null,
+              "Tags": null,
+              "UserId": "AIDAR4X3VE4ZJAR4WZDFG",
+              "UserName": "NewUser8"
+            }
+          ]
+        }
+      },
+      {
+        "json": {
+          "Arn": "arn:aws:iam::130450532146:group/New/Path/GroupName",
+          "CreateDate": 1739193696,
+          "GroupId": "AGPAR4X3VE4ZKHNKBQHBZ",
+          "GroupName": "GroupName",
+          "Path": "/New/Path/",
+          "Users": []
+        }
+      },
+      {
+        "json": {
+          "Arn": "arn:aws:iam::130450532146:group/GroupNameNewOne",
+          "CreateDate": 1739198545,
+          "GroupId": "AGPAR4X3VE4ZDUCOUTOEZ",
+          "GroupName": "GroupNameNewOne",
+          "Path": "/",
+          "Users": []
+        }
+      },
+      {
+        "json": {
+          "Arn": "arn:aws:iam::130450532146:group/path/new/this/GroupNameNewTwo",
+          "CreateDate": 1739198556,
+          "GroupId": "AGPAR4X3VE4ZLQJCQ2VMC",
+          "GroupName": "GroupNameNewTwo",
+          "Path": "/path/new/this/",
+          "Users": []
+        }
+      }
+    ],
+    "AWS IAM14": [
+      {
+        "json": {
+          "UpdateGroupResponse": {
+            "ResponseMetadata": {
+              "RequestId": "07a4899d-a5e4-46d8-91ed-b8832267d90c"
+            }
+          }
+        }
+      }
+    ],
+    "AWS IAM": [
+      {
+        "json": {
+          "DeleteGroupResponse": {
+            "ResponseMetadata": {
+              "RequestId": "2442b5c3-553d-4aa8-a09b-22b287a0e473"
+            }
+          }
+        }
+      }
+    ],
+    "AWS IAM4": [
+      {
+        "json": {
+          "Arn": "arn:aws:iam::130450532146:user/new-path-to-add/NewUser7",
+          "CreateDate": 1736251105,
+          "PasswordLastUsed": null,
+          "Path": "/new-path-to-add/",
+          "PermissionsBoundary": null,
+          "Tags": [
+            {
+              "Key": "this",
+              "Value": "that"
+            }
+          ],
+          "UserId": "AIDAR4X3VE4ZMQEROE7ET",
+          "UserName": "NewUser7"
+        }
+      }
+    ],
+    "AWS IAM6": [
+      {
+        "json": {
+          "UpdateUserResponse": {
+            "ResponseMetadata": {
+              "RequestId": "984dd6b5-7f9a-4233-8b3c-a275e215dbf7"
+            }
+          }
+        }
+      }
+    ],
+    "AWS IAM1": [
+      {
+        "json": {
+          "CreateUserResponse": {
+            "CreateUserResult": {
+              "User": {
+                "Arn": "arn:aws:iam::130450532146:user/this/path/Jonas2",
+                "CreateDate": 1739259488,
+                "PasswordLastUsed": null,
+                "Path": "/this/path/",
+                "PermissionsBoundary": null,
+                "Tags": [
+                  {
+                    "Key": "dept",
+                    "Value": "engineering"
+                  }
+                ],
+                "UserId": "AIDAR4X3VE4ZGDU7WZF2C",
+                "UserName": "Jonas2"
+              }
+            },
+            "ResponseMetadata": {
+              "RequestId": "90be7974-dfca-4101-a960-0b5e2649ce65"
+            }
+          }
+        }
+      }
+    ],
+    "AWS IAM7": [
+      {
+        "json": {
+          "AddUserToGroupResponse": {
+            "ResponseMetadata": {
+              "RequestId": "f1a134a7-9f7b-4b9e-b1df-1a0ea3a4e8f2"
+            }
+          }
+        }
+      }
+    ],
+    "AWS IAM8": [
+      {
+        "json": {
+          "RemoveUserFromGroupResponse": {
+            "ResponseMetadata": {
+              "RequestId": "45be91aa-d5f0-4c6e-b539-77abe18ac3bc"
+            }
+          }
+        }
+      }
+    ],
+    "AWS IAM9": [
+      {
+        "json": {
+          "Arn": "arn:aws:iam::130450532146:user/this/path/Jonas2",
+          "CreateDate": 1739259488,
+          "PasswordLastUsed": null,
+          "Path": "/this/path/",
+          "PermissionsBoundary": null,
+          "Tags": null,
+          "UserId": "AIDAR4X3VE4ZGDU7WZF2C",
+          "UserName": "Jonas2"
+        }
+      }
+    ]
+  },
+  "connections": {
+    "When clicking ‘Test workflow’": {
+      "main": [
+        []
+      ]
+    },
+    "AWS IAM4": {
+      "main": [
+        []
+      ]
+    },
+    "AWS IAM7": {
+      "main": [
+        []
+      ]
+    },
+    "AWS IAM6": {
+      "main": [
+        []
+      ]
+    },
+    "AWS IAM9": {
+      "main": [
+        []
+      ]
+    },
+    "AWS IAM13": {
+      "main": [
+        []
+      ]
+    },
+    "AWS IAM14": {
+      "main": [
+        []
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "3588f397-904c-4968-a93e-2b096c57b06c",
+  "meta": {
+    "instanceId": "26f38eb23ad84214537831cfef4032299ffac994ff18d5cb72e82d31ac4ceac4"
+  },
+  "id": "tHedKT04CupYzeSH",
+  "tags": []
+}
