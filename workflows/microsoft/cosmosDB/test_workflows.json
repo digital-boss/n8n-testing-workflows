@@ -1,0 +1,896 @@
+{
+  "name": "AzureCosmoDB Test Workflow",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -340,
+        -280
+      ],
+      "id": "8218dacc-3b5f-460a-a773-817faf012ba9",
+      "name": "When clicking ‘Test workflow’"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.cosmosDb",
+      "typeVersion": 1,
+      "position": [
+        1160,
+        -300
+      ],
+      "id": "7112aa1b-4be2-4d68-970a-7ae264450640",
+      "name": "updateItemRemove",
+      "credentials": {
+        "microsoftCosmosDbSharedKeyApi": {
+          "id": "KOiOQAFj7sukUyn5",
+          "name": "Azure Cosmos DB account 2"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.cosmosDb",
+      "typeVersion": 1,
+      "position": [
+        1160,
+        -100
+      ],
+      "id": "e3eabe1d-25d3-490d-a3c5-f0751bde8d15",
+      "name": "updateItemMove",
+      "credentials": {
+        "microsoftCosmosDbSharedKeyApi": {
+          "id": "KOiOQAFj7sukUyn5",
+          "name": "Azure Cosmos DB account 2"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.cosmosDb",
+      "typeVersion": 1,
+      "position": [
+        1340,
+        -100
+      ],
+      "id": "c22cfd93-2732-4614-96f6-7f4031dc5dd2",
+      "name": "updateItemIncrement",
+      "credentials": {
+        "microsoftCosmosDbSharedKeyApi": {
+          "id": "KOiOQAFj7sukUyn5",
+          "name": "Azure Cosmos DB account 2"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.cosmosDb",
+      "typeVersion": 1,
+      "position": [
+        1520,
+        -300
+      ],
+      "id": "115bdb32-1ff2-4c60-ba52-53eb39bbb221",
+      "name": "updateItemSet",
+      "credentials": {
+        "microsoftCosmosDbSharedKeyApi": {
+          "id": "KOiOQAFj7sukUyn5",
+          "name": "Azure Cosmos DB account 2"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.cosmosDb",
+      "typeVersion": 1,
+      "position": [
+        1340,
+        -300
+      ],
+      "id": "31827c30-52d9-4d4b-b7e3-4aaf285c735a",
+      "name": "updateItemAdd",
+      "credentials": {
+        "microsoftCosmosDbSharedKeyApi": {
+          "id": "KOiOQAFj7sukUyn5",
+          "name": "Azure Cosmos DB account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "CONTAINERS\n",
+        "height": 500,
+        "width": 520
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -140,
+        -400
+      ],
+      "typeVersion": 1,
+      "id": "8ca1c567-749c-44e9-9115-c790281b0d8f",
+      "name": "Sticky Note2"
+    },
+    {
+      "parameters": {
+        "content": "## ITEMS\n\n",
+        "height": 500,
+        "width": 1460
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        480,
+        -400
+      ],
+      "typeVersion": 1,
+      "id": "fc8c05a0-d2bf-4fee-be2b-6fb542b04c73",
+      "name": "Sticky Note3"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.cosmosDb",
+      "typeVersion": 1,
+      "position": [
+        740,
+        -100
+      ],
+      "id": "a45105b6-bbc7-4c79-a45d-303450d83d30",
+      "name": "getAllItems",
+      "credentials": {
+        "microsoftCosmosDbSharedKeyApi": {
+          "id": "KOiOQAFj7sukUyn5",
+          "name": "Azure Cosmos DB account 2"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.cosmosDb",
+      "typeVersion": 1,
+      "position": [
+        540,
+        -100
+      ],
+      "id": "17cff814-6bbd-4a26-9a5d-a5e8b43dbd2e",
+      "name": "createItem",
+      "credentials": {
+        "microsoftCosmosDbSharedKeyApi": {
+          "id": "KOiOQAFj7sukUyn5",
+          "name": "Azure Cosmos DB account 2"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.cosmosDb",
+      "typeVersion": 1,
+      "position": [
+        -80,
+        -100
+      ],
+      "id": "f07d61b1-7248-4589-9ae6-c9c9f20931f2",
+      "name": "deleteContainer",
+      "credentials": {
+        "microsoftCosmosDbSharedKeyApi": {
+          "id": "KOiOQAFj7sukUyn5",
+          "name": "Azure Cosmos DB account 2"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.cosmosDb",
+      "typeVersion": 1,
+      "position": [
+        140,
+        -100
+      ],
+      "id": "673c4e6e-77db-4707-ae3a-b4af296ca4e9",
+      "name": "createContainer",
+      "credentials": {
+        "microsoftCosmosDbSharedKeyApi": {
+          "id": "KOiOQAFj7sukUyn5",
+          "name": "Azure Cosmos DB account 2"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.cosmosDb",
+      "typeVersion": 1,
+      "position": [
+        140,
+        -300
+      ],
+      "id": "b27564cf-5d63-45a4-b670-dfd0cbde6439",
+      "name": "getAllContainers",
+      "credentials": {
+        "microsoftCosmosDbSharedKeyApi": {
+          "id": "KOiOQAFj7sukUyn5",
+          "name": "Azure Cosmos DB account 2"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.cosmosDb",
+      "typeVersion": 1,
+      "position": [
+        -80,
+        -300
+      ],
+      "id": "c5661a26-27e7-432b-9117-848057347468",
+      "name": "getContainer",
+      "credentials": {
+        "microsoftCosmosDbSharedKeyApi": {
+          "id": "KOiOQAFj7sukUyn5",
+          "name": "Azure Cosmos DB account 2"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.cosmosDb",
+      "typeVersion": 1,
+      "position": [
+        540,
+        -300
+      ],
+      "id": "a898410e-0ae3-4bc0-a0b1-8ebe8fa1c178",
+      "name": "getItem",
+      "credentials": {
+        "microsoftCosmosDbSharedKeyApi": {
+          "id": "KOiOQAFj7sukUyn5",
+          "name": "Azure Cosmos DB account 2"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.cosmosDb",
+      "typeVersion": 1,
+      "position": [
+        740,
+        -300
+      ],
+      "id": "664c0d37-4eac-4436-881d-fa584ddf79e0",
+      "name": "deleteItem",
+      "credentials": {
+        "microsoftCosmosDbSharedKeyApi": {
+          "id": "KOiOQAFj7sukUyn5",
+          "name": "Azure Cosmos DB account 2"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.cosmosDb",
+      "typeVersion": 1,
+      "position": [
+        960,
+        -300
+      ],
+      "id": "268c3380-4127-4ab5-bba7-8bf8cca37506",
+      "name": "queryItems",
+      "executeOnce": false,
+      "alwaysOutputData": true,
+      "credentials": {
+        "microsoftCosmosDbSharedKeyApi": {
+          "id": "KOiOQAFj7sukUyn5",
+          "name": "Azure Cosmos DB account 2"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.cosmosDb",
+      "typeVersion": 1,
+      "position": [
+        1520,
+        -100
+      ],
+      "id": "1efb2161-ec2b-45d4-a72c-5529983bc011",
+      "name": "updateItemReplace",
+      "credentials": {
+        "microsoftCosmosDbSharedKeyApi": {
+          "id": "KOiOQAFj7sukUyn5",
+          "name": "Azure Cosmos DB account 2"
+        }
+      }
+    }
+  ],
+  "pinData": {
+    "updateItemRemove": [
+      {
+        "json": {
+          "id": "John",
+          "_rid": "ptp9ALgtZEIBAAAAAAAAAA==",
+          "_self": "dbs/ptp9AA==/colls/ptp9ALgtZEI=/docs/ptp9ALgtZEIBAAAAAAAAAA==/",
+          "_etag": "\"2000c030-0000-0300-0000-67a37a0a0000\"",
+          "_attachments": "attachments/",
+          "_ts": 1738766858
+        }
+      }
+    ],
+    "updateItemMove": [
+      {
+        "json": {
+          "id": "John",
+          "_rid": "ptp9ALgtZEIBAAAAAAAAAA==",
+          "_self": "dbs/ptp9AA==/colls/ptp9ALgtZEI=/docs/ptp9ALgtZEIBAAAAAAAAAA==/",
+          "_etag": "\"f80089bb-0000-0300-0000-67a4910d0000\"",
+          "_attachments": "attachments/",
+          "FamilyName": "NewNameAdded",
+          "Parents": [
+            {
+              "FamilyName": "Bob",
+              "FirstName": "Thomas"
+            },
+            {
+              "FamilyName": null,
+              "FirstName": "Mary Kay"
+            }
+          ],
+          "Otherdetails": "male",
+          "_ts": 1738838285
+        }
+      }
+    ],
+    "updateItemIncrement": [
+      {
+        "json": {
+          "id": "John",
+          "_rid": "ptp9ALgtZEIBAAAAAAAAAA==",
+          "_self": "dbs/ptp9AA==/colls/ptp9ALgtZEI=/docs/ptp9ALgtZEIBAAAAAAAAAA==/",
+          "_etag": "\"fa000d87-0000-0300-0000-67a499fa0000\"",
+          "_attachments": "attachments/",
+          "FamilyName": "NewNameAdded",
+          "Parents": [
+            {
+              "FamilyName": "Bob",
+              "FirstName": "Thomas"
+            },
+            {
+              "FamilyName": null,
+              "FirstName": "Mary Kay"
+            }
+          ],
+          "Otherdetails": "/male",
+          "Age": 115,
+          "_ts": 1738840570
+        }
+      }
+    ],
+    "updateItemSet": [
+      {
+        "json": {
+          "id": "John",
+          "_rid": "ptp9ALgtZEIBAAAAAAAAAA==",
+          "_self": "dbs/ptp9AA==/colls/ptp9ALgtZEI=/docs/ptp9ALgtZEIBAAAAAAAAAA==/",
+          "_etag": "\"fa00e7ed-0000-0300-0000-67a49bf00000\"",
+          "_attachments": "attachments/",
+          "FamilyName": "NewNameAdded",
+          "Parents": [
+            {
+              "FamilyName": "Bob",
+              "FirstName": "Thomas"
+            },
+            {
+              "FamilyName": null,
+              "FirstName": "Mary Kay"
+            }
+          ],
+          "Otherdetails": "/male",
+          "Age": 50,
+          "_ts": 1738841072
+        }
+      }
+    ],
+    "updateItemAdd": [
+      {
+        "json": {
+          "id": "John",
+          "_rid": "ptp9ALgtZEIBAAAAAAAAAA==",
+          "_self": "dbs/ptp9AA==/colls/ptp9ALgtZEI=/docs/ptp9ALgtZEIBAAAAAAAAAA==/",
+          "_etag": "\"f8006f54-0000-0300-0000-67a48ef40000\"",
+          "_attachments": "attachments/",
+          "FamilyName": "NewNameAdded",
+          "Parents": [
+            {
+              "FamilyName": "Bob",
+              "FirstName": "Thomas"
+            },
+            {
+              "FamilyName": null,
+              "FirstName": "Mary Kay"
+            }
+          ],
+          "Gender": "male",
+          "_ts": 1738837748
+        }
+      }
+    ],
+    "getAllItems": [
+      {
+        "json": {
+          "id": "User1",
+          "_rid": "ptp9AKtVQogCAAAAAAAAAA==",
+          "_self": "dbs/ptp9AA==/colls/ptp9AKtVQog=/docs/ptp9AKtVQogCAAAAAAAAAA==/",
+          "_etag": "\"0600fcc4-0000-0300-0000-67a5bf4b0000\"",
+          "_attachments": "attachments/",
+          "_ts": 1738915659
+        }
+      },
+      {
+        "json": {
+          "id": "User2",
+          "FamilyName": "John",
+          "_rid": "ptp9AKtVQogDAAAAAAAAAA==",
+          "_self": "dbs/ptp9AA==/colls/ptp9AKtVQog=/docs/ptp9AKtVQogDAAAAAAAAAA==/",
+          "_etag": "\"060009c5-0000-0300-0000-67a5bf7e0000\"",
+          "_attachments": "attachments/",
+          "_ts": 1738915710
+        }
+      },
+      {
+        "json": {
+          "id": "User3",
+          "_rid": "ptp9AKtVQogEAAAAAAAAAA==",
+          "_self": "dbs/ptp9AA==/colls/ptp9AKtVQog=/docs/ptp9AKtVQogEAAAAAAAAAA==/",
+          "_etag": "\"06000dc5-0000-0300-0000-67a5bf850000\"",
+          "_attachments": "attachments/",
+          "_ts": 1738915717
+        }
+      },
+      {
+        "json": {
+          "id": "User4",
+          "_rid": "ptp9AKtVQogFAAAAAAAAAA==",
+          "_self": "dbs/ptp9AA==/colls/ptp9AKtVQog=/docs/ptp9AKtVQogFAAAAAAAAAA==/",
+          "_etag": "\"06000ec5-0000-0300-0000-67a5bf8c0000\"",
+          "_attachments": "attachments/",
+          "_ts": 1738915724
+        }
+      },
+      {
+        "json": {
+          "id": "User5",
+          "_rid": "ptp9AKtVQogGAAAAAAAAAA==",
+          "_self": "dbs/ptp9AA==/colls/ptp9AKtVQog=/docs/ptp9AKtVQogGAAAAAAAAAA==/",
+          "_etag": "\"06000fc5-0000-0300-0000-67a5bf940000\"",
+          "_attachments": "attachments/",
+          "_ts": 1738915732
+        }
+      },
+      {
+        "json": {
+          "id": "User6",
+          "_rid": "ptp9AKtVQogHAAAAAAAAAA==",
+          "_self": "dbs/ptp9AA==/colls/ptp9AKtVQog=/docs/ptp9AKtVQogHAAAAAAAAAA==/",
+          "_etag": "\"060013c5-0000-0300-0000-67a5bfa20000\"",
+          "_attachments": "attachments/",
+          "_ts": 1738915746
+        }
+      },
+      {
+        "json": {
+          "id": "User7",
+          "_rid": "ptp9AKtVQogIAAAAAAAAAA==",
+          "_self": "dbs/ptp9AA==/colls/ptp9AKtVQog=/docs/ptp9AKtVQogIAAAAAAAAAA==/",
+          "_etag": "\"060014c5-0000-0300-0000-67a5bfa90000\"",
+          "_attachments": "attachments/",
+          "_ts": 1738915753
+        }
+      },
+      {
+        "json": {
+          "id": "User8",
+          "_rid": "ptp9AKtVQogJAAAAAAAAAA==",
+          "_self": "dbs/ptp9AA==/colls/ptp9AKtVQog=/docs/ptp9AKtVQogJAAAAAAAAAA==/",
+          "_etag": "\"060015c5-0000-0300-0000-67a5bfaf0000\"",
+          "_attachments": "attachments/",
+          "_ts": 1738915759
+        }
+      },
+      {
+        "json": {
+          "id": "User9",
+          "_rid": "ptp9AKtVQogKAAAAAAAAAA==",
+          "_self": "dbs/ptp9AA==/colls/ptp9AKtVQog=/docs/ptp9AKtVQogKAAAAAAAAAA==/",
+          "_etag": "\"060016c5-0000-0300-0000-67a5bfb30000\"",
+          "_attachments": "attachments/",
+          "_ts": 1738915763
+        }
+      },
+      {
+        "json": {
+          "id": "User10",
+          "_rid": "ptp9AKtVQogLAAAAAAAAAA==",
+          "_self": "dbs/ptp9AA==/colls/ptp9AKtVQog=/docs/ptp9AKtVQogLAAAAAAAAAA==/",
+          "_etag": "\"060017c5-0000-0300-0000-67a5bfc40000\"",
+          "_attachments": "attachments/",
+          "_ts": 1738915780
+        }
+      },
+      {
+        "json": {
+          "id": "User11",
+          "_rid": "ptp9AKtVQogMAAAAAAAAAA==",
+          "_self": "dbs/ptp9AA==/colls/ptp9AKtVQog=/docs/ptp9AKtVQogMAAAAAAAAAA==/",
+          "_etag": "\"0600b9c5-0000-0300-0000-67a5c17c0000\"",
+          "_attachments": "attachments/",
+          "_ts": 1738916220
+        }
+      }
+    ],
+    "createItem": [
+      {
+        "json": {
+          "id": "SecondPersonHere",
+          "Gender": "male",
+          "Age": 55,
+          "_rid": "ptp9AJQTA58CAAAAAAAAAA==",
+          "_self": "dbs/ptp9AA==/colls/ptp9AJQTA58=/docs/ptp9AJQTA58CAAAAAAAAAA==/",
+          "_etag": "\"00007b00-0000-0300-0000-67a9a89b0000\"",
+          "_attachments": "attachments/",
+          "_ts": 1739171995
+        }
+      }
+    ],
+    "deleteContainer": [
+      {
+        "json": {
+          "success": true
+        }
+      }
+    ],
+    "createContainer": [
+      {
+        "json": {
+          "id": "NewContainerForTest2",
+          "indexingPolicy": {
+            "indexingMode": "consistent",
+            "automatic": true,
+            "includedPaths": [
+              {
+                "path": "/*"
+              }
+            ],
+            "excludedPaths": [
+              {
+                "path": "/\"_etag\"/?"
+              }
+            ]
+          },
+          "partitionKey": {
+            "paths": [
+              "/id"
+            ],
+            "kind": "Hash",
+            "version": 2
+          },
+          "conflictResolutionPolicy": {
+            "mode": "LastWriterWins",
+            "conflictResolutionPath": "/_ts",
+            "conflictResolutionProcedure": ""
+          },
+          "geospatialConfig": {
+            "type": "Geography"
+          },
+          "_rid": "ptp9AKAP9ZU=",
+          "_ts": 1739171632,
+          "_self": "dbs/ptp9AA==/colls/ptp9AKAP9ZU=/",
+          "_etag": "\"0000e605-0000-0300-0000-67a9a7300000\"",
+          "_docs": "docs/",
+          "_sprocs": "sprocs/",
+          "_triggers": "triggers/",
+          "_udfs": "udfs/",
+          "_conflicts": "conflicts/"
+        }
+      }
+    ],
+    "getAllContainers": [
+      {
+        "json": {
+          "id": "newOne3",
+          "indexingPolicy": {
+            "indexingMode": "consistent",
+            "automatic": true,
+            "includedPaths": [
+              {
+                "path": "/*"
+              }
+            ],
+            "excludedPaths": [
+              {
+                "path": "/\"_etag\"/?"
+              }
+            ]
+          },
+          "partitionKey": {
+            "paths": [
+              "/id"
+            ],
+            "kind": "Hash",
+            "version": 2
+          },
+          "conflictResolutionPolicy": {
+            "mode": "LastWriterWins",
+            "conflictResolutionPath": "/_ts",
+            "conflictResolutionProcedure": ""
+          },
+          "geospatialConfig": {
+            "type": "Geography"
+          },
+          "_rid": "ptp9ALgtZEI=",
+          "_ts": 1738674222,
+          "_self": "dbs/ptp9AA==/colls/ptp9ALgtZEI=/",
+          "_etag": "\"0000b22d-0000-0300-0000-67a2102e0000\"",
+          "_docs": "docs/",
+          "_sprocs": "sprocs/",
+          "_triggers": "triggers/",
+          "_udfs": "udfs/",
+          "_conflicts": "conflicts/"
+        }
+      },
+      {
+        "json": {
+          "id": "newId",
+          "indexingPolicy": {
+            "indexingMode": "consistent",
+            "automatic": true,
+            "includedPaths": [
+              {
+                "path": "/*"
+              }
+            ],
+            "excludedPaths": [
+              {
+                "path": "/\"_etag\"/?"
+              }
+            ],
+            "fullTextIndexes": []
+          },
+          "partitionKey": {
+            "paths": [
+              "/id"
+            ],
+            "kind": "Hash",
+            "version": 2
+          },
+          "uniqueKeyPolicy": {
+            "uniqueKeys": []
+          },
+          "conflictResolutionPolicy": {
+            "mode": "LastWriterWins",
+            "conflictResolutionPath": "/_ts",
+            "conflictResolutionProcedure": ""
+          },
+          "geospatialConfig": {
+            "type": "Geography"
+          },
+          "fullTextPolicy": {
+            "defaultLanguage": "en-US",
+            "fullTextPaths": []
+          },
+          "_rid": "ptp9AKtVQog=",
+          "_ts": 1738669242,
+          "_self": "dbs/ptp9AA==/colls/ptp9AKtVQog=/",
+          "_etag": "\"0000942d-0000-0300-0000-67a1fcba0000\"",
+          "_docs": "docs/",
+          "_sprocs": "sprocs/",
+          "_triggers": "triggers/",
+          "_udfs": "udfs/",
+          "_conflicts": "conflicts/",
+          "computedProperties": []
+        }
+      },
+      {
+        "json": {
+          "id": "ContainerWithNameAsKey",
+          "indexingPolicy": {
+            "indexingMode": "consistent",
+            "automatic": true,
+            "includedPaths": [
+              {
+                "path": "/*"
+              }
+            ],
+            "excludedPaths": [
+              {
+                "path": "/\"_etag\"/?"
+              }
+            ],
+            "fullTextIndexes": []
+          },
+          "partitionKey": {
+            "paths": [
+              "/Name"
+            ],
+            "kind": "Hash",
+            "version": 2
+          },
+          "uniqueKeyPolicy": {
+            "uniqueKeys": []
+          },
+          "conflictResolutionPolicy": {
+            "mode": "LastWriterWins",
+            "conflictResolutionPath": "/_ts",
+            "conflictResolutionProcedure": ""
+          },
+          "geospatialConfig": {
+            "type": "Geography"
+          },
+          "fullTextPolicy": {
+            "defaultLanguage": "en-US",
+            "fullTextPaths": []
+          },
+          "_rid": "ptp9AKp+Xak=",
+          "_ts": 1738856595,
+          "_self": "dbs/ptp9AA==/colls/ptp9AKp+Xak=/",
+          "_etag": "\"0000e200-0000-0300-0000-67a4d8930000\"",
+          "_docs": "docs/",
+          "_sprocs": "sprocs/",
+          "_triggers": "triggers/",
+          "_udfs": "udfs/",
+          "_conflicts": "conflicts/",
+          "computedProperties": []
+        }
+      }
+    ],
+    "getContainer": [
+      {
+        "json": {
+          "id": "newId",
+          "indexingPolicy": {
+            "indexingMode": "consistent",
+            "automatic": true,
+            "includedPaths": [
+              {
+                "path": "/*"
+              }
+            ],
+            "excludedPaths": [
+              {
+                "path": "/\"_etag\"/?"
+              }
+            ],
+            "fullTextIndexes": []
+          },
+          "partitionKey": {
+            "paths": [
+              "/id"
+            ],
+            "kind": "Hash",
+            "version": 2
+          },
+          "uniqueKeyPolicy": {
+            "uniqueKeys": []
+          },
+          "conflictResolutionPolicy": {
+            "mode": "LastWriterWins",
+            "conflictResolutionPath": "/_ts",
+            "conflictResolutionProcedure": ""
+          },
+          "geospatialConfig": {
+            "type": "Geography"
+          },
+          "fullTextPolicy": {
+            "defaultLanguage": "en-US",
+            "fullTextPaths": []
+          },
+          "_rid": "ptp9AKtVQog=",
+          "_ts": 1738669242,
+          "_self": "dbs/ptp9AA==/colls/ptp9AKtVQog=/",
+          "_etag": "\"0000942d-0000-0300-0000-67a1fcba0000\"",
+          "_docs": "docs/",
+          "_sprocs": "sprocs/",
+          "_triggers": "triggers/",
+          "_udfs": "udfs/",
+          "_conflicts": "conflicts/",
+          "computedProperties": []
+        }
+      }
+    ],
+    "getItem": [
+      {
+        "json": {
+          "id": "JonasAccount",
+          "Gender": "female",
+          "Name": "Jonas",
+          "_rid": "ptp9AKp+XakDAAAAAAAAAA==",
+          "_self": "dbs/ptp9AA==/colls/ptp9AKp+Xak=/docs/ptp9AKp+XakDAAAAAAAAAA==/",
+          "_etag": "\"3000f226-0000-0300-0000-67a4e7240000\"",
+          "_attachments": "attachments/",
+          "_ts": 1738860324
+        }
+      }
+    ],
+    "deleteItem": [
+      {
+        "json": {
+          "success": true
+        }
+      }
+    ],
+    "queryItems": [
+      {
+        "json": {
+          "id": "NewUser",
+          "Gender": "male",
+          "Name": "NewUserName",
+          "_rid": "ptp9AKp+XakCAAAAAAAAAA==",
+          "_self": "dbs/ptp9AA==/colls/ptp9AKp+Xak=/docs/ptp9AKp+XakCAAAAAAAAAA==/",
+          "_etag": "\"f2002af6-0000-0300-0000-67a9aa190000\"",
+          "_attachments": "attachments/",
+          "_ts": 1739172377
+        }
+      }
+    ],
+    "updateItemReplace": [
+      {
+        "json": {
+          "id": "John",
+          "_rid": "ptp9ALgtZEIBAAAAAAAAAA==",
+          "_self": "dbs/ptp9AA==/colls/ptp9ALgtZEI=/docs/ptp9ALgtZEIBAAAAAAAAAA==/",
+          "_etag": "\"c700cdf9-0000-0300-0000-67a9b5120000\"",
+          "_attachments": "attachments/",
+          "FamilyName": "NewNameAdded",
+          "Parents": [
+            {
+              "FamilyName": "Bob",
+              "FirstName": "Thomas"
+            },
+            {
+              "FamilyName": null,
+              "FirstName": "Mary Kay"
+            }
+          ],
+          "ExtraField": "nothing serious",
+          "Otherdetails": "male",
+          "Age": 43,
+          "_ts": 1739175186
+        }
+      }
+    ]
+  },
+  "connections": {
+    "When clicking ‘Test workflow’": {
+      "main": [
+        []
+      ]
+    },
+    "updateItemRemove": {
+      "main": [
+        []
+      ]
+    },
+    "deleteContainer": {
+      "main": [
+        []
+      ]
+    },
+    "getAllContainers": {
+      "main": [
+        []
+      ]
+    },
+    "getContainer": {
+      "main": [
+        []
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "877b2db4-9769-4e3f-8c51-dd62a053e778",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "26f38eb23ad84214537831cfef4032299ffac994ff18d5cb72e82d31ac4ceac4"
+  },
+  "id": "wvWLxxD8Ya37MTph",
+  "tags": []
+}
